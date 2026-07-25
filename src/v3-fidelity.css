@@ -1,0 +1,11 @@
+@media (min-width:1201px){
+  .v3Hero{
+    grid-template-columns:minmax(480px,.95fr) minmax(520px,1.1fr);
+    gap:4vw;
+    padding-inline:5vw;
+  }
+
+  .v3Hero h1{
+    font-size:clamp(54px,4.5vw,72px);
+  }
+}

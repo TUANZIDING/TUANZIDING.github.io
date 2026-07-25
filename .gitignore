@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.npmrc
+dist/
+audit-*/
+qa-*/
+AGENTS.md
+design-qa.md
+.DS_Store
