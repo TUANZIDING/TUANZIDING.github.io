@@ -6,6 +6,7 @@ import {
 } from '@phosphor-icons/react';
 
 const honors=[
+  {id:'A06',year:'2026',type:'数据科学竞赛',title:'The Pokémon Company－PTCG AI Battle Challenge Simulation 竞赛银牌（第253名／6,807支队伍）',meta:'Kaggle · 2026年9月1日',href:'https://www.kaggle.com/certification/competitions/bruceding123/pokemon-tcg-ai-battle'},
   {id:'A01',year:'2025',type:'创伤病例大赛',title:'第四届“王正国创伤医学菁英杯”江苏省青年医师创伤病例大赛一等奖',meta:'江苏省 · 一等奖'},
   {id:'A02',year:'2024',type:'青年教师竞赛',title:'江南大学附属医院青年教师“教学会讲竞赛”第一名',meta:'院级 · 第一名'},
   {id:'A03',year:'2024',type:'青年教师竞赛',title:'江南大学医学院、附属医院系统青年教师“教学会讲竞赛”二等奖',meta:'校院系统 · 二等奖'},

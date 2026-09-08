@@ -12,6 +12,7 @@ const papers=[
 ];
 
 const honors=[
+  {id:'A06',year:'2026',title:{zh:'The Pokémon Company－PTCG AI Battle Challenge Simulation 竞赛银牌（第253名／6,807支队伍）',en:'Competition Silver Medal, The Pokémon Company – PTCG AI Battle Challenge Simulation (253rd of 6,807 teams)'},meta:{zh:'Kaggle · 2026年9月1日',en:'Kaggle · Awarded September 1, 2026'},href:'https://www.kaggle.com/certification/competitions/bruceding123/pokemon-tcg-ai-battle'},
   {id:'A01',year:'2025',title:{zh:'第四届“王正国创伤医学菁英杯”江苏省青年医师创伤病例大赛一等奖',en:'First Prize, 4th Wang Zhengguo Trauma Medicine Elite Cup — Jiangsu Young Physicians Trauma Case Competition'},meta:{zh:'创伤病例大赛 · 一等奖',en:'Trauma Case Competition · First Prize'}},
   {id:'A02',year:'2024',title:{zh:'江南大学附属医院青年教师“教学会讲竞赛”第一名',en:'First Place, Young Faculty Teaching Competition — Affiliated Hospital of Jiangnan University'},meta:{zh:'青年教师竞赛 · 第一名',en:'Young Faculty Competition · First Place'}},
   {id:'A03',year:'2024',title:{zh:'江南大学医学院、附属医院系统青年教师“教学会讲竞赛”二等奖',en:'Second Prize, Young Faculty Teaching Competition — Jiangnan University School of Medicine and Affiliated Hospital System'},meta:{zh:'青年教师竞赛 · 二等奖',en:'Young Faculty Competition · Second Prize'}},
@@ -28,7 +29,7 @@ const content={
     imageAlt:'糖尿病骨质疏松研究视觉：骨小梁微结构、AGE-RAGE、ROS、Wnt/β-catenin、RANKL/OPG与AI分析网络',
     inquiry:'From Trauma Care to Testable Mechanism',inquiryLead:'以临床问题为起点，构建可验证的机制假设，推动创伤骨科与代谢性骨病研究的交叉进展。',
     steps:[['观察与临床问题','来自急救与创伤一线的真实问题，形成可研究的科学假设。'],['机制与证据','整合临床队列、影像、生物力学与分子机制证据。'],['转化与影响','面向严重创伤MDT决策、风险评估与教学改进。']],
-    evidence:'公开证据与荣誉档案',evidenceType:'证据类型',publicationsFilter:'03 English Publications',honorsFilter:'05 Honors',verify:'核验',publicSummary:'公开摘要',
+    evidence:'公开证据与荣誉档案',evidenceType:'证据类型',publicationsFilter:'03 English Publications',honorsFilter:'06 Honors',verify:'核验',publicSummary:'公开摘要',
     teaching:'连续三届受邀授课',lectureTitle:'创伤伤口治疗与管理原则',lectureCohorts:['第5届','第6届','第7届'],lectureProgram:'无锡市伤口造口专科护士培训班',lectureLabel:'受邀授课',
     os:'个人临床研究操作系统',osLead:'观察事实、核验证据、明确推断、保护边界。',domains:[['临床','创伤病例 → 风险识别 → MDT救治路径'],['科研','临床问题 → 机制假设 → 可检验方案'],['教学','病例复盘 → 关键节点 → 课程反馈'],['安全AI','证据分层 → 人工复核 → 隐私脱敏']],
     profileLabel:'专业联系',contact:'临床、科研与医学 AI 合作',contactLead:'关注创伤急救、创伤伤口管理、糖尿病骨质疏松机制、临床决策支持与医学教育，并探索大语言模型、生物医学数据分析和智能工作流在真实医疗场景中的安全应用。',contactRole:'主治医师｜AI 医学与临床研究',contactNote:'优先通过电子邮件或 LinkedIn 联系',linkedin:'LinkedIn 专业主页',email:'发送电子邮件',github:'查看 GitHub',compare:'对比深色版本',backTop:'返回顶部'
@@ -41,7 +42,7 @@ const content={
     imageAlt:'Diabetic osteoporosis research visualization combining trabecular microarchitecture, AGE-RAGE, ROS, Wnt/β-catenin, RANKL/OPG and an AI analysis network',
     inquiry:'From Trauma Care to Testable Mechanism',inquiryLead:'Starting with clinical questions, building testable mechanisms, and connecting trauma care with metabolic bone research.',
     steps:[['Observation & Clinical Question','Questions from frontline trauma care become researchable hypotheses.'],['Mechanism & Evidence','Combine cohorts, imaging, biomechanics and mechanistic evidence.'],['Translation & Impact','Support MDT decisions, risk assessment and education.']],
-    evidence:'Public Evidence & Honors',evidenceType:'Evidence type',publicationsFilter:'03 English Publications',honorsFilter:'05 Honors',verify:'Verify',publicSummary:'Public summary',
+    evidence:'Public Evidence & Honors',evidenceType:'Evidence type',publicationsFilter:'03 English Publications',honorsFilter:'06 Honors',verify:'Verify',publicSummary:'Public summary',
     teaching:'Three Consecutive Invited Lectures',lectureTitle:'Principles of Treatment and Management for Traumatic Wounds',lectureCohorts:['5th Cohort','6th Cohort','7th Cohort'],lectureProgram:'Wuxi Specialist Nurse Training Program for Wound and Stoma Care',lectureLabel:'Invited Lecture',
     os:'Personal Clinical Research OS',osLead:'Observe facts, verify evidence, label inference and protect boundaries.',domains:[['Clinical','Trauma case → Risk recognition → MDT care pathway'],['Research','Clinical question → Mechanistic hypothesis → Testable protocol'],['Teaching','Case review → Decision points → Course feedback'],['Safe AI','Evidence grading → Human review → Privacy protection']],
     profileLabel:'Professional Contact',contact:'Clinical, Research & Medical AI Collaboration',contactLead:'Focused on trauma care, wound management, diabetic osteoporosis mechanisms, clinical decision support and medical education, with an interest in safely applying large language models, biomedical data analysis and intelligent workflows to real-world healthcare.',contactRole:'Attending Physician | AI in Medicine & Clinical Research',contactNote:'Email or LinkedIn is preferred for professional enquiries',linkedin:'LinkedIn Profile',email:'Send Email',github:'View GitHub',compare:'Compare dark version',backTop:'Back to top'
@@ -54,7 +55,7 @@ const railIcons=[User,BookOpenText,ChalkboardTeacher,Microscope,EnvelopeSimple];
 const stepIcons=[FirstAidKit,Brain,Heartbeat];
 const domainIcons=[FirstAidKit,Brain,ChalkboardTeacher,ShieldCheck];
 const statIcons=[BookOpenText,Trophy,ChalkboardTeacher,GraduationCap];
-const statValues=['03','05','03','2026'];
+const statValues=['03','06','03','2026'];
 
 function ArchiveCursor(){
   const ref=useRef(null);
@@ -92,7 +93,7 @@ export function Light3App(){
       <a className="l3Brand" href="#profile" aria-label={t.homeLabel}>D</a>
       <button className="l3Menu" aria-label={menu?t.menuClose:t.menuOpen} aria-expanded={menu} onClick={()=>setMenu(!menu)}>{menu?<X/>:<List/>}</button>
       <nav className={menu?'open':''} aria-label={t.mainNav}>{t.nav.map((label,index)=><a key={label} href={'#'+navIds[index]} onClick={()=>setMenu(false)}>{label}</a>)}</nav>
-      <div className="l3Meta"><span><CalendarBlank/>2026-07-25</span><button aria-label={lang==='zh'?'Switch to English':'切换至中文'} onClick={()=>setLang(lang==='zh'?'en':'zh')}>{lang==='zh'?'中文 / English':'English / 中文'}</button></div>
+      <div className="l3Meta"><span><CalendarBlank/>2026-09-08</span><button aria-label={lang==='zh'?'Switch to English':'切换至中文'} onClick={()=>setLang(lang==='zh'?'en':'zh')}>{lang==='zh'?'中文 / English':'English / 中文'}</button></div>
     </header>
 
     <aside className="l3Rail" aria-label={t.sectionNav}>{railIds.map((id,index)=>{const Icon=railIcons[index];return <a key={id} href={'#'+id} className={active===id?'active':''}><Icon/><span>{t.rail[index]}</span></a>})}</aside>
