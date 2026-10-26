@@ -130,3 +130,11 @@
 .l3Stats svg{align-self:start;margin-top:8px}
 @media(max-width:860px){.l3Comic{padding:24px 20px 32px}.l3ComicNo{font-size:44px}.l3ComicSteps span{display:none}}
 @media(prefers-reduced-motion:reduce){.l3ComicStage img{transition:opacity .3s}.l3Flash,.l3Scan,.l3ComicStage img.on{animation:none!important}.l3ComicSteps button.on i em{animation:none;transform:scaleX(1)}}
+/* v4.1.1 polish */
+.l3ComicNo{left:9%;top:8%;font:700 44px/1 var(--l3-sans);font-variant-numeric:lining-nums;letter-spacing:.02em}
+.l3ComicSteps button i{height:3px}
+.l3ComicSteps span{min-height:32px}
+.l3Stats b{font-variant-numeric:lining-nums tabular-nums}
+.l3Hero{grid-template-rows:auto 1fr!important}
+.l3Identity{padding-bottom:40px!important}
+.l3Stats{align-content:start}
