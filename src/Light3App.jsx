@@ -28,7 +28,7 @@ const content={
     focus:'放射性骨骼肌损伤与修复 × 创伤急救 × 医学 AI',role:'主治医师 · 苏州大学临床医学博士专业学位在读',hospital:'江南大学附属医院 · 无锡，中国',download:'下载公开简历',
     stats:[['English Publications','同行评议 · 英文期刊'],['Honors','学术荣誉与表彰'],['Kaggle Silver','6,807 支队伍中第 253 名'],['Invited Lecture Cohorts','连续三届受邀授课']],
     medal:{kicker:'Kaggle 竞赛银牌',title:'PTCG AI Battle Challenge',meta:'第 253 名 / 6,807 支队伍 · 前 3.7%',cta:'查看证书'},
-    labels:['电离辐射','纤维化 · FAP','卫星细胞 MuSC','细胞外囊泡','证据网络'],figNote:'示意图 · AI 辅助绘制',
+    labels:['电离辐射','纤维化 · FAP','卫星细胞 MuSC','细胞外囊泡','证据网络'],figNote:'示意图 · AI 辅助绘制',zoom:[['辐射打击','射线穿透，肌纤维膜撕裂'],['纤维化 · FAP','FAP 过度活化，胶原沉积'],['卫星细胞','MuSC 被唤醒，沿肌纤维修复'],['细胞外囊泡','囊泡携带信号，调节修复'],['证据网络','把文献证据连成机制图']],
     atlas:[['放射性骨骼肌损伤证据图谱','分子通路按 A/B/C 证据分层，可交互浏览','v0.7'],['细胞外囊泡干预证据图谱','141 项纳入研究，标出体内证据的空白','v0.2']],earlier:'早期方向：糖尿病骨质疏松机制 · 创伤骨科临床研究',
     tagline:['从急救床旁的问题出发，','让受损的肌肉，','重新学会修复。'],
     imageAlt:'放射性骨骼肌损伤与修复示意图：电离辐射照射肌束，纤维化与卫星细胞、细胞外囊泡和证据网络',
@@ -47,7 +47,7 @@ const content={
     focus:'Radiation-Induced Skeletal Muscle Injury & Repair × Trauma Care × Medical AI',role:'Attending Physician · Professional Doctoral Student in Clinical Medicine, Soochow University',hospital:'Affiliated Hospital of Jiangnan University · Wuxi, China',download:'Download public CV',
     stats:[['English Publications','Peer-reviewed English journals'],['Honors','Academic awards and recognition'],['Kaggle Silver','253rd of 6,807 teams'],['Invited Lecture Cohorts','Three consecutive invited cohorts']],
     medal:{kicker:'Kaggle competition silver',title:'PTCG AI Battle Challenge',meta:'253rd of 6,807 teams · top 3.7%',cta:'View certificate'},
-    labels:['Ionizing radiation','Fibrosis · FAPs','Satellite cells','Extracellular vesicles','Evidence graph'],figNote:'Illustration · AI assisted',
+    labels:['Ionizing radiation','Fibrosis · FAPs','Satellite cells','Extracellular vesicles','Evidence graph'],figNote:'Illustration · AI assisted',zoom:[['Radiation hit','Rays pierce, fiber membranes tear'],['Fibrosis · FAPs','Overactive FAPs lay down collagen'],['Satellite cells','MuSCs wake and rebuild along fibers'],['Extracellular vesicles','Vesicles carry repair signals'],['Evidence graph','Literature linked into a mechanism map']],
     atlas:[['Radiation muscle injury evidence atlas','Molecular pathways graded A/B/C, fully interactive','v0.7'],['Extracellular vesicle intervention atlas','141 included studies, with the in vivo gap marked','v0.2']],earlier:'Earlier work: diabetic osteoporosis mechanisms · orthopaedic trauma outcomes',
     tagline:['Start from questions at the trauma bedside.','Help irradiated muscle','learn to repair again.'],
     imageAlt:'Illustration of radiation-induced skeletal muscle injury and repair: radiation beams, fibrosis, satellite cells, extracellular vesicles and an evidence network',
@@ -79,6 +79,32 @@ function CountUp({to,pad=0,dec=0,pre='',suf=''}){
   const ref=useRef(null);const fmt=v=>pre+(dec?v.toFixed(dec):String(Math.round(v)).padStart(pad,'0'))+suf;
   useEffect(()=>{const el=ref.current;if(reduced()){el.textContent=fmt(to);return}let raf=0;const io=new IntersectionObserver(([e])=>{if(!e.isIntersecting)return;io.disconnect();const t0=performance.now(),d=1400;const tick=now=>{const k=Math.min(1,(now-t0)/d),ease=1-Math.pow(1-k,4);el.textContent=fmt(to*ease);if(k<1)raf=requestAnimationFrame(tick)};raf=requestAnimationFrame(tick)},{threshold:.6});io.observe(el);return()=>{io.disconnect();cancelAnimationFrame(raf)}},[to]);
   return <b ref={ref}>{fmt(0)}</b>;
+}
+
+const heroSrc='/assets/light4-radiation-muscle-repair.webp';
+// target point on the image (%), lens centre (%), zoom
+const zoomSpots=[[43,55,24,82,3.2],[40,45,79,20,3],[70,40,79,20,3.4],[74,63,24,82,2.6],[45,27,79,20,2.6]];
+let zoomListeners=new Set();let zoomStep=-1;
+function useZoomStep(){const [s,setS]=useState(zoomStep);useEffect(()=>{zoomListeners.add(setS);return()=>zoomListeners.delete(setS)},[]);return s}
+function ZoomAtlas({t}){
+  const [step,setStep]=useState(-1);const [hold,setHold]=useState(false);
+  useEffect(()=>{zoomStep=step;zoomListeners.forEach(f=>f(step))},[step]);
+  useEffect(()=>{if(reduced())return;if(hold)return;const id=setTimeout(()=>setStep(v=>v===-1?0:v>=4?-1:v+1),step===-1?1800:3600);return()=>clearTimeout(id)},[step,hold]);
+  const L=34;
+  return <div className="l3Sq" data-step={step} onMouseLeave={()=>setHold(false)}>
+    <img className="l3HeroImg" src={heroSrc} alt={t.imageAlt} fetchPriority="high"/>
+    <span className="l3Beam" key={'b'+step} aria-hidden="true"/>
+    <span className="l3Motes" aria-hidden="true">{Array.from({length:14},(_,i)=><i key={i} style={{left:(64+(i*37)%26)+'%',top:(52+(i*23)%22)+'%',animationDelay:(i*0.37)+'s'}}/>)}</span>
+    {zoomSpots.map(([tx,ty],i)=><button key={i} className={'l3Hot'+(i===step?' on':'')} style={{left:tx+'%',top:ty+'%'}} aria-label={t.zoom[i][0]} onMouseEnter={()=>{setHold(true);setStep(i)}} onFocus={()=>{setHold(true);setStep(i)}} onClick={()=>{setHold(true);setStep(i)}}/>)}
+    {zoomSpots.map(([tx,ty,lx,ly,z],i)=>{const on=i===step;const w=z/(L/100)*100;
+      return <div key={'z'+i} className={'l3ZoomWrap'+(on?' on':'')} aria-hidden={!on}>
+        <svg className="l3Leader" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1={tx} y1={ty} x2={lx} y2={ly} pathLength="1"/></svg>
+        <div className="l3Lens" style={{left:lx+'%',top:ly+'%',width:L+'%','--ox':(tx-lx)+'%','--oy':(ty-ly)+'%'}}>
+          <div className="l3LensIn"><img src={heroSrc} alt="" style={{width:w+'%',left:`calc(50% - ${tx*w/100}%)`,top:`calc(50% - ${ty*w/100}%)`}}/></div>
+          <p><b>{t.zoom[i][0]}</b><span>{t.zoom[i][1]}</span></p>
+        </div>
+      </div>})}
+  </div>;
 }
 
 function MedalBadge({t}){
@@ -115,6 +141,7 @@ function ArchiveCursor(){
 }
 
 export function Light3App(){
+  const zoomStep=useZoomStep();
   const [lang,setLang]=useState('zh');
   const [menu,setMenu]=useState(false);
   const [filter,setFilter]=useState('papers');
@@ -149,7 +176,7 @@ export function Light3App(){
           <p>{t.role}</p><p className="l3Hospital">{t.hospital}</p>
           <MedalBadge t={t}/>
         </div>
-        <figure className="l3Mechanism l3Muscle"><div className="l3Float"><img src="/assets/light4-radiation-muscle-repair.webp" alt={t.imageAlt} fetchPriority="high"/>{t.labels.map((label,i)=><span key={label} className="l3Tag" style={{left:labelPos[i][0]+'%',top:labelPos[i][1]+'%',animationDelay:(0.5+i*0.18)+'s'}}><i/>{label}</span>)}</div><figcaption>{t.figNote}</figcaption></figure>
+        <figure className="l3Mechanism l3Muscle"><div className="l3Float"><ZoomAtlas t={t}/>{t.labels.map((label,i)=><span key={label} className={'l3Tag'+(i===zoomStep?' on':'')} style={{left:labelPos[i][0]+'%',top:labelPos[i][1]+'%',animationDelay:(0.5+i*0.18)+'s'}}><i/>{label}</span>)}</div><figcaption>{t.figNote}</figcaption></figure>
         <div className="l3Stats">{t.stats.map(([label,detail],index)=>{const Icon=statIcons[index];return <div key={label}><Icon/><CountUp {...statValues[index]}/><span>{label}<small>{detail}</small></span></div>})}</div>
       </section>
 
