@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>杨柳依依 折柳含蓄 · 折柳送别里的中国式含蓄</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@400;600&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      :root {
+        --x-paper: #f3ece0;
+        --x-paper-2: #efe6d6;
+        --x-ink: #1f1d1a;
+        --x-ink-2: #4a4640;
+        --x-ink-3: #8a857c;
+        --x-wash: #bdb6aa;
+        --x-seal: #b0302a;
+        --x-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --x-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+        --x-brush: "Ma Shan Zheng", "STKaiti", "KaiTi", serif;
+        --x-kai: "ZCOOL XiaoWei", "STKaiti", "KaiTi", serif;
+        --x-en: "Cormorant Garamond", Georgia, serif;
+        --x-measure: 34em;
+        --x-gap: clamp(140px, 22vh, 260px);
+      }
+      body.x-paper {
+        background: var(--x-paper);
+        color: var(--x-ink);
+        font: 400 17px/2 var(--x-serif);
+        letter-spacing: 0.02em;
+      }
+      body.x-paper::before,
+      body.x-paper::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      body.x-paper::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .29 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        opacity: 0.16;
+      }
+      body.x-paper::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .09' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .42 0 0 0 .9 -.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+        opacity: 0.12;
+      }
+      .x-wrap { position: relative; z-index: 1; }
+      .x-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .x-en {
+        font: 400 18px/1.6 var(--x-en);
+        color: var(--x-ink-2);
+        letter-spacing: 0.01em;
+        max-width: 36rem;
+        text-wrap: pretty;
+      }
+
+      /* motion */
+      .x-rise { opacity: 0; transform: translateY(32px); transition: opacity 800ms var(--x-ease), transform 800ms var(--x-ease); }
+      .x-rise.is-in { opacity: 1; transform: none; }
+
+      /* seal */
+      .x-seal {
+        display: inline-grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        background: var(--x-seal);
+        color: #f8f2e8;
+        font: 400 23px/1 var(--x-brush);
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 2px var(--x-seal), inset 0 0 0 3px rgba(248, 242, 232, 0.7);
+        transform: rotate(-3deg);
+        flex: none;
+        writing-mode: horizontal-tb;
+      }
+
+      /* painting */
+      .x-paint { position: relative; margin: 0; }
+      .x-paint img {
+        width: 100%;
+        height: auto;
+        mix-blend-mode: multiply;
+        -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 58%, transparent 100%);
+        mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 58%, transparent 100%);
+        opacity: 0;
+        transition: opacity 1400ms var(--x-ease);
+      }
+      .x-paint::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 58%, transparent 100%);
+        mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 58%, transparent 100%);
+        opacity: 1;
+        transition: opacity 1600ms var(--x-ease) 150ms;
+        pointer-events: none;
+      }
+      .x-paint.is-in img { opacity: 1; }
+      .x-paint.is-in::after { opacity: 0; }
+      .x-paint figcaption {
+        font: 400 14px/1.7 var(--x-kai);
+        color: var(--x-ink-2);
+        margin-top: 6px;
+        padding-left: 12%;
+        letter-spacing: 0.12em;
+      }
+
+      /* hero */
+      .x-hero {
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-top: -12px;
+        height: max(600px, min(100svh, 980px));
+        overflow: hidden;
+      }
+      .x-hero__img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 70% 40%;
+        mix-blend-mode: multiply;
+        -webkit-mask-image: linear-gradient(#000 70%, transparent 100%);
+        mask-image: linear-gradient(#000 70%, transparent 100%);
+        animation: x-bleed 2000ms var(--x-ease) both;
+      }
+      @keyframes x-bleed { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+      @keyframes x-fade { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+      .x-hero__copy {
+        position: absolute;
+        left: clamp(28px, 10vw, 180px);
+        top: clamp(64px, 13vh, 150px);
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: clamp(18px, 2.4vw, 34px);
+        animation: x-fade 1200ms var(--x-ease) 400ms both;
+      }
+      .x-hero h1 {
+        writing-mode: vertical-rl;
+        font: 400 clamp(72px, 10vw, 148px)/1.05 var(--x-brush);
+        letter-spacing: 0.08em;
+        color: var(--x-ink);
+      }
+      .x-hero__side {
+        writing-mode: vertical-rl;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding-top: 0.6em;
+      }
+      .x-hero__side p { font: 400 19px/1.6 var(--x-kai); letter-spacing: 0.3em; color: var(--x-ink-2); }
+      .x-hero__en {
+        position: absolute;
+        left: clamp(28px, 10vw, 180px);
+        bottom: clamp(70px, 14vh, 150px);
+        font: 400 clamp(19px, 1.7vw, 24px)/1.4 var(--x-en);
+        color: var(--x-ink-2);
+        max-width: 18em;
+        animation: x-fade 1200ms var(--x-ease) 800ms both;
+      }
+      .x-hero__en::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: var(--x-seal);
+        margin-top: 14px;
+      }
+
+      /* sections */
+      .x-sec { margin-top: var(--x-gap); position: relative; }
+      .x-head { margin-bottom: clamp(48px, 8vh, 90px); margin-left: clamp(0px, 7%, 90px); }
+      .x-head--r { margin-left: auto; width: fit-content; margin-right: 6%; }
+      .x-num { font: 400 22px/1 var(--x-kai); color: var(--x-seal); letter-spacing: 0.2em; margin-bottom: 18px; }
+      .x-head h2 {
+        font: 400 clamp(36px, 5.2vw, 60px)/1.25 var(--x-brush);
+        color: var(--x-ink);
+        letter-spacing: 0.06em;
+        text-wrap: balance;
+      }
+      .x-head__sub {
+        font: 400 clamp(19px, 2vw, 23px)/1.6 var(--x-kai);
+        color: var(--x-ink-2);
+        letter-spacing: 0.12em;
+        margin-top: 10px;
+      }
+      .x-head__sub::after { content: ""; display: block; width: 32px; height: 1px; background: var(--x-seal); margin-top: 18px; }
+      .x-prose { max-width: var(--x-measure); }
+      .x-prose p + p { margin-top: 1.2em; }
+      .x-prose .x-en { margin-top: 1.6em; }
+      .x-off-l { margin-left: clamp(0px, 10%, 130px); }
+      .x-off-r { margin-left: auto; margin-right: clamp(0px, 6%, 80px); }
+
+      /* section 1 */
+      .x-caiwei {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) auto;
+        gap: clamp(32px, 6vw, 96px);
+        align-items: center;
+        margin-bottom: clamp(64px, 10vh, 120px);
+      }
+      .x-inkpoem { display: flex; flex-direction: row-reverse; gap: clamp(24px, 3vw, 44px); align-items: flex-start; }
+      .x-inkpoem__main { writing-mode: vertical-rl; font: 400 clamp(34px, 3.6vw, 46px)/1.7 var(--x-brush); letter-spacing: 0.18em; }
+      .x-inkpoem__main p { margin: 0; }
+      .x-ch { opacity: 0.25; transition: opacity 700ms var(--x-ease); }
+      .x-ch.is-ink { opacity: 1; }
+      .x-inkpoem__rest {
+        writing-mode: vertical-rl;
+        font: 400 17px/1.9 var(--x-kai);
+        letter-spacing: 0.22em;
+        color: var(--x-ink-2);
+        padding-top: 3.2em;
+        border-right: 1px solid var(--x-wash);
+        padding-right: 14px;
+      }
+      .x-inkpoem__rest p { margin: 0; }
+
+      /* section 2 */
+      .x-baqiao {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+        gap: clamp(32px, 6vw, 90px);
+        align-items: center;
+      }
+      .x-scrollhint {
+        margin: clamp(80px, 12vh, 140px) 0 18px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 14px;
+        font: 400 15px/1.5 var(--x-kai);
+        color: var(--x-ink-2);
+        letter-spacing: 0.14em;
+      }
+      .x-scrollhint span[lang="en"] { font: 400 16px/1.5 var(--x-en); letter-spacing: 0.02em; }
+      .x-roll {
+        direction: rtl;
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        padding: 36px 0 30px;
+        border-top: 1px solid var(--x-ink-2);
+        border-bottom: 1px solid var(--x-ink-2);
+        scrollbar-width: thin;
+        scrollbar-color: var(--x-wash) transparent;
+        outline-offset: 6px;
+      }
+      .x-roll:focus-visible { outline: 1px solid var(--x-seal); }
+      .x-pc {
+        direction: ltr;
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+        padding: 6px 30px 10px;
+        border-left: 1px solid var(--x-wash);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .x-pc__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+      .x-pc__seal { display: inline-grid; place-items: center; width: 28px; height: 28px; background: var(--x-seal); color: #f8f2e8; font: 400 17px/1 var(--x-kai); border-radius: 2px; flex: none; }
+      .x-pc__lines {
+        writing-mode: vertical-rl;
+        height: 10.5em;
+        font: 400 22px/1.75 var(--x-brush);
+        letter-spacing: 0.14em;
+        color: var(--x-ink);
+        margin: 0 auto 0 0;
+      }
+      .x-pc__lines span { display: block; }
+      .x-pc__by { font: 400 16px/1.6 var(--x-kai); color: var(--x-ink); letter-spacing: 0.08em; }
+      .x-pc__read { font-size: 15px; line-height: 1.9; color: var(--x-ink); }
+      .x-pc .x-en { font-size: 16px; line-height: 1.5; }
+
+      /* section 3 */
+      .x-stage { margin-top: clamp(64px, 10vh, 120px); --x-sine: cubic-bezier(0.45, 0.05, 0.55, 0.95); }
+      .x-scenefig { margin: 0; }
+      .x-scene {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1584 / 672;
+        overflow: hidden;
+        -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 54%, transparent 72%);
+        mask-image: radial-gradient(ellipse at 50% 50%, #000 54%, transparent 72%);
+      }
+      .x-scene > * { position: absolute; pointer-events: none; }
+      .x-scene__bg, .x-scene__svg { inset: 0; width: 100%; height: 100%; display: block; }
+      .x-scene__bg { mix-blend-mode: multiply; }
+      .x-scene__svg { overflow: visible; }
+      .x-scene:not(.is-live) *, .x-scene:not(.is-live) *::before { animation-play-state: paused !important; }
+
+      /* ripples */
+      .x-ripple { fill: none; stroke: #8a857c; stroke-width: 1.3; stroke-linecap: round; opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; animation: x-ripple var(--d, 7s) ease-in-out infinite; animation-delay: var(--p, 0s); }
+      @keyframes x-ripple { 0% { opacity: 0; transform: scaleX(0.55); } 45% { opacity: 0.42; } 100% { opacity: 0; transform: scaleX(1.18); } }
+
+      /* boat */
+      .x-boat { left: 48%; top: 60%; width: 14%; transform-origin: 50% 50%; animation: x-drift 31s linear infinite; }
+      .x-boat__fade { opacity: 0; animation: x-boatfade 31s linear infinite; }
+      .x-boat__bob { animation: x-bob 3.5s var(--x-sine) infinite alternate; }
+      .x-boat img { display: block; width: 100%; height: auto; }
+      @keyframes x-drift {
+        0% { transform: translate(0, 0) scale(1); animation-timing-function: cubic-bezier(0.4, 0.1, 0.6, 0.9); }
+        90.3%, 100% { transform: translate(232%, -110%) scale(0.35); }
+      }
+      @keyframes x-boatfade {
+        0% { opacity: 0; animation-timing-function: var(--x-ease); }
+        9.7% { opacity: 1; }
+        56% { opacity: 1; animation-timing-function: var(--x-ease); }
+        90.3%, 100% { opacity: 0; }
+      }
+      @keyframes x-bob { from { transform: translateY(-2px); } to { transform: translateY(2px); } }
+
+      /* mist */
+      .x-mist {
+        border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(246, 241, 232, 0.95) 0%, rgba(246, 241, 232, 0.6) 42%, rgba(246, 241, 232, 0) 70%);
+        filter: blur(12px);
+        animation: x-mist var(--d) var(--x-sine) infinite alternate;
+        animation-delay: var(--p, 0s);
+      }
+      .x-mist--1 { left: -6%; top: 30%; width: 70%; height: 20%; opacity: 0.45; --d: 28s; --mx: 32%; }
+      .x-mist--2 { left: 38%; top: 44%; width: 66%; height: 17%; opacity: 0.38; --d: 34s; --mx: -30%; --p: -9s; }
+      .x-mist--3 { left: 30%; top: 60%; width: 52%; height: 13%; opacity: 0.26; --d: 22s; --mx: 26%; --p: -5s; }
+      @keyframes x-mist { from { transform: translateX(0); } to { transform: translateX(var(--mx)); } }
+
+      /* figure */
+      .x-fig__shadow { left: 25%; bottom: 13.4%; width: 13%; height: 4%; border-radius: 50%; background: radial-gradient(ellipse at 50% 50%, rgba(31, 29, 26, 0.3) 0%, rgba(31, 29, 26, 0.12) 45%, rgba(31, 29, 26, 0) 70%); }
+      .x-fig { left: 24.4%; bottom: 15%; height: 46%; aspect-ratio: 466 / 666; }
+      .x-fig__sway, .x-fig__flutter { position: relative; width: 100%; height: 100%; transform-origin: 55% 100%; }
+      .x-fig__sway { animation: x-figsway 5.5s var(--x-sine) infinite; }
+      .x-fig__flutter { animation: x-flutter 5.5s var(--x-sine) infinite; animation-delay: -1.8s; }
+      .x-fig img { display: block; width: 100%; height: 100%; }
+      .x-fig svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+      @keyframes x-figsway { 0%, 100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.6deg); } }
+      @keyframes x-flutter { 0%, 100% { transform: skewX(1.5deg); } 50% { transform: skewX(-1.5deg); } }
+      .x-sash { fill: none; stroke: #4a4640; stroke-width: 2.2; stroke-linecap: round; opacity: 0.22; transform-box: fill-box; transform-origin: 0 0; animation: x-sash 3.4s var(--x-sine) infinite; }
+      .x-sash + .x-sash { stroke-width: 1.6; animation-duration: 4.1s; animation-delay: -1.3s; }
+      @keyframes x-sash { 0%, 100% { transform: rotate(-3deg) scaleX(0.97); } 50% { transform: rotate(4deg) scaleX(1.03); } }
+
+      /* willow strands */
+      .x-strands g { transform-origin: 0 0; }
+      .x-gust { animation: x-gust 11s var(--x-sine) infinite; }
+      .x-sway { animation: x-sway var(--d) var(--x-sine) infinite; }
+      .x-near { animation: x-near 5.5s var(--x-sine) infinite; }
+      @keyframes x-gust { 0%, 100% { transform: rotate(0deg); } 40% { transform: rotate(calc(var(--g) * -1)); } 62% { transform: rotate(calc(var(--g) * -0.7)); } }
+      @keyframes x-sway { 0%, 100% { transform: rotate(var(--a)); } 50% { transform: rotate(calc(var(--a) * -1)); } }
+      @keyframes x-near { 0%, 100% { transform: rotate(calc(var(--a) * 0.4)); } 50% { transform: rotate(calc(var(--a) * -1)); } }
+
+      /* catkins: a full-size layer per seed, so translate % is a share of the scene */
+      .x-catkin { inset: 0; opacity: 0; animation: x-catkin var(--d) linear infinite; animation-delay: var(--p); }
+      .x-catkin::before { content: ""; position: absolute; left: var(--x); top: var(--y); width: 3px; height: 3px; border-radius: 50%; background: rgba(74, 70, 64, 0.6); }
+      @keyframes x-catkin {
+        0% { opacity: 0; transform: translate(0, 0); }
+        14% { opacity: 0.75; }
+        50% { transform: translate(calc(var(--tx) * 0.45), calc(var(--ty) * 0.35)); }
+        82% { opacity: 0.5; }
+        100% { opacity: 0; transform: translate(var(--tx), var(--ty)); }
+      }
+
+      .x-scene__cap { text-align: center; margin-top: 18px; font: 400 16px/1.8 var(--x-kai); color: var(--x-ink-2); letter-spacing: 0.12em; }
+      .x-scene__cap span { display: block; font: 400 15px/1.6 var(--x-en); letter-spacing: 0.01em; }
+      @media (prefers-reduced-motion: reduce) {
+        .x-boat, .x-boat__fade { animation-delay: -12s; }
+      }
+      .x-toggle {
+        display: block;
+        margin: 34px auto 0;
+        min-height: 44px;
+        padding: 6px 18px;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid var(--x-ink-2);
+        color: var(--x-ink);
+        font: 400 19px/1.4 var(--x-kai);
+        letter-spacing: 0.2em;
+        cursor: pointer;
+      }
+      .x-toggle span { color: var(--x-ink-3); transition: opacity 500ms var(--x-ease); }
+      .x-toggle span.is-on { color: var(--x-ink); }
+      .x-toggle:hover { border-bottom-color: var(--x-seal); }
+
+      /* section 4 */
+      .x-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); margin-bottom: clamp(70px, 11vh, 130px); }
+      .x-panel {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 28px;
+        padding: 44px clamp(20px, 3vw, 40px);
+        border-top: 3px solid var(--x-ink);
+        border-bottom: 3px solid var(--x-ink);
+        background: rgba(239, 230, 214, 0.55);
+      }
+      .x-panel::before, .x-panel::after { content: ""; position: absolute; left: -10px; right: -10px; height: 1px; background: var(--x-ink-2); }
+      .x-panel::before { top: 4px; }
+      .x-panel::after { bottom: 4px; }
+      .x-panel:nth-child(2) { margin-top: 70px; }
+      .x-panel h3 { writing-mode: vertical-rl; font: 400 30px/1.3 var(--x-brush); letter-spacing: 0.14em; color: var(--x-ink); flex: none; }
+      .x-panel h3 small { font: 400 18px/1.3 var(--x-kai); color: var(--x-ink-2); margin-top: 0.6em; display: block; letter-spacing: 0.18em; }
+      .x-panel p + p { margin-top: 1em; }
+      .x-keys { font: 400 16px/1.9 var(--x-kai); color: var(--x-ink-2); letter-spacing: 0.08em; }
+      .x-keys em { font-style: normal; color: var(--x-seal); }
+
+      /* closing */
+      .x-close { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-top: var(--x-gap); min-height: max(640px, 96svh); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 220px 24px 60px; overflow: hidden; }
+      .x-close__willow { position: absolute; top: 0; left: 0; width: 100%; height: 280px; }
+      .x-close__line { display: flex; flex-direction: row-reverse; align-items: flex-end; gap: 22px; }
+      .x-close__line p { writing-mode: vertical-rl; font: 400 clamp(56px, 7.5vw, 104px)/1.25 var(--x-brush); color: #807a70; letter-spacing: 0.14em; }
+      .x-foot { margin-top: 110px; text-align: center; font: 400 13px/1.9 var(--x-serif); color: var(--x-ink-2); max-width: 40em; }
+      .x-foot p[lang="en"] { font: 400 15px/1.6 var(--x-en); }
+
+      /* progress */
+      .x-progress { position: fixed; right: 18px; top: 20vh; height: 60vh; width: 1px; background: var(--x-wash); z-index: 5; pointer-events: none; }
+      .x-progress__ink { position: absolute; inset: 0; width: 2px; left: -0.5px; background: var(--x-ink); transform-origin: top; transform: scaleY(0); border-radius: 1px; }
+      .x-progress__dot { position: absolute; left: -3.5px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--x-seal); }
+
+      @media (max-width: 719px) {
+        body.x-paper { font-size: 16px; }
+        .x-duo { grid-template-columns: minmax(0, 1fr); }
+        .x-xtra { display: none; }
+        .x-scene__cap { padding: 0 16px; }
+        .x-panel:nth-child(2) { margin-top: 0; }
+        .x-panel { flex-direction: column; }
+        .x-panel h3 { writing-mode: horizontal-tb; }
+        .x-close__line { flex-direction: column; align-items: center; }
+        .x-close__line p { writing-mode: horizontal-tb; font-size: clamp(38px, 11vw, 52px); }
+        .x-progress { right: 8px; }
+        .x-hero { height: max(560px, 92svh); }
+        .x-hero__img { object-position: 78% 40%; }
+        .x-hero__copy { flex-direction: column; left: 24px; top: 56px; gap: 14px; }
+        .x-hero h1 { writing-mode: horizontal-tb; font-size: clamp(54px, 15vw, 72px); }
+        .x-hero__side { writing-mode: horizontal-tb; padding-top: 0; gap: 12px; }
+        .x-hero__side p { letter-spacing: 0.12em; font-size: 17px; }
+        .x-hero__en { left: 24px; right: 24px; bottom: 60px; }
+        .x-head, .x-off-l, .x-off-r { margin-left: 0; margin-right: 0; }
+        .x-caiwei, .x-baqiao { grid-template-columns: minmax(0, 1fr); }
+        .x-inkpoem { flex-direction: column; gap: 18px; }
+        .x-inkpoem__main, .x-inkpoem__rest { writing-mode: horizontal-tb; }
+        .x-inkpoem__main { font-size: 30px; line-height: 1.6; letter-spacing: 0.1em; }
+        .x-inkpoem__main p:nth-child(odd) { display: inline; }
+        .x-inkpoem__main p:nth-child(even) { display: inline; }
+        .x-inkpoem__main p:nth-child(2)::after { content: "\A"; white-space: pre; }
+        .x-inkpoem__rest { border-right: 0; border-left: 1px solid var(--x-wash); padding: 0 0 0 14px; letter-spacing: 0.1em; }
+        .x-pc { flex-basis: 82vw; padding-inline: 22px; }
+        .x-pc__lines { writing-mode: horizontal-tb; height: auto; font-size: 21px; letter-spacing: 0.08em; }
+        .x-scrollhint { justify-content: flex-start; flex-wrap: wrap; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .x-rise { transform: none; transition: opacity 600ms linear; }
+        .x-hero__img, .x-hero__copy, .x-hero__en { animation-name: x-fadeonly; }
+        @keyframes x-fadeonly { from { opacity: 0; } to { opacity: 1; } }
+      }
+    </style>
+  </head>
+  <body class="x-paper">
+    <div class="page" id="top">
+      <main class="main x-wrap">
+        <section class="x-hero" aria-labelledby="x-title">
+          <img class="x-hero__img" src="hero-willow-river.jpg" alt="水墨画：薄雾江边，右岸一株垂柳枝条低垂，左侧大片留白的宣纸" />
+          <div class="x-hero__copy">
+            <h1 id="x-title">杨柳依依</h1>
+            <div class="x-hero__side">
+              <span class="x-seal" aria-hidden="true">留</span>
+              <p>折柳送别里的中国式含蓄</p>
+            </div>
+          </div>
+          <p class="x-hero__en" lang="en">Willows, farewells, and the art of saying less</p>
+        </section>
+
+        <section class="x-sec" id="caiwei" aria-labelledby="h-caiwei">
+          <header class="x-head x-rise">
+            <p class="x-num">壹</p>
+            <h2 id="h-caiwei">一首诗的开头</h2>
+            <p class="x-head__sub">《诗经·小雅·采薇》</p>
+          </header>
+          <div class="x-caiwei">
+            <figure class="x-paint x-rise">
+              <img src="caiwei-rain-snow.jpg" alt="水墨画：雪中归途，一名戍卒独行，路旁杨柳已是枯枝" />
+              <figcaption>今我来思，雨雪霏霏</figcaption>
+            </figure>
+            <div class="x-inkpoem">
+              <div class="x-inkpoem__main">
+                <p data-ink>昔我往矣，</p>
+                <p data-ink>杨柳依依。</p>
+                <p data-ink>今我来思，</p>
+                <p data-ink>雨雪霏霏。</p>
+              </div>
+              <div class="x-inkpoem__rest">
+                <p>（后文：行道迟迟，载渴载饥。</p>
+                <p>我心伤悲，莫知我哀！）</p>
+              </div>
+            </div>
+          </div>
+          <div class="x-prose x-off-l x-rise">
+            <p>出征那天，杨柳依依；归来这天，雨雪霏霏。诗人没有说“我舍不得”，也没有说“我很痛苦”，只写了两幅天气——走时的春柳，回时的风雪。三千年来，读者自己把离愁与沧桑填了进去。</p>
+            <p>这就是“以景寄情”：情感不说出口，交给景物替你说。东晋谢玄曾称这四句为《诗经》最佳之句（见《世说新语·文学》）。</p>
+            <p class="x-en" lang="en">“When I left, the willows swayed; now I return, snow falls thick.” The poet never says he is sad. He paints two kinds of weather and lets the reader feel the years in between.</p>
+          </div>
+        </section>
+
+        <section class="x-sec" id="zheliu" aria-labelledby="h-zheliu">
+          <header class="x-head x-head--r x-rise">
+            <p class="x-num">贰</p>
+            <h2 id="h-zheliu">柳，就是“留”</h2>
+            <p class="x-head__sub">折柳赠别的传统</p>
+          </header>
+          <div class="x-baqiao">
+            <div class="x-prose x-rise">
+              <p>“柳”与“留”音近，折一枝柳相赠，就是说不出口的“请留下”。柳条随插随活，也寓意游子到了他乡也能落地生根。</p>
+              <p>《三辅黄图》记载：“霸桥在长安东，跨水作桥，汉人送客至此桥，折柳赠别。”灞桥也因此被称作“销魂桥”（《开元天宝遗事》）。</p>
+              <p class="x-en" lang="en">Liu (willow) sounds like liu (stay). Breaking a willow twig for a departing friend was a way of saying “please stay” without saying it. Han dynasty Chang’an saw friends off at Ba Bridge with willow twigs.</p>
+            </div>
+            <figure class="x-paint x-rise">
+              <img src="baqiao-zheliu.jpg" alt="水墨画：灞桥边，一位文人将一枝柳条递给即将远行的友人" />
+              <figcaption>灞桥 · 折柳赠别</figcaption>
+            </figure>
+          </div>
+
+          <p class="x-scrollhint x-rise"><span class="x-seal" aria-hidden="true">柳</span><span>← 自右向左展卷</span><span lang="en">Unroll from right to left</span></p>
+          <div class="x-roll x-rise" tabindex="0" role="region" aria-label="折柳诗六首，横向滚动">
+            <article class="x-pc">
+              <div class="x-pc__top"><p class="x-pc__lines"><span>渭城朝雨浥轻尘，</span><span>客舍青青柳色新。</span><span>劝君更尽一杯酒，</span><span>西出阳关无故人。</span></p><span class="x-pc__seal" aria-hidden="true">一</span></div>
+              <p class="x-pc__by">王维《送元二使安西》</p>
+              <p class="x-pc__read">全诗不着一个“别”字，满眼新柳、一杯再一杯，劝酒就是挽留。</p>
+              <p class="x-en" lang="en">Not one word for “goodbye”; one more cup of wine says it.</p>
+            </article>
+            <article class="x-pc">
+              <div class="x-pc__top"><p class="x-pc__lines"><span>谁家玉笛暗飞声，</span><span>散入春风满洛城。</span><span>此夜曲中闻折柳，</span><span>何人不起故园情。</span></p><span class="x-pc__seal" aria-hidden="true">二</span></div>
+              <p class="x-pc__by">李白《春夜洛城闻笛》</p>
+              <p class="x-pc__read">“折柳”是一支曲子的名字，听见它，人人想家。</p>
+              <p class="x-en" lang="en">“Breaking Willows” was a flute tune; hearing it, everyone thinks of home.</p>
+            </article>
+            <article class="x-pc">
+              <div class="x-pc__top"><p class="x-pc__lines"><span>箫声咽，</span><span>秦娥梦断秦楼月。</span><span>秦楼月，</span><span>年年柳色，</span><span>灞陵伤别。</span></p><span class="x-pc__seal" aria-hidden="true">三</span></div>
+              <p class="x-pc__by">李白（传）《忆秦娥》</p>
+              <p class="x-pc__read">年年柳色新，年年有人在灞陵分手。</p>
+              <p class="x-en" lang="en">Every year the willows green again; every year someone parts at Baling.</p>
+            </article>
+            <article class="x-pc">
+              <div class="x-pc__top"><p class="x-pc__lines"><span>天下伤心处，</span><span>劳劳送客亭。</span><span>春风知别苦，</span><span>不遣柳条青。</span></p><span class="x-pc__seal" aria-hidden="true">四</span></div>
+              <p class="x-pc__by">李白《劳劳亭》</p>
+              <p class="x-pc__read">春风知道离别苦，故意不让柳条变青，好让人无柳可折。</p>
+              <p class="x-en" lang="en">The spring wind, knowing parting hurts, keeps the willows bare so no one has a twig to break.</p>
+            </article>
+            <article class="x-pc">
+              <div class="x-pc__top"><p class="x-pc__lines"><span>城外春风吹酒旗，</span><span>行人挥袂日西时。</span><span>长安陌上无穷树，</span><span>唯有垂杨管别离。</span></p><span class="x-pc__seal" aria-hidden="true">五</span></div>
+              <p class="x-pc__by">刘禹锡《杨柳枝词九首》其八</p>
+              <p class="x-pc__read">行人挥动衣袖，而满城树木中，只有垂杨“管”离别。</p>
+              <p class="x-en" lang="en">The traveller waves his sleeve; of all the trees in Chang’an, only the willow is in charge of goodbyes.</p>
+            </article>
+            <article class="x-pc">
+              <div class="x-pc__top"><p class="x-pc__lines"><span>今宵酒醒何处？</span><span>杨柳岸，晓风残月。</span></p><span class="x-pc__seal" aria-hidden="true">六</span></div>
+              <p class="x-pc__by">柳永《雨霖铃》</p>
+              <p class="x-pc__read">不说想你，只说醒来时会在哪里：一岸杨柳，一弯残月。</p>
+              <p class="x-en" lang="en">He doesn’t say “I’ll miss you”; he only asks where he’ll wake: a willow bank, a fading moon.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="x-sec" id="hand" aria-labelledby="h-hand">
+          <header class="x-head x-rise">
+            <p class="x-num">叁</p>
+            <h2 id="h-hand">握手，放手，挥手</h2>
+            <p class="x-head__sub">柳条就是主人的手臂</p>
+          </header>
+          <div>
+            <div class="x-prose x-off-l x-rise">
+              <p>告别时，我们先握握手，再慢慢松开，然后摆摆手。请你看看这个摆手的动作，再看看水边迎风飘荡的柳条——那些垂下的枝条，多像主人伸出的手臂：先是不舍地放手，又是一下一下、慢慢地摆手告别。</p>
+              <p>古人折柳相送，送的其实就是这只“手”。刘禹锡写“行人挥袂日西时”，衣袖与柳条在同一阵风里摆动。</p>
+              <p class="x-en" lang="en">At a farewell we shake hands, slowly let go, then wave. Watch that wave, then watch a willow by the water in the wind: its branches are the host’s arms, reluctant to let go, slowly waving. A willow twig given at parting is, in a sense, a hand.</p>
+            </div>
+          </div>
+
+          <div class="x-stage x-rise" id="x-stage">
+            <figure class="x-scenefig">
+              <div class="x-scene" id="x-scene" role="img" aria-label="柳堤送别·孤舟远去：动画水墨。柳堤上一位古人背身扬袖挥别，一叶孤舟向远方雾中漂去；岸边垂柳与衣袖在同一阵风里摆动">
+                <img class="x-scene__bg" src="farewell-bank-bg.jpg" alt="" />
+                <svg class="x-scene__svg" viewBox="0 0 1584 672" aria-hidden="true">
+                  <path class="x-ripple" style="--d: 7s; --p: -1s" d="M800 512 q14 -3 28 0 t28 0 t28 0 t28 0" />
+                  <path class="x-ripple" style="--d: 8.5s; --p: -4s" d="M930 478 q12 -2.5 24 0 t24 0 t24 0 t24 0 t24 0" />
+                  <path class="x-ripple" style="--d: 6.2s; --p: -2.5s" d="M1060 448 q10 -2 20 0 t20 0 t20 0 t20 0" />
+                  <path class="x-ripple" style="--d: 9s; --p: -6s" d="M1180 424 q9 -2 18 0 t18 0 t18 0 t18 0" />
+                  <path class="x-ripple" style="--d: 7.6s; --p: -3.4s" d="M880 548 q14 -3 28 0 t28 0 t28 0" />
+                  <path class="x-ripple" style="--d: 8s; --p: -5.2s" d="M1290 404 q7 -1.5 14 0 t14 0 t14 0" />
+                </svg>
+                <div class="x-boat"><div class="x-boat__fade"><div class="x-boat__bob"><img src="farewell-boat-v0.2.png" alt="" /></div></div></div>
+                <div class="x-mist x-mist--1"></div>
+                <div class="x-mist x-mist--2"></div>
+                <div class="x-mist x-mist--3"></div>
+                <div class="x-fig__shadow"></div>
+                <div class="x-fig">
+                  <div class="x-fig__sway">
+                    <div class="x-fig__flutter">
+                      <img src="farewell-figure-v0.2.png" alt="" />
+                      <svg viewBox="0 0 466 666" aria-hidden="true">
+                        <path class="x-sash" d="M272 328 C312 352 348 388 384 404 C404 414 422 430 440 450" />
+                        <path class="x-sash" d="M262 340 C282 392 300 430 326 470 C340 492 352 512 366 528" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <svg class="x-scene__svg" viewBox="0 0 1584 672" aria-hidden="true">
+                  <g class="x-strands" id="x-strands" fill="rgb(110, 130, 95)"></g>
+                </svg>
+                <div class="x-catkin" style="--x: 30%; --y: 34%; --tx: 34%; --ty: 22%; --d: 22s; --p: -2s"></div>
+                <div class="x-catkin" style="--x: 22%; --y: 22%; --tx: 42%; --ty: 30%; --d: 26s; --p: -11s"></div>
+                <div class="x-catkin" style="--x: 34%; --y: 46%; --tx: 30%; --ty: 14%; --d: 19s; --p: -7s"></div>
+                <div class="x-catkin" style="--x: 10%; --y: 30%; --tx: 46%; --ty: 34%; --d: 28s; --p: -17s"></div>
+                <div class="x-catkin" style="--x: 27%; --y: 14%; --tx: 38%; --ty: 40%; --d: 24s; --p: -20s"></div>
+                <div class="x-catkin" style="--x: 36%; --y: 28%; --tx: 26%; --ty: 26%; --d: 21s; --p: -14s"></div>
+              </div>
+              <figcaption class="x-scene__cap">柳条与衣袖，在同一阵风里摆动；孤舟渐远，人仍在岸。<span lang="en">Willow and sleeve sway in the same wind; the boat fades, the friend remains on the shore.</span></figcaption>
+            </figure>
+            <button class="x-toggle" id="x-toggle" type="button" aria-pressed="false" aria-label="风停：暂停动画"><span data-s="on" class="is-on">风起</span> / <span data-s="off">风停</span></button>
+          </div>
+        </section>
+
+        <section class="x-sec" id="two" aria-labelledby="h-two">
+          <header class="x-head x-head--r x-rise">
+            <p class="x-num">肆</p>
+            <h2 id="h-two">两种告别的语言</h2>
+            <p class="x-head__sub">含蓄与直抒</p>
+          </header>
+          <div class="x-duo">
+            <article class="x-panel x-rise">
+              <h3>含蓄<small>以景寄情</small></h3>
+              <div>
+                <p>把情感托付给一棵柳、一场雪、一杯酒。说得越少，留给对方的越多；读者要自己走完最后一步，才真正“懂”了。</p>
+                <p class="x-keys"><em>关键词</em>　留白 · 言外之意 · 意在言外 · 托物言志</p>
+              </div>
+            </article>
+            <article class="x-panel x-rise">
+              <h3>直抒<small>直抒胸臆</small></h3>
+              <div>
+                <p>把情感直接说出口：“<span lang="en">I’ll miss you.</span>”清楚、坦诚、不需要猜。</p>
+                <p>许多西方诗歌与日常告别习惯这种方式；中国诗里也有直抒胸臆的名篇（如“我心伤悲，莫知我哀”）。</p>
+              </div>
+            </article>
+          </div>
+          <div class="x-prose x-off-l x-rise">
+            <p>两者不是高下之分，而是两种表达传统。含蓄的价值在于：它尊重对方的体会，也给不舍留了体面。下次告别，不妨在挥手时，想一想水边那棵柳。</p>
+            <p class="x-en" lang="en">Not better or worse, just two grammars of feeling. One says it; the other lets a willow say it.</p>
+          </div>
+        </section>
+
+        <section class="x-close" aria-label="结语">
+          <svg class="x-close__willow" id="x-closewillow" viewBox="0 0 1200 280" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+            <g stroke-linecap="round">
+              <path d="M-20 14 C300 34 700 4 1220 22" fill="none" stroke="#4a4640" stroke-width="3" />
+              <g id="x-closestrands"></g>
+            </g>
+          </svg>
+          <div class="x-close__line x-rise">
+            <p>昔我往矣</p>
+            <p>杨柳依依</p>
+            <span class="x-seal" aria-hidden="true">别</span>
+          </div>
+        </section>
+      </main>
+      <div class="x-progress" aria-hidden="true"><span class="x-progress__ink" id="x-pink"></span><span class="x-progress__dot" id="x-pdot"></span></div>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var NS = "http://www.w3.org/2000/svg";
+        function el(n, a, p) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+        function watch(node, cb, opts) {
+          if (!("IntersectionObserver" in window)) { cb(true); return; }
+          new IntersectionObserver(function (es) { es.forEach(function (e) { cb(e.isIntersecting, e); }); }, opts || {}).observe(node);
+        }
+
+        /* reveal once */
+        var rise = [].slice.call(document.querySelectorAll(".x-rise"));
+        if (!("IntersectionObserver" in window)) rise.forEach(function (e) { e.classList.add("is-in"); });
+        else {
+          var io = new IntersectionObserver(function (es) {
+            es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+          }, { rootMargin: "0px 0px -12% 0px" });
+          rise.forEach(function (e) { io.observe(e); });
+        }
+
+        /* poem: split into characters */
+        var poem = document.querySelector(".x-inkpoem__main"), chars = [], inked = 0;
+        poem.querySelectorAll("[data-ink]").forEach(function (line) {
+          var t = line.textContent.trim(); line.textContent = "";
+          Array.from(t).forEach(function (c) { var s = document.createElement("span"); s.className = "x-ch"; s.textContent = c; line.appendChild(s); chars.push(s); });
+        });
+
+        /* scroll work, throttled to one frame */
+        var pink = document.getElementById("x-pink"), pdot = document.getElementById("x-pdot"), track = pink.parentNode;
+        var ticking = false;
+        function onFrame() {
+          ticking = false;
+          var vh = window.innerHeight, h = document.documentElement.scrollHeight - vh;
+          var pr = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+          pink.style.transform = "scaleY(" + pr + ")";
+          pdot.style.transform = "translateY(" + pr * track.clientHeight + "px)";
+          if (inked < chars.length) {
+            var r = poem.getBoundingClientRect();
+            var p = (vh * 0.88 - r.top) / (r.height + vh * 0.3);
+            var n = Math.min(chars.length, Math.round(Math.max(0, p) * chars.length * 1.15));
+            for (var i = inked; i < n; i++) chars[i].classList.add("is-ink");
+            if (n > inked) inked = n;
+          }
+        }
+        window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onFrame); } }, { passive: true });
+        window.addEventListener("resize", function () { if (!ticking) { ticking = true; requestAnimationFrame(onFrame); } }, { passive: true });
+        onFrame();
+
+        /* willow strands: nested segments, each rotating from its own top */
+        function strand(parent, x, y, len, segs, w) {
+          var root = el("g", { transform: "translate(" + x + " " + y + ")" }, parent), cur = root, out = [], L = len / segs;
+          for (var i = 0; i < segs; i++) {
+            var g = el("g", {}, cur);
+            var bend = i % 2 ? 1.6 : -1.6;
+            el("path", { d: "M0 0 Q" + bend + " " + L / 2 + " 0 " + L, fill: "none", stroke: "#4a4640", "stroke-width": Math.max(0.7, w * (1 - i / segs)) }, g);
+            for (var k = 0; k < 2; k++) {
+              var side = (i + k) % 2 ? 1 : -1, ly = L * (0.3 + k * 0.45);
+              el("path", { d: "M0 0 C3 3 4.5 9 2 15 C-0.5 10 -1 4 0 0Z", fill: k ? "#4a4640" : "#1f1d1a", "fill-opacity": 0.78, transform: "translate(0 " + ly + ") rotate(" + side * -32 + ")" }, g);
+            }
+            cur = el("g", { transform: "translate(0 " + L + ")" }, g);
+            out.push(g);
+          }
+          return out;
+        }
+
+        /* farewell scene: willow strands hung from the painted canopy */
+        var seed = 7;
+        function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+        var H = 672;
+        /* [x, y, length as share of scene height, hidden on phones] */
+        var spec = [
+          [14, 150, 0.30, 1], [40, 128, 0.36, 0], [66, 112, 0.42, 1], [92, 104, 0.33, 0], [120, 108, 0.45, 0], [146, 120, 0.38, 1], [172, 138, 0.30, 0], [200, 160, 0.27, 1],
+          [228, 70, 0.34, 1], [250, 40, 0.40, 0], [278, 22, 0.48, 1], [306, 12, 0.52, 0], [322, 48, 0.28, 1], [334, 8, 0.44, 1], [362, 14, 0.55, 0], [390, 22, 0.47, 1],
+          [418, 30, 0.50, 0], [446, 38, 0.42, 1], [474, 50, 0.50, 0], [500, 62, 0.44, 0], [526, 78, 0.38, 1], [548, 96, 0.33, 0], [566, 116, 0.29, 1], [582, 140, 0.25, 0]
+        ];
+        function seg(parent, L, w0, w1, lean, bow) {
+          var n = 14, l = [], r = [], i, t, x, y, w;
+          for (i = 0; i <= n; i++) {
+            t = i / n; x = lean * t + bow * Math.sin(Math.PI * t); y = L * t; w = (w0 + (w1 - w0) * t) / 2;
+            l.push((x - w).toFixed(1) + " " + y.toFixed(1)); r.unshift((x + w).toFixed(1) + " " + y.toFixed(1));
+          }
+          el("path", { d: "M" + l.join(" L") + " L" + r.join(" L") + "Z" }, parent);
+          for (var d = 9 + rnd() * 8, k = 0; d < L - 4; d += 15 + rnd() * 10, k++) {
+            t = d / L; x = lean * t + bow * Math.sin(Math.PI * t);
+            var side = k % 2 ? 1 : -1, s = 1 - t * 0.35;
+            el("ellipse", { cx: 0, cy: 0, rx: (1.3 * s).toFixed(2), ry: ((3.6 + rnd() * 1.6) * s).toFixed(2), transform: "translate(" + (x + side * 2.4).toFixed(1) + " " + (d + 2).toFixed(1) + ") rotate(" + (side * -(24 + rnd() * 16)).toFixed(0) + ")" }, parent);
+          }
+          return { x: lean, y: L };
+        }
+        var holder = document.getElementById("x-strands");
+        spec.forEach(function (s) {
+          var x = s[0], L = s[2] * H, near = x >= 474;
+          var root = el("g", { transform: "translate(" + x + " " + s[1] + ")", opacity: 0.55 }, holder);
+          if (s[3]) root.setAttribute("class", "x-xtra");
+          var gust = el("g", { class: "x-gust", style: "--g:" + (0.5 + (2.6 * x) / 582).toFixed(2) + "deg;animation-delay:" + (-11 + (x / 582) * 0.9).toFixed(2) + "s" }, root);
+          var drift = x < 215 ? (x - 107) / 107 : (x - 410) / 172;
+          var lean1 = drift * 8 + (rnd() - 0.5) * 6, lean2 = drift * 6 + (rnd() - 0.5) * 8, bow = (rnd() - 0.5) * 12;
+          var a = 2.2 + rnd() * 1.6, dur = 4.5 + rnd() * 2.5, ph = -rnd() * dur;
+          var top = el("g", near
+            ? { class: "x-near", style: "--a:" + (a + 1.2).toFixed(2) + "deg;animation-delay:-5.2s" }
+            : { class: "x-sway", style: "--a:" + a.toFixed(2) + "deg;--d:" + dur.toFixed(2) + "s;animation-delay:" + ph.toFixed(2) + "s" }, gust);
+          var end = seg(top, L * 0.55, 2.6, 1.5, lean1, bow);
+          var joint = el("g", { transform: "translate(" + end.x.toFixed(1) + " " + end.y.toFixed(1) + ")" }, top);
+          var tip = el("g", near
+            ? { class: "x-near", style: "--a:" + (a * 0.8).toFixed(2) + "deg;animation-delay:-4.7s" }
+            : { class: "x-sway", style: "--a:" + (a * 0.7).toFixed(2) + "deg;--d:" + dur.toFixed(2) + "s;animation-delay:" + (ph + 0.45).toFixed(2) + "s" }, joint);
+          el("circle", { cx: 0, cy: 0, r: 0.75 }, tip);
+          seg(tip, L * 0.45, 1.5, 0.3, lean2, -bow * 0.6);
+        });
+
+        var scene = document.getElementById("x-scene");
+        var paused = reduce, inView = false;
+        var btn = document.getElementById("x-toggle");
+        function label() {
+          btn.setAttribute("aria-pressed", paused ? "true" : "false");
+          btn.setAttribute("aria-label", paused ? "风起：播放动画" : "风停：暂停动画");
+          btn.querySelector('[data-s="on"]').classList.toggle("is-on", !paused);
+          btn.querySelector('[data-s="off"]').classList.toggle("is-on", paused);
+        }
+        function run() { scene.classList.toggle("is-live", inView && !paused); }
+        label();
+        btn.addEventListener("click", function () { paused = !paused; label(); run(); });
+        watch(scene, function (v) { inView = v; run(); }, { threshold: 0.15 });
+
+        /* closing strands at the top edge */
+        var ch = document.getElementById("x-closestrands"), closeStrands = [];
+        for (var c = 0; c < 15; c++) {
+          var x = 30 + c * 80 + (c % 3) * 14, len = 120 + ((c * 53) % 130);
+          closeStrands.push(strand(ch, x, 14 + Math.sin(c) * 6, len, 7, 1.4));
+        }
+        var cRaf = 0, cT0 = null;
+        function cTick(ts) {
+          if (cT0 === null) cT0 = ts;
+          var t = (ts - cT0) / 1000;
+          closeStrands.forEach(function (segs, s) {
+            segs.forEach(function (g, i) { g.setAttribute("transform", "rotate(" + (1.1 * Math.sin((2 * Math.PI * (t - i * 0.12 - s * 0.35)) / 6)).toFixed(2) + ")"); });
+          });
+          cRaf = requestAnimationFrame(cTick);
+        }
+        if (!reduce) watch(document.querySelector(".x-close"), function (v) {
+          if (v && !cRaf) cRaf = requestAnimationFrame(cTick);
+          if (!v && cRaf) { cancelAnimationFrame(cRaf); cRaf = 0; }
+        });
+      })();
+    </script>
+  <a href="/#culture" style="position:fixed;left:16px;bottom:16px;z-index:9999;padding:7px 14px;border-radius:999px;background:rgba(247,244,239,.86);border:1px solid rgba(60,50,40,.18);color:#3a3a36;font:13px/1.4 'Noto Serif SC','Songti SC',serif;letter-spacing:.12em;text-decoration:none;backdrop-filter:blur(6px)">← 丁海祥 · 主页</a>
+</body>
+</html>
