@@ -138,3 +138,5 @@
 .l3Stats>div{grid-template-columns:24px 1fr!important;justify-items:start}
 .l3Muscle .l3Float{display:grid;place-items:center;align-self:stretch;justify-self:stretch}
 .l3Sq{position:relative;left:auto;top:auto;transform:none;width:min(100%,920px)}
+.l3Lens p{padding:8px 12px;border-radius:8px;background:rgba(252,250,247,.94);box-shadow:0 8px 20px -14px rgba(16,29,58,.5)}
+.l3Lens span{color:#4b5361}
