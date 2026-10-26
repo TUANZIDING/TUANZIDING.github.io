@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>春水碧于天 · 江南水乡诗歌集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Noto+Serif+SC:wght@400;600&family=Ma+Shan+Zheng&family=Cormorant+Garamond:wght@500;600&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <script>document.documentElement.classList.add("x-js");</script>
+    <style>
+      :root, :root[data-theme] {
+        color-scheme: light;
+        --x-paper: #f3f1e9; --x-ink: #26292b; --x-indigo: #34404a; --x-celadon: #6f9a8c; --x-seal: #b23a32;
+        --x-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --x-kai: "Ma Shan Zheng", KaiTi, "STKaiti", "Kaiti SC", serif;
+        --x-en: "Cormorant Garamond", Georgia, serif;
+        --sans: "Noto Serif SC", "Songti SC", "SimSun", serif;
+        --text-primary: #26292b; --text-secondary: #4a5157; --fill-primary: #34404a; --text-primary-on: #f3f1e9;
+        --fill-primary-on: #f3f1e9; --fill-tertiary: #e9e6db; --stroke-primary: rgba(52,64,74,.2); --stroke-secondary: rgba(52,64,74,.1);
+      }
+      .theme-btn { display: none; }
+      body {
+        font-family: var(--sans);
+        background: var(--x-paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .16 0 0 0 0 .17 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      .x-en { font-family: var(--x-en); font-style: normal; font-weight: 500; font-size: 17px; line-height: 1.45; color: var(--x-indigo); }
+      .x-seal { display: inline-grid; place-items: center; background: var(--x-seal); color: var(--x-paper); font-family: var(--x-kai); font-weight: 400; border-radius: 4px; writing-mode: vertical-rl; line-height: 1; letter-spacing: .05em; padding: 6px 5px; transform: rotate(-3deg); box-shadow: inset 0 0 0 2px rgba(243,241,233,.35); }
+      .x-sec { padding-block: 56px 16px; scroll-margin-top: 72px; }
+      .x-h { font-family: var(--x-kai); font-weight: 400; font-size: clamp(30px, 4vw, 44px); line-height: 1.2; color: var(--x-ink); margin-bottom: 28px; }
+      .x-h small { display: block; font-family: var(--x-en); font-size: 18px; font-weight: 500; color: var(--x-indigo); margin-top: 4px; }
+      html.x-js .x-rv { opacity: 0; transform: translateY(28px); }
+      .x-rv { transition: opacity 1s var(--x-ease), transform 1s var(--x-ease); }
+      html.x-js .x-rv.is-in { opacity: 1; transform: none; }
+
+      /* hero: a living painting */
+      .x-hero { position: relative; width: 100vw; margin-left: calc(50% - 50vw); aspect-ratio: 1584 / 672; overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent), linear-gradient(transparent, #000 8%, #000 90%, transparent);
+        -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent), linear-gradient(transparent, #000 8%, #000 90%, transparent); mask-composite: intersect; }
+      .x-hero > img, .x-layer { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .x-hero > img { object-fit: cover; }
+      .x-layer { pointer-events: none; }
+      .x-mist { position: absolute; left: -30%; width: 160%; height: 18%; background: linear-gradient(transparent, rgba(243,241,233,.6), transparent); filter: blur(6px); animation: x-drift 70s ease-in-out infinite alternate; }
+      .x-mist:nth-child(1) { top: 30%; } .x-mist:nth-child(2) { top: 58%; height: 14%; animation-duration: 90s; animation-direction: alternate-reverse; opacity: .7; }
+      @keyframes x-drift { to { transform: translateX(18%); } }
+      .x-lamp { position: absolute; width: 3.2%; aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(rgba(255,170,90,.85), rgba(255,140,70,.25) 45%, transparent 70%); mix-blend-mode: multiply; animation: x-breathe 5s ease-in-out infinite alternate; }
+      @keyframes x-breathe { from { opacity: .35; transform: translate(-50%,-50%) scale(.85); } to { opacity: .95; transform: translate(-50%,-50%) scale(1.15); } }
+      .x-rain-wrap { transition: opacity 1.4s ease; }
+      .x-rain { position: absolute; inset: -25%; transform: rotate(14deg); background-repeat: repeat; animation: x-fall-far 1.5s linear infinite; }
+      .x-rain--far { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='140'%3E%3Cpath d='M10 0v16M52 58v13M76 100v16M30 112v12M64 20v10' stroke='%2334404a' stroke-opacity='.28' stroke-width='1'/%3E%3C/svg%3E"); }
+      .x-rain--near { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='220'%3E%3Cpath d='M20 10v34M120 90v30M80 160v36M150 30v26' stroke='%2334404a' stroke-opacity='.38' stroke-width='1.2'/%3E%3C/svg%3E"); animation-name: x-fall-near; animation-duration: .9s; }
+      @keyframes x-fall-far { to { background-position: 0 140px; } }
+      @keyframes x-fall-near { to { background-position: 0 220px; } }
+      .x-ring { position: absolute; width: 3.4%; aspect-ratio: 3; border: 1px solid rgba(52,64,74,.45); border-radius: 50%; opacity: 0; transform: translate(-50%,-50%) scale(.1); animation: x-ring 3s ease-out infinite; }
+      @keyframes x-ring { 0% { opacity: .9; transform: translate(-50%,-50%) scale(.1); } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.8); } }
+      .x-path { animation: x-path 40s linear infinite; }
+      .x-boat { position: absolute; left: 38%; top: 78%; width: 24%; transform: translate(-50%,-50%); animation: x-boat 40s linear infinite; }
+      .x-boat img { width: 100%; animation: x-bob 5s ease-in-out infinite alternate; }
+      @keyframes x-path { 0% { transform: none; } 90%, 100% { transform: translate(18%, -20%); } }
+      @keyframes x-boat { 0% { opacity: 0; transform: translate(-50%,-50%); } 6% { opacity: 1; } 78% { opacity: 1; } 88%, 100% { opacity: 0; transform: translate(-50%,-50%) scale(.25); } }
+      @keyframes x-bob { from { transform: translateY(0) rotate(0); } to { transform: translateY(-3%) rotate(-.8deg); } }
+      .x-hero:not(.is-live) *, .x-hero:not(.is-live) { animation-play-state: paused !important; }
+      .x-hero.is-dry .x-rain-wrap { opacity: 0; }
+      .x-title { position: absolute; left: 9%; top: 9%; display: flex; flex-direction: row-reverse; align-items: flex-start; gap: clamp(8px, 1.4vw, 22px); writing-mode: horizontal-tb; }
+      .x-title h1 { writing-mode: vertical-rl; font-family: var(--x-kai); font-weight: 400; font-size: clamp(22px, 5vw, 76px); line-height: 1; letter-spacing: .12em; color: var(--x-ink); }
+      .x-title .x-seal { font-size: clamp(12px, 1.3vw, 20px); margin-top: clamp(30px, 6vw, 90px); }
+      .x-sub { writing-mode: vertical-rl; font-size: clamp(12px, 1.2vw, 18px); letter-spacing: .2em; color: var(--x-indigo); margin-top: clamp(10px, 2vw, 32px); }
+      .x-toggle { position: absolute; right: 8%; bottom: 10%; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(52,64,74,.3); background: rgba(243,241,233,.86); color: var(--x-ink); font: 15px/1 var(--sans); cursor: pointer; }
+      .x-toggle span { color: var(--x-indigo); opacity: .9; }
+      .x-toggle span.is-on { color: var(--x-seal); font-weight: 600; opacity: 1; }
+      @media (max-width: 719px) { .x-hero .x-sub { display: none; } .x-title { left: 8%; top: 10%; } .x-toggle { right: 6%; bottom: 6%; font-size: 13px; padding: 0 12px; } }
+      @media (min-width: 720px) { .x-sub-m { display: none; } }
+      .x-sub-m { text-align: center; color: var(--x-indigo); letter-spacing: .15em; }
+
+      /* opening */
+      .x-open { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
+      .x-poem-big { writing-mode: vertical-rl; font-family: var(--x-kai); font-size: 34px; line-height: 2; color: var(--x-ink); height: 9em; justify-self: center; }
+      .x-poem-big p { white-space: nowrap; }
+      .x-poem-big .x-by { font-family: var(--sans); font-size: 15px; color: var(--x-indigo); line-height: 68px; }
+      html.x-js .x-ch { display: inline-block; opacity: 0; transform: scale(1.35); transition: opacity 1.2s var(--x-ease), transform 1.2s var(--x-ease); transition-delay: calc(var(--i) * 90ms); }
+      html.x-js .is-in .x-ch { opacity: 1; transform: none; }
+      .x-read { max-width: 34em; display: grid; gap: 14px; line-height: 1.9; font-size: 16px; }
+      .x-du b { display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; margin-right: 8px; border-radius: 3px; background: var(--x-seal); color: var(--x-paper); font-weight: 400; font-size: 13px; vertical-align: .1em; }
+
+      /* imagery tiles */
+      .x-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+      .x-tile { padding: 24px; background: rgba(255,255,255,.35); border: 1px solid rgba(52,64,74,.14); border-top: 3px solid var(--x-celadon); border-radius: 4px; }
+      .x-tile h3 { font-family: var(--x-kai); font-weight: 400; font-size: 34px; line-height: 1.2; color: var(--x-ink); }
+      .x-tile .x-en { display: block; margin: 2px 0 10px; }
+      .x-tile p { font-size: 15px; line-height: 1.8; }
+      @media (max-width: 900px) { .x-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 520px) { .x-tiles { grid-template-columns: 1fr; } }
+
+      /* volumes */
+      .x-vol-top { display: grid; grid-template-columns: 1fr 1.7fr; gap: 40px; align-items: end; margin-bottom: 32px; }
+      .x-vol:nth-of-type(even) .x-vol-top { grid-template-columns: 1.7fr 1fr; }
+      .x-vol:nth-of-type(even) .x-vol-top figure { order: -1; }
+      .x-vol h2 { display: flex; align-items: center; gap: 16px; font-family: var(--x-kai); font-weight: 400; font-size: clamp(32px, 4vw, 48px); line-height: 1.2; }
+      .x-vol h2 .x-seal { font-size: 20px; padding: 8px 6px; }
+      .x-vol-top .x-en { font-size: 20px; margin-top: 8px; }
+      .x-vol-top figure { margin: 0; -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%); }
+      .x-vol-top figure img { width: 100%; aspect-ratio: 1376 / 768; object-fit: cover; }
+      .x-ctrl { display: flex; gap: 10px; margin-top: 24px; }
+      .x-ctrl button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(52,64,74,.35); background: transparent; color: var(--x-ink); font: 24px/1 var(--sans); cursor: pointer; transition: background .3s, color .3s; }
+      .x-ctrl button:hover:not(:disabled) { background: var(--x-indigo); color: var(--x-paper); }
+      .x-ctrl button:disabled { opacity: .35; cursor: default; }
+      .x-strip { position: relative; display: flex; align-items: flex-start; gap: 64px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 2px 20px; scrollbar-width: thin; scrollbar-color: rgba(52,64,74,.3) transparent; }
+      .x-panel { position: relative; flex: 0 0 auto; box-sizing: border-box; width: max(360px, calc(var(--cols) * var(--fs) * 2 + 48px)); padding: 32px 24px 24px; scroll-snap-align: start; background: rgba(255,255,255,.4); border: 1px solid rgba(52,64,74,.14); border-radius: 4px; }
+      .x-panel + .x-panel::before { content: ""; position: absolute; left: -33px; top: 12%; bottom: 12%; width: 1px; background: linear-gradient(transparent, rgba(52,64,74,.35), transparent); }
+      .x-vert { writing-mode: vertical-rl; width: calc(var(--cols) * var(--fs) * 2); height: var(--h); margin-inline: auto; font-size: var(--fs); line-height: calc(var(--fs) * 2); color: var(--x-ink); overflow: hidden; }
+      .x-vert p, .x-vert h3 { white-space: nowrap; }
+      .x-vert h3 { font-family: var(--x-kai); font-weight: 400; color: var(--x-indigo); }
+      .x-vert h3 span { color: var(--x-seal); }
+      .x-vert .x-pa { font-size: 15px; color: var(--x-indigo); }
+      .x-note { display: grid; gap: 8px; margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(52,64,74,.14); font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
+      .x-toc { position: fixed; top: 50%; left: max(12px, calc((100vw - 1120px) / 2 - 64px)); transform: translateY(-50%); display: none; flex-direction: column; z-index: 5; }
+      .x-toc a { width: 44px; height: 44px; display: grid; place-items: center; }
+      .x-toc a::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--x-seal); transition: transform .4s var(--x-ease), background .4s; }
+      .x-toc a.is-on::before { background: var(--x-seal); transform: scale(1.3); }
+      @media (min-width: 1240px) { .x-toc { display: flex; } }
+      @media (max-width: 719px) {
+        .x-open, .x-vol-top, .x-vol:nth-of-type(even) .x-vol-top { grid-template-columns: 1fr; gap: 24px; }
+        .x-vol:nth-of-type(even) .x-vol-top figure { order: 0; }
+        .x-poem-big { writing-mode: horizontal-tb; height: auto; font-size: 26px; line-height: 1.7; justify-self: start; }
+        .x-poem-big p { white-space: normal; }
+        .x-poem-big .x-by { line-height: 2; }
+        .x-panel { width: 82vw; }
+        .x-vert { writing-mode: horizontal-tb; width: auto; height: auto; font-size: 18px; line-height: 1.9; }
+        .x-vert p, .x-vert h3 { white-space: normal; }
+        .x-vert h3 { font-size: 22px; }
+      }
+
+      /* two kinds */
+      .x-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .x-side { padding: 32px; border-radius: 4px; line-height: 1.9; }
+      .x-side h3 { font-family: var(--x-kai); font-weight: 400; font-size: 40px; line-height: 1.2; margin-bottom: 4px; }
+      .x-side .x-line { font-family: var(--x-kai); font-size: 22px; margin-bottom: 14px; }
+      .x-bright { background: rgba(255,255,255,.45); border: 1px solid rgba(52,64,74,.14); border-top: 3px solid var(--x-seal); }
+      .x-bright h3, .x-bright .x-line { color: var(--x-seal); }
+      .x-misty { background: var(--x-indigo); color: var(--x-paper); }
+      .x-bridge { grid-column: 1 / -1; text-align: center; padding: 8px 16px 0; display: grid; justify-items: center; gap: 10px; line-height: 1.9; }
+      .x-bridge svg { width: min(320px, 70%); height: auto; color: var(--x-celadon); }
+      .x-bridge p:not(.x-en) { max-width: 36em; font-size: 17px; }
+      @media (max-width: 719px) { .x-two { grid-template-columns: 1fr; } }
+
+      /* closing */
+      .x-end { display: flex; justify-content: center; align-items: flex-start; gap: 20px; padding: 80px 0 48px; }
+      .x-end p { writing-mode: vertical-rl; font-family: var(--x-kai); font-size: clamp(48px, 8vw, 96px); line-height: 1; letter-spacing: .15em; color: #646b70; }
+      .x-end .x-seal { font-size: 26px; padding: 10px; margin-top: 2em; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .x-hero *, .x-ch, .x-rv { animation: none !important; transition: none !important; }
+        .x-ring { display: none; }
+        .x-boat { opacity: 1; }
+        html.x-js .x-rv, html.x-js .x-ch { opacity: 1; transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <header class="nav glass" data-auto></header>
+      <nav class="x-toc" aria-label="卷目">
+        <a href="#juan1" title="卷一" aria-label="卷一"></a>
+        <a href="#juan2" title="卷二" aria-label="卷二"></a>
+        <a href="#juan3" title="卷三" aria-label="卷三"></a>
+        <a href="#juan4" title="卷四" aria-label="卷四"></a>
+      </nav>
+      <main class="main">
+        <section class="x-hero" aria-label="春水碧于天">
+          <img src="jiangnan-hero-canal.jpg" alt="江南水乡：石拱桥跨过运河，两岸白墙黛瓦、垂柳桃花" />
+          <div class="x-layer" aria-hidden="true"><div class="x-mist"></div><div class="x-mist"></div></div>
+          <div class="x-layer" aria-hidden="true">
+            <span class="x-lamp" style="left:24%;top:64%"></span>
+            <span class="x-lamp" style="left:27%;top:63%;animation-delay:-1.7s;animation-duration:6s"></span>
+            <span class="x-lamp" style="left:47%;top:48%;animation-delay:-3s;animation-duration:4.4s"></span>
+            <span class="x-lamp" style="left:84%;top:40%;animation-delay:-.8s;animation-duration:5.6s"></span>
+          </div>
+          <div class="x-layer x-path" aria-hidden="true"><div class="x-boat"><img src="jiangnan-boat-v0.2.png" alt="" /></div></div>
+          <div class="x-layer x-rain-wrap" aria-hidden="true" id="rings"></div>
+          <div class="x-layer x-rain-wrap" aria-hidden="true"><div class="x-rain x-rain--far"></div><div class="x-rain x-rain--near"></div></div>
+          <div class="x-title">
+            <h1>春水碧于天</h1>
+            <span class="x-seal">江南</span>
+            <p class="x-sub">江南水乡诗歌集 · 十六首</p>
+          </div>
+          <button class="x-toggle" type="button" aria-pressed="true" aria-label="雨落 / 雨歇：切换雨景"><span class="is-on">雨落</span> / <span>雨歇</span></button>
+        </section>
+        <p class="x-sub-m">江南水乡诗歌集 · 十六首</p>
+
+        <section class="x-sec" id="open" data-nav="开篇">
+          <h2 class="x-h">开篇</h2>
+          <div class="x-open">
+            <div class="x-poem-big" id="ink">
+              <p class="x-by">白居易《忆江南》其一（唐）</p>
+              <p class="x-ink">江南好，</p><p class="x-ink">风景旧曾谙。</p><p class="x-ink">日出江花红胜火，</p><p class="x-ink">春来江水绿如蓝。</p><p class="x-ink">能不忆江南？</p>
+            </div>
+            <div class="x-read x-rv">
+              <p class="x-du"><b>读</b>白居易曾在杭州、苏州做官，晚年回到洛阳仍念念不忘。全词只问一句"能不忆江南？"——不说多想，反问里全是想。红与绿两种颜色，就是江南最鲜明的记忆。</p>
+              <p class="x-en" lang="en">EN: Bai Juyi only asks, "How could I not remember Jiangnan?" The longing hides inside the question.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec" id="images" data-nav="意象">
+          <h2 class="x-h">六个意象</h2>
+          <div class="x-tiles">
+            <div class="x-tile x-rv"><h3>烟雨</h3><span class="x-en" lang="en">Misty rain</span><p>南朝四百八十寺，都在雨里若隐若现。</p></div>
+            <div class="x-tile x-rv"><h3>小桥</h3><span class="x-en" lang="en">Little bridges</span><p>水港小桥多，一座桥连起两岸人家。</p></div>
+            <div class="x-tile x-rv"><h3>流水</h3><span class="x-en" lang="en">Flowing water</span><p>人家尽枕河，枕着水声入梦。</p></div>
+            <div class="x-tile x-rv"><h3>舟</h3><span class="x-en" lang="en">Boats</span><p>画船听雨眠，乌篷摇过石阶。</p></div>
+            <div class="x-tile x-rv"><h3>莲</h3><span class="x-en" lang="en">Lotus</span><p>接天莲叶，鱼戏其间。</p></div>
+            <div class="x-tile x-rv"><h3>钟声</h3><span class="x-en" lang="en">Night bells</span><p>夜半钟声到客船，乡愁有了声音。</p></div>
+          </div>
+        </section>
+
+        <section class="x-sec x-vol" id="juan1" data-nav="卷一">
+          <div class="x-vol-top">
+            <div><h2><span class="x-seal">卷一</span><span aria-hidden="true"> · </span>春江烟雨</h2><p class="x-en" lang="en">Spring rivers in misty rain</p>
+              <div class="x-ctrl"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></div></div>
+            <figure class="x-rv"><img src="jiangnan-spring-river.jpg" alt="春江烟雨图" /></figure>
+          </div>
+          <div class="x-strip" data-vol="0"></div>
+        </section>
+        <section class="x-sec x-vol" id="juan2" data-nav="卷二">
+          <div class="x-vol-top">
+            <div><h2><span class="x-seal">卷二</span><span aria-hidden="true"> · </span>水巷舟桥</h2><p class="x-en" lang="en">Canals, boats and bridges</p>
+              <div class="x-ctrl"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></div></div>
+            <figure class="x-rv"><img src="jiangnan-maple-bridge-night.jpg" alt="枫桥夜泊图" /></figure>
+          </div>
+          <div class="x-strip" data-vol="1"></div>
+        </section>
+        <section class="x-sec x-vol" id="juan3" data-nav="卷三">
+          <div class="x-vol-top">
+            <div><h2><span class="x-seal">卷三</span><span aria-hidden="true"> · </span>西湖莲塘</h2><p class="x-en" lang="en">West Lake and lotus ponds</p>
+              <div class="x-ctrl"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></div></div>
+            <figure class="x-rv"><img src="jiangnan-westlake-lotus.jpg" alt="西湖莲塘图" /></figure>
+          </div>
+          <div class="x-strip" data-vol="2"></div>
+        </section>
+        <section class="x-sec x-vol" id="juan4" data-nav="卷四">
+          <div class="x-vol-top">
+            <div><h2><span class="x-seal">卷四</span><span aria-hidden="true"> · </span>烟雨闲愁</h2><p class="x-en" lang="en">Rain and quiet sorrow</p>
+              <div class="x-ctrl"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></div></div>
+            <figure class="x-rv"><img src="jiangnan-plum-rain.jpg" alt="黄梅雨图" /></figure>
+          </div>
+          <div class="x-strip" data-vol="3"></div>
+        </section>
+
+        <section class="x-sec" id="two" data-nav="两种">
+          <h2 class="x-h">两种江南 · 明媚与烟愁</h2>
+          <div class="x-two">
+            <div class="x-side x-bright x-rv"><h3>明媚</h3><p class="x-line">日出江花红胜火</p><p>白居易、杨万里、张志和——江南是鲜亮的红与绿，是欢喜。</p></div>
+            <div class="x-side x-misty x-rv"><h3>烟愁</h3><p class="x-line">一川烟草</p><p>贺铸、张继、赵师秀——江南是雨、雾、钟声，是说不尽的闲愁。</p></div>
+            <div class="x-bridge x-rv">
+              <svg viewBox="0 0 320 60" aria-hidden="true"><path d="M0 56h96M224 56h96M96 56a64 50 0 0 1 128 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              <p class="x-du"><b>桥</b>同一片水，晴时照见欢喜，雨时照见心事。江南诗的含蓄，在于把心事交给水和雨。</p>
+              <p class="x-en" lang="en">EN: The same water mirrors joy in sunshine and longing in rain.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-end x-rv" aria-label="结尾">
+          <p>画船听雨眠</p><span class="x-seal">梦</span>
+        </section>
+      </main>
+      <footer class="foot">
+        <nav aria-label="Back to sections" data-auto></nav>
+      </footer>
+    </div>
+    <script>
+      /* number|poet|title|dynasty|text|读|EN, one array, four volumes */
+      const VOLS = [[
+        "①|杜牧|《江南春》|唐|千里莺啼绿映红，水村山郭酒旗风。南朝四百八十寺，多少楼台烟雨中。|前两句晴，后两句雨，一首诗写尽江南的两种天气。|Sun in the first couplet, rain in the second.",
+        "②|张志和|《渔歌子》|唐|西塞山前白鹭飞，桃花流水鳜鱼肥。青箬笠，绿蓑衣，斜风细雨不须归。|细雨不是愁，是渔父不想回家的理由。|The drizzle isn't sorrow; it's the fisherman's reason to stay out.",
+        "③|王安石|《泊船瓜洲》|宋|京口瓜洲一水间，钟山只隔数重山。春风又绿江南岸，明月何时照我还？|\"绿\"字作动词，春风一吹，整片江岸变绿。|\"Green\" becomes a verb.",
+        "④|李白|《送孟浩然之广陵》|唐|故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。|与《杨柳依依》呼应：不说再见，只看帆影消失在天边。|No goodbye, only a sail vanishing into the sky."
+      ], [
+        "⑤|张继|《枫桥夜泊》|唐|月落乌啼霜满天，江枫渔火对愁眠。姑苏城外寒山寺，夜半钟声到客船。|愁看不见，于是让钟声把它送到船上。|A temple bell carries the sorrow to the boat.",
+        "⑥|杜荀鹤|《送人游吴》|唐|君到姑苏见，人家尽枕河。古宫闲地少，水港小桥多。夜市卖菱藕，春船载绮罗。遥知未眠月，乡思在渔歌。|一首诗就是一张苏州水乡导览图。|Houses pillowed on the river: Suzhou in eight lines.",
+        "⑦|韦庄|《菩萨蛮》|唐|人人尽说江南好，游人只合江南老。春水碧于天，画船听雨眠。垆边人似月，皓腕凝霜雪。未老莫还乡，还乡须断肠。|\"春水碧于天，画船听雨眠\"，是江南最慵懒也最美的十个字。|Spring water bluer than the sky; sleeping to rain in a painted boat.",
+        "⑧|杜牧|《寄扬州韩绰判官》|唐|青山隐隐水迢迢，秋尽江南草未凋。二十四桥明月夜，玉人何处教吹箫？|秋尽而草未凋，江南连秋天都是温柔的。|Even autumn is gentle here."
+      ], [
+        "⑨|苏轼|《饮湖上初晴后雨》其二|宋|水光潋滟晴方好，山色空蒙雨亦奇。欲把西湖比西子，淡妆浓抹总相宜。|晴也好，雨也好，西湖像西施，怎样都美。|Sun or rain, West Lake is lovely either way.",
+        "⑩|杨万里|《晓出净慈寺送林子方》|宋|毕竟西湖六月中，风光不与四时同。接天莲叶无穷碧，映日荷花别样红。|一碧一红，铺满整个夏天。|Endless green, sun-lit red: summer in two colors.",
+        "⑪|汉乐府|《江南》|汉|江南可采莲，莲叶何田田，鱼戏莲叶间。鱼戏莲叶东，鱼戏莲叶西，鱼戏莲叶南，鱼戏莲叶北。|东西南北反复吟唱，像小鱼在叶间穿梭。|The repetition swims like the fish.",
+        "⑫|白居易|《钱塘湖春行》|唐|孤山寺北贾亭西，水面初平云脚低。几处早莺争暖树，谁家新燕啄春泥。乱花渐欲迷人眼，浅草才能没马蹄。最爱湖东行不足，绿杨阴里白沙堤。|一路走一路看，早春刚刚好。|A slow spring walk round the lake; never enough."
+      ], [
+        "⑬|贺铸|《青玉案》|宋|凌波不过横塘路，但目送、芳尘去。锦瑟华年谁与度？月桥花院，琐窗朱户，只有春知处。飞云冉冉蘅皋暮，彩笔新题断肠句。试问闲愁都几许？一川烟草，满城风絮，梅子黄时雨。|愁有多少？他不回答，只给三幅景：烟草、风絮、黄梅雨。|How much sorrow? Three scenes for an answer.",
+        "⑭|赵师秀|《约客》|宋|黄梅时节家家雨，青草池塘处处蛙。有约不来过夜半，闲敲棋子落灯花。|等人不来，不说焦急，只写敲落的灯花。|He only taps a go stone till the wick-ash falls.",
+        "⑮|白居易|《忆江南》其二|唐|江南忆，最忆是杭州。山寺月中寻桂子，郡亭枕上看潮头。何日更重游？|最后一问，与开篇遥相呼应。|Another question, answering the opening one.",
+        "⑯|杜牧|《泊秦淮》|唐|烟笼寒水月笼沙，夜泊秦淮近酒家。商女不知亡国恨，隔江犹唱后庭花。|一片烟月之下，是诗人对兴亡的叹息。|Under mist and moonlight, a sigh for a fallen dynasty."
+      ]];
+      const len = (s) => [...s].length;
+      function panel(row) {
+        const [n, poet, title, dyn, text, du, en] = row.split("|");
+        const clauses = text.match(/[^，。？！；]+[，。？！；]?/g);
+        const lines = clauses.length <= 8 ? clauses : text.match(/[^。？！]+[。？！]/g);
+        const fs = clauses.length <= 8 ? 26 : 22, by = poet + "（" + dyn + "）";
+        const h = Math.ceil(Math.max(...lines.map(len), len(n + title), len(by) * 15 / fs) * fs + fs * 0.5);
+        return `<article class="x-panel x-rv" style="--fs:${fs}px;--cols:${lines.length + 2};--h:${h}px">
+          <div class="x-vert"><h3><span>${n}</span>${title}</h3><p class="x-pa">${by}</p>${lines.map((l) => `<p>${l}</p>`).join("")}</div>
+          <div class="x-note"><p class="x-du"><b>读</b>${du}</p><p class="x-en" lang="en">EN: ${en}</p></div></article>`;
+      }
+      document.querySelectorAll(".x-strip").forEach((s) => (s.innerHTML = VOLS[s.dataset.vol].map(panel).join("")));
+    </script>
+    <script src="hark.js"></script>
+    <script>
+      (() => {
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        /* reveal once */
+        const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.15 });
+        let i = 0;
+        document.querySelectorAll(".x-ink").forEach((p) => (p.innerHTML = [...p.textContent].map((c) => `<span class="x-ch" style="--i:${i++}">${c}</span>`).join("")));
+        document.querySelectorAll(".x-rv, #ink").forEach((el) => io.observe(el));
+
+        /* hero: live only in view, rain toggle, ripples */
+        const hero = document.querySelector(".x-hero"), rings = document.getElementById("rings");
+        const spots = [[44, 90], [52, 80], [60, 93], [66, 84], [57, 71], [63, 74], [48, 96], [71, 95], [55, 86], [61, 66]];
+        rings.innerHTML = spots.map(([x, y], k) => `<span class="x-ring" style="left:${x}%;top:${y}%;animation-delay:${(-k * 0.83).toFixed(2)}s;animation-duration:${2.6 + (k % 4) * 0.4}s"></span>`).join("");
+        new IntersectionObserver(([e]) => hero.classList.toggle("is-live", e.isIntersecting && !reduce)).observe(hero);
+        const tg = hero.querySelector(".x-toggle");
+        tg.addEventListener("click", () => {
+          const dry = hero.classList.toggle("is-dry");
+          tg.setAttribute("aria-pressed", String(!dry));
+          tg.children[0].classList.toggle("is-on", !dry);
+          tg.children[1].classList.toggle("is-on", dry);
+        });
+
+        /* strips: ‹ › jump one panel, disabled at the ends */
+        document.querySelectorAll(".x-vol").forEach((vol) => {
+          const strip = vol.querySelector(".x-strip"), [prev, next] = vol.querySelectorAll(".x-ctrl button");
+          const panels = [...strip.children], pad = () => parseFloat(getComputedStyle(strip).paddingLeft);
+          const update = () => {
+            prev.disabled = strip.scrollLeft <= 2;
+            next.disabled = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 2;
+          };
+          const go = (dir) => {
+            const x = strip.scrollLeft + pad();
+            let cur = 0;
+            panels.forEach((p, k) => { if (Math.abs(p.offsetLeft - x) < Math.abs(panels[cur].offsetLeft - x)) cur = k; });
+            const t = panels[Math.max(0, Math.min(panels.length - 1, cur + dir))];
+            strip.scrollTo({ left: t.offsetLeft - pad(), behavior: reduce ? "auto" : "smooth" });
+          };
+          prev.addEventListener("click", () => go(-1));
+          next.addEventListener("click", () => go(1));
+          strip.addEventListener("scroll", update, { passive: true });
+          addEventListener("resize", update);
+          update();
+          if (document.fonts) document.fonts.ready.then(update);
+        });
+
+        /* sticky TOC */
+        const dots = [...document.querySelectorAll(".x-toc a")];
+        const tio = new IntersectionObserver((es) => es.forEach((e) => {
+          if (e.isIntersecting) dots.forEach((d) => d.classList.toggle("is-on", d.getAttribute("href") === "#" + e.target.id));
+        }), { rootMargin: "-45% 0px -45% 0px" });
+        document.querySelectorAll(".x-vol").forEach((v) => tio.observe(v));
+      })();
+    </script>
+  <a href="/#culture" style="position:fixed;left:16px;bottom:16px;z-index:9999;padding:7px 14px;border-radius:999px;background:rgba(247,244,239,.86);border:1px solid rgba(60,50,40,.18);color:#3a3a36;font:13px/1.4 'Noto Serif SC','Songti SC',serif;letter-spacing:.12em;text-decoration:none;backdrop-filter:blur(6px)">← 丁海祥 · 主页</a>
+</body>
+</html>
