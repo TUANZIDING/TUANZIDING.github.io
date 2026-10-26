@@ -21,3 +21,28 @@
 
 .l3ContactIntro>p{max-width:760px}.l3ContactIdentity{display:grid;gap:6px;margin-top:30px;padding:20px 0;border-block:1px solid var(--l3-line)}.l3ContactIdentity b{color:var(--l3-ink);font:500 15px/1.5 var(--l3-sans)}.l3ContactIdentity span{color:var(--l3-muted);font-size:11px}.l3ContactPanel{display:grid;border:1px solid var(--l3-line);background:var(--l3-paper)}.l3ContactPanel>a{display:grid;grid-template-columns:28px minmax(0,1fr) 20px;align-items:center;gap:16px;min-height:96px;padding:20px 24px;border-bottom:1px solid var(--l3-line);transition:background .2s,color .2s}.l3ContactPanel>a.featured{background:var(--l3-sage);color:#fff}.l3ContactPanel>a:not(.featured):hover{background:#fff}.l3ContactPanel>a>svg:first-child{width:25px}.l3ContactPanel>a>svg:last-child{width:18px;justify-self:end}.l3ContactPanel>a span{display:grid;gap:5px;min-width:0}.l3ContactPanel>a b{font:500 15px var(--l3-sans)}.l3ContactPanel>a small{overflow-wrap:anywhere;color:inherit;font:10px/1.5 var(--l3-sans);opacity:.76}.l3ContactSecondary{display:flex;flex-wrap:wrap;gap:10px;padding:18px}.l3ContactSecondary a{display:flex;align-items:center;gap:7px;padding:8px 10px;color:var(--l3-muted);font-size:10px}.l3ContactSecondary svg{width:14px}.l3ContactSecondary a:hover{color:var(--l3-ink)}
 @media(max-width:560px){.l3ContactPanel>a{min-height:88px;padding:18px}.l3ContactSecondary{display:grid;grid-template-columns:1fr}.l3ContactSecondary a{padding:10px 0}}
+
+.light3 main>section.l3Culture{padding:86px 7vw;border-bottom:1px solid var(--l3-line);background:var(--l3-white)}
+.l3Scrolls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.l3Scroll{display:flex;flex-direction:column;border:1px solid var(--l3-line);background:var(--l3-paper);text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
+.l3Scroll:hover{border-color:var(--l3-red);transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,29,58,.08)}
+.l3Scroll figure{position:relative;margin:0;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--l3-line)}
+.l3Scroll img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.l3Scroll:hover img{transform:scale(1.04)}
+.l3Scroll figure i{position:absolute;right:14px;bottom:14px;display:grid;place-items:center;width:34px;height:34px;background:var(--l3-red);color:#fbf6ee;font:500 19px/1 "STKaiti","KaiTi","Noto Serif SC",serif;font-style:normal;border-radius:3px;box-shadow:0 0 0 2px rgba(251,246,238,.6) inset}
+.l3Scroll>div{position:relative;display:flex;flex-direction:column;flex:1;padding:26px 28px 24px}
+.l3Scroll>div>b{position:absolute;right:26px;top:22px;color:var(--l3-red);font:20px var(--l3-serif)}
+.l3Scroll h3{margin:0 40px 12px 0;color:var(--l3-ink);font:500 24px/1.25 var(--l3-serif)}
+.l3Scroll q{color:var(--l3-sage);font:15px/1.6 "STKaiti","KaiTi","Noto Serif SC",serif;letter-spacing:.06em;quotes:"「" "」"}
+.l3Scroll p{flex:1;margin:12px 0 20px;color:var(--l3-muted);font-size:12px;line-height:1.85}
+.l3Scroll span{display:flex;align-items:center;gap:8px;color:var(--l3-ink);font-size:12px;letter-spacing:.08em}
+.l3Scroll span svg{width:15px;color:var(--l3-red);transition:transform .25s}
+.l3Scroll:hover span svg{transform:translateX(4px)}
+.l3ScrollSource{display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:var(--l3-muted);font-size:11px;text-decoration:none}
+.l3ScrollSource svg{width:15px}.l3ScrollSource:hover{color:var(--l3-ink)}
+.l3Rail a{min-height:min(118px,calc((100vh - 80px)/6))}
+@media(max-width:1200px){.l3Scrolls{gap:18px}.l3Scroll>div{padding:22px 20px}.l3Scroll h3{font-size:21px}}
+@media(max-width:860px){.light3 main>section.l3Culture{padding:72px 20px}.l3Scrolls{grid-template-columns:1fr;gap:22px}}
+@media(prefers-reduced-motion:reduce){.l3Scroll,.l3Scroll img{transition:none}.l3Scroll:hover{transform:none}.l3Scroll:hover img{transform:none}}
+@media(min-width:861px) and (max-width:1200px){.l3Header nav{gap:1.8vw}.l3Header nav a{white-space:nowrap;font-size:13px}.l3Meta span{display:none}}
+@media(min-width:861px) and (max-width:1000px){.light3[data-lang="en"] .l3Header nav a{font-size:12px}.light3[data-lang="en"] .l3Header nav{gap:1.4vw}}
