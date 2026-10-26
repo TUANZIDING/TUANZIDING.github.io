@@ -2,7 +2,7 @@ import {useEffect,useMemo,useRef,useState} from 'react';
 import {
   ArrowDown,ArrowRight,BookOpenText,Brain,CalendarBlank,ChalkboardTeacher,
   DownloadSimple,EnvelopeSimple,FirstAidKit,Funnel,GithubLogo,GraduationCap,LinkedinLogo,
-  Heartbeat,List,Lock,Microscope,ShieldCheck,Trophy,User,X
+  Feather,Heartbeat,List,Lock,Microscope,ShieldCheck,Trophy,User,X
 } from '@phosphor-icons/react';
 
 const papers=[
@@ -22,8 +22,8 @@ const honors=[
 
 const content={
   zh:{
-    nav:['首页','临床与研究','学术成果','教学与服务','Haixiang OS'],
-    rail:['概览','证据','教学','系统','联系'],homeLabel:'丁海祥首页',menuOpen:'打开菜单',menuClose:'关闭菜单',mainNav:'主导航',sectionNav:'章节导航',
+    nav:['首页','临床与研究','学术成果','教学与服务','诗画长卷','Haixiang OS'],
+    rail:['概览','证据','教学','诗画','系统','联系'],homeLabel:'丁海祥首页',menuOpen:'打开菜单',menuClose:'关闭菜单',mainNav:'主导航',sectionNav:'章节导航',
     focus:'创伤急救 × 骨科创伤 × 糖尿病骨质疏松机制',role:'主治医师 · 苏州大学临床医学博士专业学位在读',hospital:'江南大学附属医院 · 无锡，中国',download:'下载公开简历',
     stats:[['English Publications','同行评议 · 英文期刊'],['Honors','学术荣誉与表彰'],['Invited Lecture Cohorts','连续三届受邀授课'],['Doctoral Trainee','2026级临床医学博士学员']],
     imageAlt:'糖尿病骨质疏松研究视觉：骨小梁微结构、AGE-RAGE、ROS、Wnt/β-catenin、RANKL/OPG与AI分析网络',
@@ -31,12 +31,14 @@ const content={
     steps:[['观察与临床问题','来自急救与创伤一线的真实问题，形成可研究的科学假设。'],['机制与证据','整合临床队列、影像、生物力学与分子机制证据。'],['转化与影响','面向严重创伤MDT决策、风险评估与教学改进。']],
     evidence:'公开证据与荣誉档案',evidenceType:'证据类型',publicationsFilter:'03 English Publications',honorsFilter:'06 Honors',verify:'核验',publicSummary:'公开摘要',
     teaching:'连续三届受邀授课',lectureTitle:'创伤伤口治疗与管理原则',lectureCohorts:['第5届','第6届','第7届'],lectureProgram:'无锡市伤口造口专科护士培训班',lectureLabel:'受邀授课',
+    culture:'诗画长卷',cultureLead:'以水墨动态长卷读中国古典诗词：不说“我想你”，只写杨柳、孤城与烟雨。临床之外，这是我理解“含蓄”的方式。',cultureOpen:'展卷',cultureSource:'GitHub 源码',
+    scrolls:[['杨柳依依 · 折柳含蓄','昔我往矣，杨柳依依','从《采薇》到灞桥折柳：柳条如挥别的手臂，不舍放手，慢慢摆手。'],['边塞诗歌集','黄河远上白云间','大漠、孤城、关山月：四卷十八首，看豪情与乡愁如何同在一幅画里。'],['江南水乡诗歌集','日出江花红胜火','烟雨水巷、乌篷船与拱桥：四卷十六首，读江南的明媚与烟愁。']],
     os:'个人临床研究操作系统',osLead:'观察事实、核验证据、明确推断、保护边界。',domains:[['临床','创伤病例 → 风险识别 → MDT救治路径'],['科研','临床问题 → 机制假设 → 可检验方案'],['教学','病例复盘 → 关键节点 → 课程反馈'],['安全AI','证据分层 → 人工复核 → 隐私脱敏']],
     profileLabel:'专业联系',contact:'临床、科研与医学 AI 合作',contactLead:'关注创伤急救、创伤伤口管理、糖尿病骨质疏松机制、临床决策支持与医学教育，并探索大语言模型、生物医学数据分析和智能工作流在真实医疗场景中的安全应用。',contactRole:'主治医师｜AI 医学与临床研究',contactNote:'优先通过电子邮件或 LinkedIn 联系',linkedin:'LinkedIn 专业主页',email:'发送电子邮件',github:'查看 GitHub',compare:'对比深色版本',backTop:'返回顶部'
   },
   en:{
-    nav:['Home','Clinical & Research','Evidence','Teaching & Service','Haixiang OS'],
-    rail:['PROFILE','EVIDENCE','TEACHING','OS','CONTACT'],homeLabel:'Haixiang Ding home',menuOpen:'Open menu',menuClose:'Close menu',mainNav:'Main navigation',sectionNav:'Section navigation',
+    nav:['Home','Clinical & Research','Evidence','Teaching & Service','Poetry Scrolls','Haixiang OS'],
+    rail:['PROFILE','EVIDENCE','TEACHING','POETRY','OS','CONTACT'],homeLabel:'Haixiang Ding home',menuOpen:'Open menu',menuClose:'Close menu',mainNav:'Main navigation',sectionNav:'Section navigation',
     focus:'Trauma Care × Orthopaedic Trauma × Diabetic Osteoporosis',role:'Attending Physician · Professional Doctoral Student in Clinical Medicine, Soochow University',hospital:'Affiliated Hospital of Jiangnan University · Wuxi, China',download:'Download public CV',
     stats:[['English Publications','Peer-reviewed English journals'],['Honors','Academic awards and recognition'],['Invited Lecture Cohorts','Three consecutive invited cohorts'],['Doctoral Trainee','Clinical Medicine · Class of 2026']],
     imageAlt:'Diabetic osteoporosis research visualization combining trabecular microarchitecture, AGE-RAGE, ROS, Wnt/β-catenin, RANKL/OPG and an AI analysis network',
@@ -44,17 +46,20 @@ const content={
     steps:[['Observation & Clinical Question','Questions from frontline trauma care become researchable hypotheses.'],['Mechanism & Evidence','Combine cohorts, imaging, biomechanics and mechanistic evidence.'],['Translation & Impact','Support MDT decisions, risk assessment and education.']],
     evidence:'Public Evidence & Honors',evidenceType:'Evidence type',publicationsFilter:'03 English Publications',honorsFilter:'06 Honors',verify:'Verify',publicSummary:'Public summary',
     teaching:'Three Consecutive Invited Lectures',lectureTitle:'Principles of Treatment and Management for Traumatic Wounds',lectureCohorts:['5th Cohort','6th Cohort','7th Cohort'],lectureProgram:'Wuxi Specialist Nurse Training Program for Wound and Stoma Care',lectureLabel:'Invited Lecture',
+    culture:'Poetry Scrolls',cultureLead:'Classical Chinese poetry as living ink-painting scrolls: instead of saying “I miss you,” the poets paint willows, lone fortresses and misty rain.',cultureOpen:'Open scroll',cultureSource:'Source on GitHub',
+    scrolls:[['Willows Swaying · Farewell Unspoken','When I left, the willows swayed','From the Book of Songs to the willow-breaking farewell at Baqiao: branches like a hand slowly waving goodbye.'],['Frontier Poems','The Yellow River climbs into the clouds','Deserts, lone forts and the moon over the passes: eighteen poems where valor and homesickness share one painting.'],['Jiangnan Water-Town Poems','Sunrise turns river flowers redder than flame','Misty canals, awning boats and arched bridges: sixteen poems of Jiangnan in bright spring and soft rain.']],
     os:'Personal Clinical Research OS',osLead:'Observe facts, verify evidence, label inference and protect boundaries.',domains:[['Clinical','Trauma case → Risk recognition → MDT care pathway'],['Research','Clinical question → Mechanistic hypothesis → Testable protocol'],['Teaching','Case review → Decision points → Course feedback'],['Safe AI','Evidence grading → Human review → Privacy protection']],
     profileLabel:'Professional Contact',contact:'Clinical, Research & Medical AI Collaboration',contactLead:'Focused on trauma care, wound management, diabetic osteoporosis mechanisms, clinical decision support and medical education, with an interest in safely applying large language models, biomedical data analysis and intelligent workflows to real-world healthcare.',contactRole:'Attending Physician | AI in Medicine & Clinical Research',contactNote:'Email or LinkedIn is preferred for professional enquiries',linkedin:'LinkedIn Profile',email:'Send Email',github:'View GitHub',compare:'Compare dark version',backTop:'Back to top'
   }
 };
 
-const navIds=['profile','research','evidence','teaching','os'];
-const railIds=['profile','evidence','teaching','os','contact'];
-const railIcons=[User,BookOpenText,ChalkboardTeacher,Microscope,EnvelopeSimple];
+const navIds=['profile','research','evidence','teaching','culture','os'];
+const railIds=['profile','evidence','teaching','culture','os','contact'];
+const railIcons=[User,BookOpenText,ChalkboardTeacher,Feather,Microscope,EnvelopeSimple];
 const stepIcons=[FirstAidKit,Brain,Heartbeat];
 const domainIcons=[FirstAidKit,Brain,ChalkboardTeacher,ShieldCheck];
 const statIcons=[BookOpenText,Trophy,ChalkboardTeacher,GraduationCap];
+const scrollMeta=[{slug:'yangliu-yiyi',img:'/assets/shihua-yangliu.jpg',seal:'柳'},{slug:'biansai',img:'/assets/shihua-biansai.jpg',seal:'关'},{slug:'jiangnan',img:'/assets/shihua-jiangnan.jpg',seal:'梦'}];
 const statValues=['03','06','03','2026'];
 
 function ArchiveCursor(){
@@ -123,6 +128,12 @@ export function Light3App(){
       <section id="teaching" className="l3Teaching">
         <div className="l3SectionHead"><h2>{t.teaching}</h2><p>{t.lectureTitle}</p></div>
         <div className="l3Timeline">{['2024','2025','2026'].map((year,index)=><article key={year}><span>0{index+1}</span><time>{year}</time><h3>{t.lectureCohorts[index]}</h3><p>{t.lectureProgram}</p><small>{t.lectureLabel}</small></article>)}</div>
+      </section>
+
+      <section id="culture" className="l3Culture">
+        <div className="l3SectionHead"><h2>{t.culture}</h2><p>{t.cultureLead}</p></div>
+        <div className="l3Scrolls">{t.scrolls.map(([title,line,body],index)=>{const m=scrollMeta[index];return <a key={m.slug} className="l3Scroll" href={`/shihua/${m.slug}/`}><figure><img src={m.img} alt={title} loading="lazy"/><i aria-hidden="true">{m.seal}</i></figure><div><b>0{index+1}</b><h3>{title}</h3><q>{line}</q><p>{body}</p><span>{t.cultureOpen}<ArrowRight/></span></div></a>})}</div>
+        <a className="l3ScrollSource" href="https://github.com/TUANZIDING/shihua-scrolls" target="_blank" rel="noreferrer"><GithubLogo/>{t.cultureSource}</a>
       </section>
 
       <section id="os" className="l3OS">
