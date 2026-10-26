@@ -1,6 +1,6 @@
 # Haixiang Ding — Clinical Academic Profile
 
-Personal academic website for Haixiang Ding, M.D., focused on trauma care, diabetic osteoporosis mechanisms, medical education, and responsible AI in medicine.
+Personal academic website for Haixiang Ding, M.D., focused on radiation-induced skeletal muscle injury and repair, trauma care, medical education, and responsible AI in medicine.
 
 ## Public website
 
