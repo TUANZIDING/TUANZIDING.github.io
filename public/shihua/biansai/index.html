@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>秦时明月汉时关 · 边塞诗歌集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=Cormorant+Garamond:wght@400;500&display=swap"
+    />
+    <script>document.documentElement.classList.add("x-js");</script>
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      /* Frontier-painting page: departs from the default Hark look on purpose. */
+      :root {
+        color-scheme: light;
+        --x-ink: #231f1a;
+        --x-ink-2: #5d5245;
+        --x-ochre: #a3643a;
+        --x-sand: #d8c095;
+        --x-blue: #4b6f78;
+        --x-green: #6f8f73;
+        --x-red: #a8322a;
+        --x-paper: #efe3cc;
+        --x-paper-2: #e8d8bb;
+        --x-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+        --x-brush: "Zhi Mang Xing", "Ma Shan Zheng", "STKaiti", "KaiTi", cursive;
+        --x-brush-2: "Ma Shan Zheng", "STKaiti", "KaiTi", serif;
+        --x-en: "Cormorant Garamond", Georgia, serif;
+        --x-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --x-max: 1120px;
+      }
+      html { background: var(--x-paper); }
+      body {
+        background:
+          radial-gradient(120% 80% at 20% 0%, #f4ead8 0%, rgba(244, 234, 216, 0) 60%),
+          linear-gradient(160deg, var(--x-paper) 0%, var(--x-paper-2) 70%, #e3d2b3 100%);
+        background-attachment: fixed;
+        color: var(--x-ink);
+        font-family: var(--x-serif);
+        font-size: 16px;
+        line-height: 1.95;
+      }
+      /* paper fibre noise */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.5;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.22'/></svg>");
+      }
+      .x-page { position: relative; z-index: 1; }
+      .x-wrap {
+        max-width: var(--x-max);
+        margin: 0 auto;
+        padding-inline: clamp(18px, 5vw, 48px);
+      }
+      .x-narrow { max-width: 760px; }
+      .x-sec { padding-block: clamp(56px, 9vw, 110px); }
+
+      /* reveals */
+      .x-js .x-rise { opacity: 0; transform: translateY(32px); }
+      .x-js .x-rise.x-in { opacity: 1; transform: none; transition: opacity 900ms var(--x-ease), transform 900ms var(--x-ease); }
+
+      /* ---- type ---- */
+      .x-eyebrow {
+        font-family: var(--x-en);
+        font-size: 13px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #8a4f2a;
+        margin-bottom: 10px;
+      }
+      h2.x-h {
+        font-family: var(--x-brush-2);
+        font-weight: 400;
+        font-size: clamp(30px, 5vw, 50px);
+        line-height: 1.25;
+        color: var(--x-ink);
+        letter-spacing: 0.04em;
+      }
+      .x-en {
+        font-family: var(--x-en);
+        font-size: 15px;
+        line-height: 1.6;
+        color: #64533f;
+      }
+      .x-lead { font-size: 17px; color: var(--x-ink-2); max-width: 46em; }
+      .x-rule {
+        height: 2px;
+        border: 0;
+        margin: 26px 0 0;
+        background: linear-gradient(90deg, var(--x-ochre), rgba(163, 100, 58, 0.25) 55%, rgba(163, 100, 58, 0));
+      }
+      .x-seal {
+        display: inline-grid;
+        place-items: center;
+        width: 2.1em; height: 2.1em;
+        background: var(--x-red);
+        color: #f6ecd8;
+        font-family: var(--x-brush-2);
+        font-size: 15px;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+      /* ---- hero ---- */
+      .x-hero {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1792 / 592;
+        overflow: hidden;
+        isolation: isolate;
+        container-type: inline-size;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 84%, transparent);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 84%, transparent);
+        mask-composite: intersect;
+      }
+      .x-hero__base {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: 62% 50%;
+      }
+      .x-layer { position: absolute; inset: 0; pointer-events: none; }
+      /* 孤烟 */
+      .x-smoke { position: absolute; left: 68%; top: 52%; width: 0; height: 0; }
+      .x-puff {
+        position: absolute;
+        left: 0; bottom: 0;
+        width: 1.1cqw; height: 1.1cqw;
+        margin-left: -0.55cqw;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(118, 104, 88, 0.6), rgba(160, 140, 115, 0) 70%);
+        filter: blur(0.25cqw);
+        opacity: 0;
+        animation: x-rise-smoke 10s linear infinite;
+      }
+      @keyframes x-rise-smoke {
+        0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+        12% { opacity: 0.75; }
+        60% { opacity: 0.45; }
+        100% { opacity: 0; transform: translate(-0.6cqw, -15cqw) scale(2.6, 3); }
+      }
+      .x-column {
+        position: absolute;
+        left: -0.12cqw; bottom: 0;
+        width: 0.24cqw; height: 12cqw;
+        background: linear-gradient(to top, rgba(110, 98, 84, 0.5), rgba(130, 115, 98, 0.18) 70%, rgba(130, 115, 98, 0));
+        filter: blur(0.12cqw);
+        transform-origin: bottom center;
+        animation: x-sway 12s ease-in-out infinite;
+      }
+      @keyframes x-sway { 0%, 100% { transform: skewX(0deg); opacity: 0.8; } 50% { transform: skewX(-1.2deg); opacity: 1; } }
+      .x-hero-wrap { position: relative; }
+      /* sun */
+      .x-sun {
+        position: absolute;
+        left: 83%; top: 22%;
+        width: 15%;
+        aspect-ratio: 1;
+        translate: -50% -50%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(226, 126, 103, 0.42) 0%, rgba(226, 126, 103, 0.18) 42%, rgba(226, 126, 103, 0) 70%);
+        animation: x-breathe 6s ease-in-out infinite, x-sink 40s ease-in-out infinite alternate;
+      }
+      @keyframes x-breathe { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.95; } }
+      @keyframes x-sink { from { translate: -50% -50%; } to { translate: -50% calc(-50% + 12px); } }
+      /* river shimmer */
+      .x-shimmer {
+        position: absolute;
+        height: 2px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, rgba(255, 250, 238, 0), rgba(255, 250, 240, 0.85), rgba(255, 250, 238, 0));
+        filter: blur(1.2px);
+        opacity: 0;
+        animation: x-shim 9s ease-in-out infinite;
+      }
+      @keyframes x-shim {
+        0% { opacity: 0; transform: translateX(-22px); }
+        35% { opacity: 0.9; }
+        100% { opacity: 0; transform: translateX(34px); }
+      }
+      /* geese */
+      .x-geese { position: absolute; left: 0; top: 14%; width: 26%; animation: x-fly 35s linear infinite; }
+      @keyframes x-fly {
+        0% { transform: translateX(390%); opacity: 0; }
+        8% { opacity: 0.85; }
+        88% { opacity: 0.85; }
+        100% { transform: translateX(-110%); opacity: 0; }
+      }
+      .x-goose { transform-box: fill-box; transform-origin: center; animation: x-flap 1.1s ease-in-out infinite; }
+      @keyframes x-flap { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.45); } }
+      /* caravan */
+      .x-caravan {
+        position: absolute;
+        top: 78%;
+        left: 0;
+        width: 16%;
+        transform: translateY(-50%);
+        animation: x-walk 60s linear infinite;
+      }
+      .x-caravan img { width: 100%; animation: x-bob 2.4s ease-in-out infinite; }
+      @keyframes x-walk {
+        0% { transform: translate(630%, -50%); opacity: 0; }
+        10% { opacity: 1; }
+        86% { opacity: 1; }
+        100% { transform: translate(-110%, -50%); opacity: 0; }
+      }
+      @keyframes x-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+      /* sand haze */
+      .x-haze {
+        position: absolute;
+        height: 9%;
+        width: 55%;
+        background: linear-gradient(90deg, rgba(232, 214, 182, 0), rgba(236, 219, 188, 0.55), rgba(232, 214, 182, 0));
+        filter: blur(6px);
+        animation: x-drift 28s linear infinite;
+      }
+      @keyframes x-drift {
+        0% { transform: translateX(190%); opacity: 0; }
+        20% { opacity: 0.8; }
+        80% { opacity: 0.8; }
+        100% { transform: translateX(-110%); opacity: 0; }
+      }
+      .x-hero-wrap.is-paused .x-hero * { animation-play-state: paused !important; }
+      /* hero title */
+      .x-hero__title {
+        position: absolute;
+        left: 6%;
+        top: 7%;
+        bottom: 22%;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+      .x-hero__title h1 {
+        font-family: var(--x-brush);
+        font-weight: 400;
+        font-size: clamp(22px, 3.4vw, 64px);
+        line-height: 1.18;
+        letter-spacing: 0.1em;
+        color: var(--x-ink);
+        margin: 0;
+      }
+      .x-hero__side { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+      .x-hero__sub {
+        font-size: clamp(12px, 1.05vw, 14px);
+        letter-spacing: 0.3em;
+        color: #4a4038;
+        writing-mode: vertical-rl;
+      }
+      .x-hero__sub span { display: block; margin-left: 0.5em; }
+      .x-hero__en {
+        position: absolute;
+        left: 6%;
+        bottom: 6%;
+        max-width: 34%;
+      }
+      .x-hero__en .x-en { font-size: clamp(12px, 1.1vw, 16px); line-height: 1.4; color: #4a4038; }
+      .x-wind {
+        position: absolute;
+        right: 14px; bottom: 12px;
+        background: rgba(243, 234, 216, 0.6);
+        border: 1px solid rgba(163, 100, 58, 0.5);
+        color: #8a4f2a;
+        font-family: var(--x-serif);
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        padding: 8px 14px;
+        min-height: 44px;
+        cursor: pointer;
+        z-index: 3;
+      }
+      .x-wind:hover { background: rgba(243, 234, 216, 0.92); }
+
+      /* ---- sticky volume stops ---- */
+      .x-stops {
+        position: fixed;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 15;
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .x-stops a {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-decoration: none;
+        color: var(--x-ink-2);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        opacity: 0.45;
+        transition: opacity 300ms var(--x-ease);
+      }
+      .x-stops a::before {
+        content: "";
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        border: 1px solid var(--x-red);
+        background: transparent;
+        transition: background 300ms var(--x-ease);
+      }
+      .x-stops a:hover, .x-stops a.is-on { opacity: 1; }
+      .x-stops a.is-on::before { background: var(--x-red); }
+      @media (min-width: 1240px) { .x-stops { display: flex; } }
+
+      /* ---- char reveal ---- */
+      .x-char { opacity: 0.12; transition: opacity 620ms var(--x-ease); }
+      .x-reveal.is-lit .x-char { opacity: 1; }
+
+      /* ---- feathered paintings ---- */
+      .x-paint { position: relative; margin-block: clamp(28px, 5vw, 48px); }
+      .x-paint img {
+        width: 100%;
+        height: clamp(240px, 38vw, 460px);
+        object-fit: cover;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 14%, #000 82%, transparent);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 14%, #000 82%, transparent);
+        mask-composite: intersect;
+      }
+      .x-paint figcaption {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #64533f;
+        letter-spacing: 0.12em;
+      }
+
+      /* ---- volume head ---- */
+      .x-vol__mark {
+        display: inline-grid;
+        place-items: center;
+        width: 76px; height: 76px;
+        background: var(--x-red);
+        color: #f3e6cf;
+        font-family: var(--x-brush-2);
+        font-size: 30px;
+        line-height: 1;
+        letter-spacing: 0.04em;
+        margin-bottom: 20px;
+      }
+      /* ---- hand scroll strip ---- */
+      .x-strip-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 14px;
+        font-size: 13px;
+        color: #64533f;
+        letter-spacing: 0.14em;
+      }
+      .x-arrows { display: flex; gap: 4px; }
+      .x-arrows button {
+        min-width: 44px; min-height: 44px;
+        background: none;
+        border: 0;
+        color: #8a4f2a;
+        font-size: 20px;
+        font-family: var(--x-serif);
+        cursor: pointer;
+      }
+      .x-arrows button:hover { color: var(--x-red); }
+      .x-arrows button:disabled { opacity: 0.35; cursor: default; color: #8a4f2a; }
+      .x-strip {
+        display: flex;
+        gap: 64px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-block: 6px 22px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(163, 100, 58, 0.45) transparent;
+        cursor: grab;
+      }
+      .x-strip.is-drag { cursor: grabbing; scroll-snap-type: none; }
+      .x-strip::-webkit-scrollbar { height: 5px; }
+      .x-strip::-webkit-scrollbar-thumb { background: rgba(163, 100, 58, 0.4); }
+      .x-poem {
+        position: relative;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        box-sizing: border-box;
+        /* width follows the poem: columns × pitch + padding; reading lines never widen it */
+        width: max-content;
+        min-width: 360px;
+        max-width: calc(100vw - 48px);
+        padding: 48px;
+      }
+      /* thin divider, centred in the 64px gap */
+      .x-poem + .x-poem::before {
+        content: "";
+        position: absolute;
+        left: -32.5px;
+        top: 48px;
+        bottom: 48px;
+        width: 1px;
+        background: rgba(163, 100, 58, 0.3);
+      }
+      .x-poem__no {
+        font-family: var(--x-brush-2);
+        color: var(--x-red);
+        font-size: 15px;
+        letter-spacing: 0.1em;
+      }
+      .x-poem .x-poem__no {
+        display: inline-grid;
+        place-items: center;
+        min-width: 34px; height: 34px;
+        padding-inline: 5px;
+        background: var(--x-red);
+        color: #f3e6cf;
+        letter-spacing: 0;
+      }
+      .x-poem__title {
+        font-family: var(--x-brush-2);
+        font-weight: 400;
+        font-size: clamp(22px, 2.6vw, 30px);
+        letter-spacing: 0.06em;
+        margin: 4px 0 2px;
+      }
+      .x-poem__by { font-size: 13px; color: #64533f; letter-spacing: 0.14em; margin-bottom: 16px; }
+      .x-poem__body {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        inline-size: max-content; /* column height = its longest line, nothing clipped */
+        font-size: clamp(19px, 1.9vw, 26px);
+        line-height: 1.5;
+        letter-spacing: 0.12em;
+      }
+      .x-poem__body p { margin: 0; white-space: nowrap; }
+      .x-poem__body p + p { margin-block-start: 0.9em; } /* gap between columns */
+      .x-poem--long .x-poem__body { font-size: clamp(17px, 1.55vw, 22px); letter-spacing: 0.08em; }
+      .x-poem__read {
+        /* never widens the panel; wraps to the poem's width */
+        width: 0;
+        min-width: 100%;
+        margin-top: 24px;
+        font-size: 14px;
+        line-height: 1.9;
+        color: var(--x-ink-2);
+        border-top: 1px solid rgba(163, 100, 58, 0.25);
+        padding-top: 14px;
+        text-wrap: pretty;
+        overflow-wrap: anywhere;
+      }
+      .x-poem__read .x-en { margin-top: 4px; display: block; line-height: 1.9; text-wrap: pretty; }
+
+      /* ---- image tiles ---- */
+      .x-tiles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: clamp(20px, 3vw, 34px);
+        margin-top: 36px;
+      }
+      .x-tile { border-top: 2px solid rgba(163, 100, 58, 0.45); padding-top: 16px; }
+      .x-tile__word {
+        font-family: var(--x-brush-2);
+        font-size: clamp(28px, 3.4vw, 40px);
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .x-tile p { font-size: 14px; color: var(--x-ink-2); margin-top: 8px; }
+
+      /* ---- two voices ---- */
+      .x-voices {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 4vw, 56px);
+        margin-top: 36px;
+      }
+      .x-voice h3 {
+        font-family: var(--x-brush-2);
+        font-weight: 400;
+        font-size: clamp(22px, 2.6vw, 30px);
+        letter-spacing: 0.08em;
+        margin-bottom: 12px;
+      }
+      .x-voice--l { text-align: right; border-right: 2px solid rgba(168, 50, 42, 0.4); padding-right: clamp(16px, 2vw, 28px); }
+      .x-voice--r { border-left: 2px solid rgba(75, 111, 120, 0.4); padding-left: clamp(16px, 2vw, 28px); }
+      .x-voice p { color: var(--x-ink-2); }
+      .x-bridge {
+        margin-top: clamp(32px, 5vw, 56px);
+        text-align: center;
+        font-size: clamp(17px, 2vw, 21px);
+        letter-spacing: 0.06em;
+        max-width: 40em;
+        margin-inline: auto;
+      }
+
+      /* ---- closing ---- */
+      .x-close {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 22px;
+        padding-block: clamp(70px, 12vw, 140px);
+      }
+      .x-close__line {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-family: var(--x-brush);
+        font-size: clamp(34px, 6vw, 78px);
+        letter-spacing: 0.14em;
+        color: rgba(35, 31, 26, 0.6);
+        line-height: 1.1;
+      }
+      .x-close .x-seal { font-size: 20px; }
+      .x-foot {
+        border-top: 1px solid rgba(163, 100, 58, 0.3);
+        padding-block: 26px 48px;
+        font-size: 12.5px;
+        line-height: 1.9;
+        color: #64533f;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 28px;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 719px) {
+        .x-hero__title { position: static; writing-mode: horizontal-tb; padding: 18px clamp(18px, 5vw, 48px) 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+        .x-wind { bottom: auto; top: calc(100vw * 592 / 1792 - 52px); right: 8px; }
+        .x-hero__title h1 { writing-mode: horizontal-tb; font-size: clamp(26px, 8vw, 40px); letter-spacing: 0.06em; }
+        .x-hero__side { flex-direction: row; align-items: center; gap: 12px; }
+        .x-hero__sub { writing-mode: horizontal-tb; letter-spacing: 0.14em; }
+        .x-hero__sub span { display: inline; margin: 0; }
+        .x-hero__en { position: static; max-width: none; padding: 6px clamp(18px, 5vw, 48px) 0; }
+        .x-poem { width: min(420px, calc(100vw - 48px)); min-width: 0; }
+        .x-poem__body, .x-poem--long .x-poem__body { writing-mode: horizontal-tb; inline-size: auto; text-orientation: mixed; font-size: 18px; letter-spacing: 0.05em; line-height: 1.9; }
+        .x-poem--long .x-poem__body { font-size: 17px; }
+        .x-poem__body p { white-space: normal; }
+        .x-poem__body p + p { margin-block-start: 0; }
+        .x-poem--long .x-poem__body p + p { margin-block-start: 0.5em; }
+        .x-poem__body p span { display: block; }
+        .x-close__line { writing-mode: horizontal-tb; text-align: center; }
+        .x-close { flex-direction: column; align-items: center; }
+        .x-voices { grid-template-columns: 1fr; }
+        .x-voice--l { text-align: left; border-right: 0; padding-right: 0; border-left: 2px solid rgba(168, 50, 42, 0.4); padding-left: 16px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .x-rise { opacity: 1; transform: none; }
+        .x-char { opacity: 1; }
+        .x-puff, .x-sun, .x-shimmer, .x-geese, .x-goose, .x-caravan, .x-caravan img, .x-haze { animation: none !important; }
+        .x-caravan { transform: translate(40%, -50%); }
+        .x-geese { transform: translateX(40%); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="x-page" id="top">
+      <nav class="x-stops" aria-label="四卷">
+        <a href="#vol1">卷一 · 大漠</a>
+        <a href="#vol2">卷二 · 豪情</a>
+        <a href="#vol3">卷三 · 乡愁</a>
+        <a href="#vol4">卷四 · 悲悯</a>
+      </nav>
+
+      <!-- HERO -->
+      <header class="x-hero-wrap is-paused" id="hero">
+        <div class="x-hero">
+        <img class="x-hero__base" src="frontier-hero-desert-river.jpg" alt="大漠、长河与落日，残破的烽火台立在山脊上" />
+        <div class="x-layer" aria-hidden="true">
+          <div class="x-sun"></div>
+          <div class="x-smoke">
+            <span class="x-column"></span>
+            <span class="x-puff" style="animation-delay: 0s"></span>
+            <span class="x-puff" style="animation-delay: 1.6s"></span>
+            <span class="x-puff" style="animation-delay: 3.2s"></span>
+            <span class="x-puff" style="animation-delay: 4.8s"></span>
+            <span class="x-puff" style="animation-delay: 6.4s"></span>
+            <span class="x-puff" style="animation-delay: 8s"></span>
+          </div>
+          <span class="x-shimmer" style="left: 50%; top: 61%; width: 7%; animation-delay: 0s"></span>
+          <span class="x-shimmer" style="left: 62%; top: 55%; width: 6%; animation-delay: 2.4s"></span>
+          <span class="x-shimmer" style="left: 73%; top: 48%; width: 8%; animation-delay: 4.1s"></span>
+          <span class="x-shimmer" style="left: 84%; top: 45%; width: 6%; animation-delay: 6.3s"></span>
+          <span class="x-haze" style="top: 72%; animation-delay: 0s"></span>
+          <span class="x-haze" style="top: 83%; animation-delay: 11s; opacity: 0.7"></span>
+          <div class="x-geese">
+            <svg viewBox="0 0 220 60" width="100%" fill="none" stroke="#4a4038" stroke-width="2.4" stroke-linecap="round" opacity="0.55">
+              <g class="x-goose" style="animation-delay:0s"><path d="M12 20 l9 7 l9 -7" /></g>
+              <g class="x-goose" style="animation-delay:.12s"><path d="M38 28 l8 6 l8 -6" /></g>
+              <g class="x-goose" style="animation-delay:.24s"><path d="M62 36 l8 6 l8 -6" /></g>
+              <g class="x-goose" style="animation-delay:.36s"><path d="M86 44 l7 5 l7 -5" /></g>
+              <g class="x-goose" style="animation-delay:.18s"><path d="M38 12 l8 6 l8 -6" /></g>
+              <g class="x-goose" style="animation-delay:.3s"><path d="M64 6 l7 5 l7 -5" /></g>
+              <g class="x-goose" style="animation-delay:.42s"><path d="M92 2 l7 5 l7 -5" /></g>
+              <g class="x-goose" style="animation-delay:.5s"><path d="M116 48 l6 4 l6 -4" /></g>
+              <g class="x-goose" style="animation-delay:.6s"><path d="M124 0 l6 4 l6 -4" /></g>
+            </svg>
+          </div>
+          <div class="x-caravan">
+            <img src="frontier-caravan-v0.3.png" alt="" />
+          </div>
+        </div>
+        </div>
+        <div class="x-hero__title">
+          <h1>秦时明月汉时关</h1>
+          <div class="x-hero__side">
+            <span class="x-seal">边</span>
+            <p class="x-hero__sub"><span>边塞诗歌集</span> <span>十八首传唱千年的诗</span></p>
+          </div>
+        </div>
+        <div class="x-hero__en">
+          <p class="x-en">Moon over the Passes: Classic Chinese Frontier Poems</p>
+          <p class="x-en">Eighteen frontier poems sung for a thousand years</p>
+        </div>
+        <button class="x-wind" id="wind" type="button" aria-pressed="false">风停</button>
+      </header>
+
+      <main>
+        <!-- 开篇 -->
+        <section class="x-sec" id="open">
+          <div class="x-wrap">
+            <p class="x-eyebrow x-rise">Prologue</p>
+            <h2 class="x-h x-rise">开篇 · 一轮月，一道关</h2>
+            <hr class="x-rule x-rise" />
+          </div>
+          <div class="x-wrap">
+            <figure class="x-paint x-rise">
+              <img src="frontier-moon-pass.jpg" alt="满月下的玉门关式关隘，长城伏在山脊上" />
+              <figcaption>玉门关外，长城伏于山脊 · The pass under a full moon</figcaption>
+            </figure>
+          </div>
+          <div class="x-wrap x-narrow">
+            <p class="x-poem__no x-rise">○ 王昌龄《出塞》其一 · 唐</p>
+            <p class="x-reveal x-rise" style="font-size: clamp(19px, 2.6vw, 27px); line-height: 2.2; letter-spacing: 0.1em; margin-top: 12px; font-family: var(--x-serif)">
+              秦时明月汉时关，万里长征人未还。<br />但使龙城飞将在，不教胡马度阴山。
+            </p>
+            <p class="x-lead x-rise" style="margin-top: 32px">
+              第一句只有七个字，却叠了两个朝代：明月还是秦时的明月，关隘还是汉时的关隘，而守关的人换了一代又一代，至今"人未还"。诗人不写一个"悲"字，千年征戍之苦全在"秦汉"二字的错位里。明代李攀龙推此诗为唐人七绝压卷之作。
+            </p>
+            <p class="x-en x-rise" style="margin-top: 14px">
+              "The moon of Qin, the pass of Han" — two dynasties folded into one line; the moon and the gate stay, the soldiers never come home.
+            </p>
+          </div>
+        </section>
+
+        <!-- 五个意象 -->
+        <section class="x-sec" id="images">
+          <div class="x-wrap">
+            <p class="x-eyebrow x-rise">Five images</p>
+            <h2 class="x-h x-rise">边塞诗的五个意象</h2>
+            <p class="x-en x-rise" style="margin-top: 8px">Moon · Qiang flute · Willow · The Jade Gate · Returning geese</p>
+            <hr class="x-rule x-rise" />
+            <div class="x-tiles">
+              <div class="x-tile x-rise">
+                <p class="x-tile__word"><span class="x-seal">一</span>明月</p>
+                <p>人隔万里，共此一轮，最能牵出乡思。</p>
+                <p class="x-en">Moon</p>
+              </div>
+              <div class="x-tile x-rise">
+                <p class="x-tile__word"><span class="x-seal">二</span>羌笛</p>
+                <p>边地的乐声，一吹就是《折杨柳》《关山月》的离愁。</p>
+                <p class="x-en">Qiang flute</p>
+              </div>
+              <div class="x-tile x-rise">
+                <p class="x-tile__word"><span class="x-seal">三</span>杨柳</p>
+                <p>与前一页相呼应："羌笛何须怨杨柳"，折柳曲在玉门关外也吹得响。</p>
+                <p class="x-en">Willow</p>
+              </div>
+              <div class="x-tile x-rise">
+                <p class="x-tile__word"><span class="x-seal">四</span>玉门</p>
+                <p>玉门关 / 阳关，中原与西域的界线，出了关，就是"西出阳关无故人"。</p>
+                <p class="x-en">The Jade Gate</p>
+              </div>
+              <div class="x-tile x-rise">
+                <p class="x-tile__word"><span class="x-seal">五</span>归雁</p>
+                <p>雁能南归，人不能。</p>
+                <p class="x-en">Returning geese</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 卷一 -->
+        <section class="x-sec x-vol" id="vol1" data-nav="卷一">
+          <div class="x-wrap">
+            <p class="x-vol__mark x-rise">卷一</p>
+            <h2 class="x-h x-rise">大漠风光</h2>
+            <p class="x-en x-rise">Landscape of the frontier</p>
+            <figure class="x-paint x-rise">
+              <img src="frontier-river-fortress-v0.1.jpg" alt="黄河远上白云间，一片孤城万仞山" />
+              <figcaption>黄河远上，孤城万仞 · The Yellow River climbing into the clouds, a lone fortress among the peaks</figcaption>
+            </figure>
+          </div>
+          <div class="x-wrap">
+            <div class="x-strip-head x-rise"><span>横卷 · 四首　拖动或滑动展开</span><span class="x-arrows"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></span></div>
+            <div class="x-strip x-rise" tabindex="0" aria-label="卷一诗卷">
+              <article class="x-poem">
+                <p class="x-poem__no">一</p>
+                <h3 class="x-poem__title">《使至塞上》</h3>
+                <p class="x-poem__by">王维 · 唐</p>
+                <div class="x-poem__body"><p>单车欲问边，</p><p>属国过居延。</p><p>征蓬出汉塞，</p><p>归雁入胡天。</p><p>大漠孤烟直，</p><p>长河落日圆。</p><p>萧关逢候骑，</p><p>都护在燕然。</p></div>
+                <p class="x-poem__read">读："直"与"圆"两个最简单的字，画出了最辽阔的大漠。<span class="x-en">Two plain words, "straight" and "round," paint the whole desert.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">二</p>
+                <h3 class="x-poem__title">《凉州词》</h3>
+                <p class="x-poem__by">王之涣 · 唐</p>
+                <div class="x-poem__body"><p>黄河远上白云间，</p><p>一片孤城万仞山。</p><p>羌笛何须怨杨柳，</p><p>春风不度玉门关。</p></div>
+                <p class="x-poem__read">读：不怨，是因为怨也没用；春风都到不了这里，何况家书。<span class="x-en">Why blame the willow tune? Even spring wind never reaches the Jade Gate.</span></p>
+              </article>
+              <article class="x-poem x-poem--long">
+                <p class="x-poem__no">三</p>
+                <h3 class="x-poem__title">《白雪歌送武判官归京》</h3>
+                <p class="x-poem__by">岑参 · 唐</p>
+                <div class="x-poem__body"><p><span>北风卷地白草折，</span><span>胡天八月即飞雪。</span></p><p><span>忽如一夜春风来，</span><span>千树万树梨花开。</span></p><p><span>散入珠帘湿罗幕，</span><span>狐裘不暖锦衾薄。</span></p><p><span>将军角弓不得控，</span><span>都护铁衣冷难着。</span></p><p><span>瀚海阑干百丈冰，</span><span>愁云惨淡万里凝。</span></p><p><span>中军置酒饮归客，</span><span>胡琴琵琶与羌笛。</span></p><p><span>纷纷暮雪下辕门，</span><span>风掣红旗冻不翻。</span></p><p><span>轮台东门送君去，</span><span>去时雪满天山路。</span></p><p><span>山回路转不见君，</span><span>雪上空留马行处。</span></p></div>
+                <p class="x-poem__read">读：结尾不说不舍，只看雪地上留下的马蹄印——这正是"折柳"式的含蓄。<span class="x-en">He doesn't say he'll miss his friend; he only watches the hoofprints left in the snow.</span></p>
+              </article>
+              <article class="x-poem x-poem--long">
+                <p class="x-poem__no">四</p>
+                <h3 class="x-poem__title">《关山月》</h3>
+                <p class="x-poem__by">李白 · 唐</p>
+                <div class="x-poem__body"><p><span>明月出天山，</span><span>苍茫云海间。</span></p><p><span>长风几万里，</span><span>吹度玉门关。</span></p><p><span>汉下白登道，</span><span>胡窥青海湾。</span></p><p><span>由来征战地，</span><span>不见有人还。</span></p><p><span>戍客望边色，</span><span>思归多苦颜。</span></p><p><span>高楼当此夜，</span><span>叹息未应闲。</span></p></div>
+                <p class="x-poem__read">读：一轮月同时照着戍客与高楼上的妻子，两地叹息，一句未写相思。<span class="x-en">One moon lights the soldier and the wife in her tower; both sigh.</span></p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 卷二 -->
+        <section class="x-sec x-vol" id="vol2" data-nav="卷二">
+          <div class="x-wrap">
+            <p class="x-vol__mark x-rise">卷二</p>
+            <h2 class="x-h x-rise">壮志豪情</h2>
+            <p class="x-en x-rise">Courage and resolve</p>
+            <figure class="x-paint x-rise">
+              <img src="frontier-cavalry-snow.jpg" alt="唐代骑兵举着红旗，在天山下的风雪中行进" />
+              <figcaption>天山雪中的铁骑 · Tang cavalry in the snow below the Tianshan</figcaption>
+            </figure>
+          </div>
+          <div class="x-wrap">
+            <div class="x-strip-head x-rise"><span>横卷 · 五首　拖动或滑动展开</span><span class="x-arrows"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></span></div>
+            <div class="x-strip x-rise" tabindex="0" aria-label="卷二诗卷">
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">五</p>
+                <h3 class="x-poem__title">《从军行》其四</h3>
+                <p class="x-poem__by">王昌龄 · 唐</p>
+                <div class="x-poem__body"><p>青海长云暗雪山，</p><p>孤城遥望玉门关。</p><p>黄沙百战穿金甲，</p><p>不破楼兰终不还。</p></div>
+                <p class="x-poem__read">读：铠甲都磨穿了，誓言还没变。<span class="x-en">The armor is worn through; the vow is not.</span></p>
+              </article>
+              <article class="x-poem">
+                <p class="x-poem__no">六</p>
+                <h3 class="x-poem__title">《从军行》</h3>
+                <p class="x-poem__by">杨炯 · 唐</p>
+                <div class="x-poem__body"><p>烽火照西京，</p><p>心中自不平。</p><p>牙璋辞凤阙，</p><p>铁骑绕龙城。</p><p>雪暗凋旗画，</p><p>风多杂鼓声。</p><p>宁为百夫长，</p><p>胜作一书生。</p></div>
+                <p class="x-poem__read">读：一个书生的直抒胸臆：宁可上阵，不愿只读书。<span class="x-en">A scholar says it straight: better a captain than a bookworm.</span></p>
+              </article>
+              <article class="x-poem x-poem--long">
+                <p class="x-poem__no">七</p>
+                <h3 class="x-poem__title">《雁门太守行》</h3>
+                <p class="x-poem__by">李贺 · 唐</p>
+                <div class="x-poem__body"><p><span>黑云压城城欲摧，</span><span>甲光向日金鳞开。</span></p><p><span>角声满天秋色里，</span><span>塞上燕脂凝夜紫。</span></p><p><span>半卷红旗临易水，</span><span>霜重鼓寒声不起。</span></p><p><span>报君黄金台上意，</span><span>提携玉龙为君死。</span></p></div>
+                <p class="x-poem__read">读：浓墨重彩，像一幅压城的战争画。<span class="x-en">Painted in the heaviest colors: black clouds, gold scales, violet dusk.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">八</p>
+                <h3 class="x-poem__title">《和张仆射塞下曲》其二</h3>
+                <p class="x-poem__by">卢纶 · 唐</p>
+                <div class="x-poem__body"><p>林暗草惊风，</p><p>将军夜引弓。</p><p>平明寻白羽，</p><p>没在石棱中。</p></div>
+                <p class="x-poem__read">读：化用李广射石的典故，只写天亮后去找箭。<span class="x-en">Only at dawn do they find the arrow, buried in stone.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">九</p>
+                <h3 class="x-poem__title">《和张仆射塞下曲》其三</h3>
+                <p class="x-poem__by">卢纶 · 唐</p>
+                <div class="x-poem__body"><p>月黑雁飞高，</p><p>单于夜遁逃。</p><p>欲将轻骑逐，</p><p>大雪满弓刀。</p></div>
+                <p class="x-poem__read">读：故事停在追击之前，一场大雪替你想象后面。<span class="x-en">The poem stops before the chase; the snow on the blades tells the rest.</span></p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 卷三 -->
+        <section class="x-sec x-vol" id="vol3" data-nav="卷三">
+          <div class="x-wrap">
+            <p class="x-vol__mark x-rise">卷三</p>
+            <h2 class="x-h x-rise">征人乡愁</h2>
+            <p class="x-en x-rise">Homesickness</p>
+            <figure class="x-paint x-rise">
+              <img src="frontier-homesick-night.jpg" alt="夜里一名士兵立在城墙上，月下雁过，沙白如雪" />
+              <figcaption>沙似雪，月如霜 · A soldier on the wall at night</figcaption>
+            </figure>
+          </div>
+          <div class="x-wrap">
+            <div class="x-strip-head x-rise"><span>横卷 · 五首　拖动或滑动展开</span><span class="x-arrows"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></span></div>
+            <div class="x-strip x-rise" tabindex="0" aria-label="卷三诗卷">
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十</p>
+                <h3 class="x-poem__title">《凉州词》</h3>
+                <p class="x-poem__by">王翰 · 唐</p>
+                <div class="x-poem__body"><p>葡萄美酒夜光杯，</p><p>欲饮琵琶马上催。</p><p>醉卧沙场君莫笑，</p><p>古来征战几人回？</p></div>
+                <p class="x-poem__read">读：笑着劝酒，最后一问却叫人心沉。<span class="x-en">A toast, then the question that sinks the heart.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十一</p>
+                <h3 class="x-poem__title">《夜上受降城闻笛》</h3>
+                <p class="x-poem__by">李益 · 唐</p>
+                <div class="x-poem__body"><p>回乐峰前沙似雪，</p><p>受降城外月如霜。</p><p>不知何处吹芦管，</p><p>一夜征人尽望乡。</p></div>
+                <p class="x-poem__read">读：不写一个人哭，只写"一夜""尽望乡"。<span class="x-en">No one weeps on the page; a whole army simply looks toward home.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十二</p>
+                <h3 class="x-poem__title">《从军行》其二</h3>
+                <p class="x-poem__by">王昌龄 · 唐</p>
+                <div class="x-poem__body"><p>琵琶起舞换新声，</p><p>总是关山旧别情。</p><p>撩乱边愁听不尽，</p><p>高高秋月照长城。</p></div>
+                <p class="x-poem__read">读：愁说不尽，于是抬头看月——以景结情。<span class="x-en">When sorrow has no end, he looks up at the moon over the Wall.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十三</p>
+                <h3 class="x-poem__title">《逢入京使》</h3>
+                <p class="x-poem__by">岑参 · 唐</p>
+                <div class="x-poem__body"><p>故园东望路漫漫，</p><p>双袖龙钟泪不干。</p><p>马上相逢无纸笔，</p><p>凭君传语报平安。</p></div>
+                <p class="x-poem__read">读：千言万语，只托一句"平安"。<span class="x-en">A thousand words, and he sends just one: "safe."</span></p>
+              </article>
+              <article class="x-poem x-poem--long">
+                <p class="x-poem__no">十四</p>
+                <h3 class="x-poem__title">《渔家傲·秋思》</h3>
+                <p class="x-poem__by">范仲淹 · 宋</p>
+                <div class="x-poem__body"><p><span>塞下秋来风景异，</span><span>衡阳雁去无留意。</span></p><p><span>四面边声连角起，</span><span>千嶂里，长烟落日孤城闭。</span></p><p><span>浊酒一杯家万里，</span><span>燕然未勒归无计。</span></p><p><span>羌管悠悠霜满地，</span><span>人不寐，将军白发征夫泪。</span></p></div>
+                <p class="x-poem__read">读：将军与士兵，同一夜无眠。<span class="x-en">General and private, sleepless on the same night.</span></p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 卷四 -->
+        <section class="x-sec x-vol" id="vol4" data-nav="卷四">
+          <div class="x-wrap">
+            <p class="x-vol__mark x-rise">卷四</p>
+            <h2 class="x-h x-rise">战争悲悯</h2>
+            <p class="x-en x-rise">The cost of war</p>
+            <figure class="x-paint x-rise">
+              <img src="frontier-old-battlefield.jpg" alt="黄昏河边的古战场，倒下的旗帜与乌鸦" />
+              <figcaption>无定河边 · An abandoned battlefield by the river at dusk</figcaption>
+            </figure>
+          </div>
+          <div class="x-wrap">
+            <div class="x-strip-head x-rise"><span>横卷 · 四首　拖动或滑动展开</span><span class="x-arrows"><button type="button" data-dir="-1" aria-label="上一首">‹</button><button type="button" data-dir="1" aria-label="下一首">›</button></span></div>
+            <div class="x-strip x-rise" tabindex="0" aria-label="卷四诗卷">
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十五</p>
+                <h3 class="x-poem__title">《陇西行》其二</h3>
+                <p class="x-poem__by">陈陶 · 唐</p>
+                <div class="x-poem__body"><p>誓扫匈奴不顾身，</p><p>五千貂锦丧胡尘。</p><p>可怜无定河边骨，</p><p>犹是春闺梦里人。</p></div>
+                <p class="x-poem__read">读：河边已是白骨，闺中还在梦里等他。<span class="x-en">Bones by the river; in a spring bedroom, still a dream of him.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十六</p>
+                <h3 class="x-poem__title">《己亥岁》其一</h3>
+                <p class="x-poem__by">曹松 · 唐</p>
+                <div class="x-poem__body"><p>泽国江山入战图，</p><p>生民何计乐樵苏。</p><p>凭君莫话封侯事，</p><p>一将功成万骨枯。</p></div>
+                <p class="x-poem__read">读：七个字的反战宣言。<span class="x-en">Seven characters against war: one general's glory, ten thousand bones.</span></p>
+              </article>
+              <article class="x-poem x-poem--long">
+                <p class="x-poem__no">十七</p>
+                <h3 class="x-poem__title">《古从军行》</h3>
+                <p class="x-poem__by">李颀 · 唐</p>
+                <div class="x-poem__body"><p><span>白日登山望烽火，</span><span>黄昏饮马傍交河。</span></p><p><span>行人刁斗风沙暗，</span><span>公主琵琶幽怨多。</span></p><p><span>野云万里无城郭，</span><span>雨雪纷纷连大漠。</span></p><p><span>胡雁哀鸣夜夜飞，</span><span>胡儿眼泪双双落。</span></p><p><span>闻道玉门犹被遮，</span><span>应将性命逐轻车。</span></p><p><span>年年战骨埋荒外，</span><span>空见蒲桃入汉家。</span></p></div>
+                <p class="x-poem__read">读：多少战骨，只换来葡萄入汉。<span class="x-en">Years of bones in the wasteland, and all the empire gets is grapes.</span></p>
+              </article>
+              <article class="x-poem x-poem--short">
+                <p class="x-poem__no">十八</p>
+                <h3 class="x-poem__title">《送元二使安西》</h3>
+                <p class="x-poem__by">王维 · 唐</p>
+                <div class="x-poem__body"><p>渭城朝雨浥轻尘，</p><p>客舍青青柳色新。</p><p>劝君更尽一杯酒，</p><p>西出阳关无故人。</p></div>
+                <p class="x-poem__read">放在最后，作为"出关前的最后一杯酒"，与前一页《杨柳依依》相接。<span class="x-en">The last cup before the Yang Pass — bridging back to the willow page.</span></p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 两种声音 -->
+        <section class="x-sec" id="voices" data-nav="两种声音">
+          <div class="x-wrap">
+            <p class="x-eyebrow x-rise">Two voices</p>
+            <h2 class="x-h x-rise">两种声音 · 豪放直抒与以景结情</h2>
+            <hr class="x-rule x-rise" />
+            <div class="x-voices">
+              <div class="x-voice x-voice--l x-rise">
+                <h3>直抒 · 金戈铁马</h3>
+                <p>杨炯"宁为百夫长，胜作一书生"、王昌龄"不破楼兰终不还"——豪情直接喊出来，气势如鼓角。</p>
+                <p class="x-en" style="margin-top: 8px">Said outright, like a war drum.</p>
+              </div>
+              <div class="x-voice x-voice--r x-rise">
+                <h3>含蓄 · 以景结情</h3>
+                <p>李益"一夜征人尽望乡"、岑参"雪上空留马行处"、王昌龄"高高秋月照长城"——最深的情绪交给月、雪、笛声。</p>
+                <p class="x-en" style="margin-top: 8px">Left to the moon, the snow, the flute.</p>
+              </div>
+            </div>
+            <p class="x-bridge x-rise">边塞诗之所以千年传唱，正因为两种声音并存：一面是报国的热血，一面是望乡的沉默。</p>
+            <p class="x-en x-rise" style="text-align: center; margin-top: 10px">Frontier poetry endures because it holds both: the war drum and the silent look toward home.</p>
+          </div>
+        </section>
+
+        <!-- 结尾 -->
+        <section class="x-close x-rise" aria-label="结语">
+          <p class="x-close__line">春风不度玉门关</p>
+          <span class="x-seal">关</span>
+        </section>
+      </main>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var hasIO = "IntersectionObserver" in window;
+
+        // ink-soak characters in the opening poem
+        document.querySelectorAll(".x-reveal").forEach(function (el) {
+          var i = 0;
+          [].slice.call(el.childNodes).forEach(function (n) {
+            if (n.nodeType !== 3) return;
+            var frag = document.createDocumentFragment();
+            n.textContent.trim().split("").forEach(function (ch) {
+              var s = document.createElement("span");
+              s.className = "x-char";
+              s.textContent = ch;
+              s.style.transitionDelay = i++ * 90 + "ms";
+              frag.appendChild(s);
+            });
+            el.replaceChild(frag, n);
+          });
+        });
+
+        // reveal once
+        var rises = document.querySelectorAll(".x-rise, .x-reveal");
+        if (reduce || !hasIO) {
+          rises.forEach(function (el) { el.classList.add("x-in", "is-lit"); });
+        } else {
+          var io = new IntersectionObserver(function (es) {
+            es.forEach(function (e) {
+              if (!e.isIntersecting) return;
+              e.target.classList.add("x-in");
+              if (e.target.classList.contains("x-reveal")) {
+                var t = e.target;
+                setTimeout(function () { t.classList.add("is-lit"); }, 500);
+              }
+              io.unobserve(e.target);
+            });
+          }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+          rises.forEach(function (el) { io.observe(el); });
+        }
+
+        // hero: runs only in view, pausable
+        var hero = document.getElementById("hero"), btn = document.getElementById("wind");
+        var userStop = false, inView = false;
+        function sync() {
+          hero.classList.toggle("is-paused", userStop || !inView);
+          btn.textContent = userStop ? "风起" : "风停";
+          btn.setAttribute("aria-label", userStop ? "风起：继续动画" : "风停：暂停动画");
+          btn.setAttribute("aria-pressed", userStop ? "true" : "false");
+        }
+        if (reduce) {
+          btn.hidden = true;
+        } else {
+          btn.addEventListener("click", function () { userStop = !userStop; sync(); });
+          if (hasIO) {
+            new IntersectionObserver(function (es) { inView = es[0].isIntersecting; sync(); }, { threshold: 0.1 }).observe(hero);
+          } else { inView = true; sync(); }
+        }
+
+        // hand-scroll strips
+        document.querySelectorAll(".x-vol").forEach(function (vol) {
+          var strip = vol.querySelector(".x-strip");
+          if (!strip) return;
+          var arrows = [].slice.call(vol.querySelectorAll(".x-arrows button"));
+          var poems = [].slice.call(strip.querySelectorAll(".x-poem"));
+          function edges() {
+            var max = strip.scrollWidth - strip.clientWidth - 2;
+            arrows.forEach(function (b) {
+              var d = +b.getAttribute("data-dir");
+              b.disabled = d < 0 ? strip.scrollLeft <= 2 : strip.scrollLeft >= max;
+            });
+          }
+          var ticking = false;
+          strip.addEventListener("scroll", function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () { ticking = false; edges(); });
+          }, { passive: true });
+          window.addEventListener("resize", edges);
+          edges();
+          arrows.forEach(function (b) {
+            b.addEventListener("click", function () {
+              var d = +b.getAttribute("data-dir");
+              var base = strip.getBoundingClientRect().left, cur = strip.scrollLeft, target = null;
+              poems.forEach(function (p) {
+                var x = p.getBoundingClientRect().left - base + cur;
+                if (d > 0 && target === null && x > cur + 8) target = x;
+                if (d < 0 && x < cur - 8) target = x;
+              });
+              if (target === null) target = d > 0 ? strip.scrollWidth : 0;
+              strip.style.scrollSnapType = "none";
+              strip.scrollLeft = target;
+              strip.style.scrollSnapType = "";
+              edges();
+            });
+          });
+          var down = false, startX = 0, startL = 0, moved = false;
+          strip.addEventListener("pointerdown", function (e) {
+            if (e.pointerType !== "mouse" || e.button !== 0) return;
+            if (e.target.closest(".x-poem__body") && e.target.closest(".x-poem__body").scrollWidth > e.target.closest(".x-poem__body").clientWidth) return;
+            down = true; moved = false; startX = e.clientX; startL = strip.scrollLeft;
+          });
+          window.addEventListener("pointermove", function (e) {
+            if (!down) return;
+            var dx = e.clientX - startX;
+            if (!moved && Math.abs(dx) > 4) { moved = true; strip.classList.add("is-drag"); }
+            if (moved) { strip.scrollLeft = startL - dx; e.preventDefault(); }
+          });
+          window.addEventListener("pointerup", function () {
+            if (!down) return;
+            down = false;
+            if (moved) {
+              var l = strip.scrollLeft;
+              strip.classList.remove("is-drag");
+              strip.scrollLeft = l;
+            }
+          });
+          strip.addEventListener("keydown", function (e) {
+            if (e.target !== strip) return;
+            if (e.key === "ArrowRight") { strip.scrollBy({ left: 320, behavior: "smooth" }); e.preventDefault(); }
+            if (e.key === "ArrowLeft") { strip.scrollBy({ left: -320, behavior: "smooth" }); e.preventDefault(); }
+          });
+        });
+
+        // volume stops
+        var stops = document.querySelectorAll(".x-stops a");
+        if (hasIO) {
+          var sio = new IntersectionObserver(function (es) {
+            es.forEach(function (e) {
+              if (!e.isIntersecting) return;
+              stops.forEach(function (a) { a.classList.toggle("is-on", a.getAttribute("href") === "#" + e.target.id); });
+            });
+          }, { rootMargin: "-45% 0px -50% 0px" });
+          document.querySelectorAll(".x-vol").forEach(function (v) { sio.observe(v); });
+        }
+      })();
+    </script>
+  <a href="/#culture" style="position:fixed;left:16px;bottom:16px;z-index:9999;padding:7px 14px;border-radius:999px;background:rgba(247,244,239,.86);border:1px solid rgba(60,50,40,.18);color:#3a3a36;font:13px/1.4 'Noto Serif SC','Songti SC',serif;letter-spacing:.12em;text-decoration:none;backdrop-filter:blur(6px)">← 丁海祥 · 主页</a>
+</body>
+</html>
