@@ -28,7 +28,7 @@ const content={
     focus:'放射性骨骼肌损伤与修复 × 创伤急救 × 医学 AI',role:'主治医师 · 苏州大学临床医学博士专业学位在读',hospital:'江南大学附属医院 · 无锡，中国',download:'下载公开简历',
     stats:[['English Publications','同行评议 · 英文期刊'],['Honors','学术荣誉与表彰'],['Kaggle Silver','6,807 支队伍中第 253 名'],['Invited Lecture Cohorts','连续三届受邀授课']],
     medal:{kicker:'Kaggle 竞赛银牌',title:'PTCG AI Battle Challenge',meta:'第 253 名 / 6,807 支队伍 · 前 3.7%',cta:'查看证书'},
-    labels:['电离辐射','纤维化 · FAP','卫星细胞 MuSC','细胞外囊泡','证据网络'],figNote:'示意图 · AI 辅助绘制',
+    comic:[['损伤','电离辐射穿透肌束，DNA 断裂，肌纤维撕裂'],['修复','卫星细胞苏醒，囊泡与巨噬细胞赶来缝合缺口'],['瘢痕','修复失衡时，胶原纤维缠绕成瘢痕']],figNote:'示意漫画 · AI 辅助绘制',comicHint:'悬停暂停 · 点击切换',
     atlas:[['放射性骨骼肌损伤证据图谱','分子通路按 A/B/C 证据分层，可交互浏览','v0.7'],['细胞外囊泡干预证据图谱','141 项纳入研究，标出体内证据的空白','v0.2']],earlier:'早期方向：糖尿病骨质疏松机制 · 创伤骨科临床研究',
     tagline:['从急救床旁的问题出发，','让受损的肌肉，','重新学会修复。'],
     imageAlt:'放射性骨骼肌损伤与修复示意图：电离辐射照射肌束，纤维化与卫星细胞、细胞外囊泡和证据网络',
@@ -47,7 +47,7 @@ const content={
     focus:'Radiation-Induced Skeletal Muscle Injury & Repair × Trauma Care × Medical AI',role:'Attending Physician · Professional Doctoral Student in Clinical Medicine, Soochow University',hospital:'Affiliated Hospital of Jiangnan University · Wuxi, China',download:'Download public CV',
     stats:[['English Publications','Peer-reviewed English journals'],['Honors','Academic awards and recognition'],['Kaggle Silver','253rd of 6,807 teams'],['Invited Lecture Cohorts','Three consecutive invited cohorts']],
     medal:{kicker:'Kaggle competition silver',title:'PTCG AI Battle Challenge',meta:'253rd of 6,807 teams · top 3.7%',cta:'View certificate'},
-    labels:['Ionizing radiation','Fibrosis · FAPs','Satellite cells','Extracellular vesicles','Evidence graph'],figNote:'Illustration · AI assisted',
+    comic:[['Injury','Radiation pierces the fascicle, DNA breaks, fibers tear'],['Repair','Satellite cells wake; vesicles and macrophages close the gap'],['Scar','When repair loses balance, collagen knots into scar']],figNote:'Illustrated sequence · AI assisted',comicHint:'Hover to pause · click to switch',
     atlas:[['Radiation muscle injury evidence atlas','Molecular pathways graded A/B/C, fully interactive','v0.7'],['Extracellular vesicle intervention atlas','141 included studies, with the in vivo gap marked','v0.2']],earlier:'Earlier work: diabetic osteoporosis mechanisms · orthopaedic trauma outcomes',
     tagline:['Start from questions at the trauma bedside.','Help irradiated muscle','learn to repair again.'],
     imageAlt:'Illustration of radiation-induced skeletal muscle injury and repair: radiation beams, fibrosis, satellite cells, extracellular vesicles and an evidence network',
@@ -71,7 +71,6 @@ const statIcons=[BookOpenText,Trophy,Medal,ChalkboardTeacher];
 const scrollMeta=[{slug:'yangliu-yiyi',img:'/assets/shihua-yangliu.jpg',seal:'柳'},{slug:'biansai',img:'/assets/shihua-biansai.jpg',seal:'关'},{slug:'jiangnan',img:'/assets/shihua-jiangnan.jpg',seal:'梦'}];
 const statValues=[{to:4,pad:2},{to:6,pad:2},{to:3.7,dec:1,pre:'Top ',suf:'%'},{to:3,pad:2}];
 const atlasLinks=['https://tuanziding.github.io/radiation-muscle-pathway/','https://tuanziding.github.io/radiation-muscle-pathway/ev-intervention.html'];
-const labelPos=[[16,12],[30,47],[73,30],[76,74],[12,66]];
 const KAGGLE='https://www.kaggle.com/certification/competitions/bruceding123/pokemon-tcg-ai-battle';
 const reduced=()=>typeof matchMedia!=='undefined'&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 
@@ -79,6 +78,22 @@ function CountUp({to,pad=0,dec=0,pre='',suf=''}){
   const ref=useRef(null);const fmt=v=>pre+(dec?v.toFixed(dec):String(Math.round(v)).padStart(pad,'0'))+suf;
   useEffect(()=>{const el=ref.current;if(reduced()){el.textContent=fmt(to);return}let raf=0;const io=new IntersectionObserver(([e])=>{if(!e.isIntersecting)return;io.disconnect();const t0=performance.now(),d=1400;const tick=now=>{const k=Math.min(1,(now-t0)/d),ease=1-Math.pow(1-k,4);el.textContent=fmt(to*ease);if(k<1)raf=requestAnimationFrame(tick)};raf=requestAnimationFrame(tick)},{threshold:.6});io.observe(el);return()=>{io.disconnect();cancelAnimationFrame(raf)}},[to]);
   return <b ref={ref}>{fmt(0)}</b>;
+}
+
+const comicImgs=['/assets/manga-01-injury.webp','/assets/manga-02-repair.webp','/assets/manga-03-scar.webp'];
+function ComicHero({t}){
+  const [stage,setStage]=useState(0);const [paused,setPaused]=useState(false);
+  useEffect(()=>{if(paused||reduced())return;const id=setTimeout(()=>setStage(v=>(v+1)%3),4600);return()=>clearTimeout(id)},[stage,paused]);
+  return <figure className="l3Mechanism l3Comic" data-stage={stage} onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)}>
+    <div className="l3ComicStage">
+      {comicImgs.map((src,i)=><img key={src} src={src} alt={t.comic[i][0]+'：'+t.comic[i][1]} className={i===stage?'on':''} loading={i?'lazy':'eager'} fetchPriority={i?'auto':'high'}/>)}
+      <span className="l3Flash" key={'f'+stage} aria-hidden="true"/>
+      <span className="l3Scan" aria-hidden="true"/>
+      <b className="l3ComicNo" key={'n'+stage}>0{stage+1}</b>
+    </div>
+    <div className="l3ComicSteps" role="tablist">{t.comic.map(([title,body],i)=><button key={title} role="tab" aria-selected={i===stage} className={i===stage?'on':''} onClick={()=>setStage(i)}><i><em key={stage+'-'+paused} style={{animationPlayState:paused?'paused':'running'}}/></i><b>0{i+1} {title}</b><span>{body}</span></button>)}</div>
+    <figcaption>{t.figNote} · {t.comicHint}</figcaption>
+  </figure>;
 }
 
 function MedalBadge({t}){
@@ -149,7 +164,7 @@ export function Light3App(){
           <p>{t.role}</p><p className="l3Hospital">{t.hospital}</p>
           <MedalBadge t={t}/>
         </div>
-        <figure className="l3Mechanism l3Muscle"><div className="l3Float"><img src="/assets/light4-radiation-muscle-repair.webp" alt={t.imageAlt} fetchPriority="high"/>{t.labels.map((label,i)=><span key={label} className="l3Tag" style={{left:labelPos[i][0]+'%',top:labelPos[i][1]+'%',animationDelay:(0.5+i*0.18)+'s'}}><i/>{label}</span>)}</div><figcaption>{t.figNote}</figcaption></figure>
+        <ComicHero t={t}/>
         <div className="l3Stats">{t.stats.map(([label,detail],index)=>{const Icon=statIcons[index];return <div key={label}><Icon/><CountUp {...statValues[index]}/><span>{label}<small>{detail}</small></span></div>})}</div>
       </section>
 
