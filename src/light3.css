@@ -136,3 +136,5 @@
 @media(max-width:860px){.l3Lens p{display:none}.l3Hot{width:18px;height:18px;margin:-9px 0 0 -9px}}
 @media(prefers-reduced-motion:reduce){.l3Beam,.l3Motes{display:none}.l3Lens,.l3Leader line,.l3LensIn img{transition:none}}
 .l3Stats>div{grid-template-columns:24px 1fr!important;justify-items:start}
+.l3Muscle .l3Float{display:grid;place-items:center;align-self:stretch;justify-self:stretch}
+.l3Sq{position:relative;left:auto;top:auto;transform:none;width:min(100%,920px)}
