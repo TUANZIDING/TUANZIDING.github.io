@@ -1,0 +1,2256 @@
+{
+ "version": "1.0",
+ "last_verified": "2026-11-13",
+ "description": "方案推荐器逻辑：sample × use × priority → 主方法 + 纯化组合 + 关键注意。起点方案，非规定；需本实验室小试验证。",
+ "labels": {
+  "sample": {
+   "culture": "细胞培养上清",
+   "plasma": "血浆 / 血清",
+   "urine": "尿液",
+   "otherfluid": "其他体液（脑脊液/唾液/乳汁等）",
+   "tissue": "组织 / 类器官培养液"
+  },
+  "use": {
+   "omics": "组学分析",
+   "func": "功能实验",
+   "biomarker": "标志物检测 / 液体活检",
+   "routine": "常规表征与定量"
+  },
+  "priority": {
+   "purity": "纯度优先",
+   "yield": "得率优先",
+   "scale": "通量 / 可放大优先",
+   "gentle": "温和、保功能优先"
+  }
+ },
+ "global_rules": [
+  {
+   "rule": "没有万能方法；组合不同分离原理可提高特异性",
+   "refs": [
+    "welsh2024",
+    "dong2020"
+   ]
+  },
+  {
+   "rule": "血清样本：优先改用血浆（凝血释放的血小板 EV 可占血清 EV 50% 以上）；如用血清，报告促凝剂与凝血时间",
+   "refs": [
+    "witwer2013",
+    "lucien2023"
+   ]
+  },
+  {
+   "rule": "避免以聚合物沉淀作为组学或功能实验的唯一步骤",
+   "refs": [
+    "welsh2024",
+    "gamezvalero2016",
+    "vandeun2014"
+   ]
+  },
+  {
+   "rule": "通用收尾 QC：颗粒数量与粒径、形貌、MISEV2023 第 1/2/3 类蛋白各至少一种、分别报告颗粒与蛋白绝对量；完整报告分离与储存参数",
+   "refs": [
+    "welsh2024"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "sample": "culture",
+   "use": "omics",
+   "priority": "purity",
+   "route": "差速超离粗提 → 碘克沙醇密度梯度",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024",
+    "vandeun2014",
+    "jeppesen2019"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1,
+    2,
+    15
+   ],
+   "note": "组学对共分离物最敏感：用去 EV 血清（需验证残留）或无血清窗口，并设未条件化培养基空白对照；密度梯度后需去除梯度介质。",
+   "note_refs": [
+    "vandeun2014",
+    "shelke2014",
+    "lehrich2018",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    2,
+    32,
+    33,
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "omics",
+   "priority": "yield",
+   "route": "TFF 浓缩 → 差速超离",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    8,
+    9,
+    1
+   ],
+   "note": "组学对共分离物最敏感：用去 EV 血清（需验证残留）或无血清窗口，并设未条件化培养基空白对照；密度梯度后需去除梯度介质。",
+   "note_refs": [
+    "vandeun2014",
+    "shelke2014",
+    "lehrich2018",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    2,
+    32,
+    33,
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "omics",
+   "priority": "scale",
+   "route": "TFF 浓缩 → SEC → 超滤再浓缩",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "组学对共分离物最敏感：用去 EV 血清（需验证残留）或无血清窗口，并设未条件化培养基空白对照；密度梯度后需去除梯度介质。",
+   "note_refs": [
+    "vandeun2014",
+    "shelke2014",
+    "lehrich2018",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    2,
+    32,
+    33,
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "omics",
+   "priority": "gentle",
+   "route": "TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "组学对共分离物最敏感：用去 EV 血清（需验证残留）或无血清窗口，并设未条件化培养基空白对照；密度梯度后需去除梯度介质。",
+   "note_refs": [
+    "vandeun2014",
+    "shelke2014",
+    "lehrich2018",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    2,
+    32,
+    33,
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "func",
+   "priority": "purity",
+   "route": "TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "功能实验避免用沉淀法制备给药（共沉淀物多）；设未条件化培养基与 EV 去除级分对照；剂量同时报颗粒数与蛋白量。",
+   "note_refs": [
+    "gamezvalero2016",
+    "welsh2024",
+    "nordin2015",
+    "mol2017"
+   ],
+   "note_ref_numbers": [
+    19,
+    1,
+    3,
+    20
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "func",
+   "priority": "yield",
+   "route": "TFF 浓缩 → 差速超离 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "功能实验避免用沉淀法制备给药（共沉淀物多）；设未条件化培养基与 EV 去除级分对照；剂量同时报颗粒数与蛋白量。",
+   "note_refs": [
+    "gamezvalero2016",
+    "welsh2024",
+    "nordin2015",
+    "mol2017"
+   ],
+   "note_ref_numbers": [
+    19,
+    1,
+    3,
+    20
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "func",
+   "priority": "scale",
+   "route": "TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "功能实验避免用沉淀法制备给药（共沉淀物多）；设未条件化培养基与 EV 去除级分对照；剂量同时报颗粒数与蛋白量。",
+   "note_refs": [
+    "gamezvalero2016",
+    "welsh2024",
+    "nordin2015",
+    "mol2017"
+   ],
+   "note_ref_numbers": [
+    19,
+    1,
+    3,
+    20
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "func",
+   "priority": "gentle",
+   "route": "TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "功能实验避免用沉淀法制备给药（共沉淀物多）；设未条件化培养基与 EV 去除级分对照；剂量同时报颗粒数与蛋白量。",
+   "note_refs": [
+    "gamezvalero2016",
+    "welsh2024",
+    "nordin2015",
+    "mol2017"
+   ],
+   "note_ref_numbers": [
+    19,
+    1,
+    3,
+    20
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "biomarker",
+   "priority": "purity",
+   "route": "差速超离 → 密度梯度",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024",
+    "vandeun2014",
+    "jeppesen2019"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1,
+    2,
+    15
+   ],
+   "note": "免疫亲和捕获只得到暴露该抗原的亚群，需声明“亚群”属性，结果不能外推到全部 EV。",
+   "note_refs": [
+    "welsh2024",
+    "kowal2016"
+   ],
+   "note_ref_numbers": [
+    1,
+    26
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "biomarker",
+   "priority": "yield",
+   "route": "差速超离粗提 → 免疫捕获目标亚群",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024",
+    "kowal2016"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1,
+    26
+   ],
+   "note": "免疫亲和捕获只得到暴露该抗原的亚群，需声明“亚群”属性，结果不能外推到全部 EV。",
+   "note_refs": [
+    "welsh2024",
+    "kowal2016"
+   ],
+   "note_ref_numbers": [
+    1,
+    26
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "biomarker",
+   "priority": "scale",
+   "route": "SEC 为主线、批量平行处理",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "免疫亲和捕获只得到暴露该抗原的亚群，需声明“亚群”属性，结果不能外推到全部 EV。",
+   "note_refs": [
+    "welsh2024",
+    "kowal2016"
+   ],
+   "note_ref_numbers": [
+    1,
+    26
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "biomarker",
+   "priority": "gentle",
+   "route": "SEC → 免疫捕获（珠上直接检测）",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "kowal2016"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    26
+   ],
+   "note": "免疫亲和捕获只得到暴露该抗原的亚群，需声明“亚群”属性，结果不能外推到全部 EV。",
+   "note_refs": [
+    "welsh2024",
+    "kowal2016"
+   ],
+   "note_ref_numbers": [
+    1,
+    26
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "routine",
+   "priority": "purity",
+   "route": "差速超离 → SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "每批做颗粒计数与粒径、蛋白标志（第 1/2/3 类）并分别报告颗粒与蛋白绝对量，保证批间可比。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "routine",
+   "priority": "yield",
+   "route": "差速超离",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1
+   ],
+   "note": "每批做颗粒计数与粒径、蛋白标志（第 1/2/3 类）并分别报告颗粒与蛋白绝对量，保证批间可比。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "routine",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "每批做颗粒计数与粒径、蛋白标志（第 1/2/3 类）并分别报告颗粒与蛋白绝对量，保证批间可比。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "culture",
+   "use": "routine",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "每批做颗粒计数与粒径、蛋白标志（第 1/2/3 类）并分别报告颗粒与蛋白绝对量，保证批间可比。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "omics",
+   "priority": "purity",
+   "route": "SEC → 密度分离（去 VLDL/LDL）→ 必要时超滤浓缩",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "karimi2018"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1,
+    17
+   ],
+   "note": "血浆组学的主要干扰是脂蛋白：SEC 去 HDL，但 LDL/VLDL/乳糜微粒与 EV 大小重叠，需密度分离；ApoA1/ApoB 作为第 3 类纯度对照报告；沉淀法不适用。采血流程（空腹、抗凝剂、去血小板）需标准化并按 MIBlood-EV 报告。",
+   "note_refs": [
+    "welsh2024",
+    "karimi2018",
+    "boing2014",
+    "sodar2016",
+    "gamezvalero2016",
+    "lucien2023"
+   ],
+   "note_ref_numbers": [
+    1,
+    17,
+    18,
+    22,
+    19,
+    34
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "omics",
+   "priority": "yield",
+   "route": "SEC → 超滤浓缩",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "血浆组学的主要干扰是脂蛋白：SEC 去 HDL，但 LDL/VLDL/乳糜微粒与 EV 大小重叠，需密度分离；ApoA1/ApoB 作为第 3 类纯度对照报告；沉淀法不适用。采血流程（空腹、抗凝剂、去血小板）需标准化并按 MIBlood-EV 报告。",
+   "note_refs": [
+    "welsh2024",
+    "karimi2018",
+    "boing2014",
+    "sodar2016",
+    "gamezvalero2016",
+    "lucien2023"
+   ],
+   "note_ref_numbers": [
+    1,
+    17,
+    18,
+    22,
+    19,
+    34
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "omics",
+   "priority": "scale",
+   "route": "SEC 批量处理",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "血浆组学的主要干扰是脂蛋白：SEC 去 HDL，但 LDL/VLDL/乳糜微粒与 EV 大小重叠，需密度分离；ApoA1/ApoB 作为第 3 类纯度对照报告；沉淀法不适用。采血流程（空腹、抗凝剂、去血小板）需标准化并按 MIBlood-EV 报告。",
+   "note_refs": [
+    "welsh2024",
+    "karimi2018",
+    "boing2014",
+    "sodar2016",
+    "gamezvalero2016",
+    "lucien2023"
+   ],
+   "note_ref_numbers": [
+    1,
+    17,
+    18,
+    22,
+    19,
+    34
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "omics",
+   "priority": "gentle",
+   "route": "SEC（单步）",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "血浆组学的主要干扰是脂蛋白：SEC 去 HDL，但 LDL/VLDL/乳糜微粒与 EV 大小重叠，需密度分离；ApoA1/ApoB 作为第 3 类纯度对照报告；沉淀法不适用。采血流程（空腹、抗凝剂、去血小板）需标准化并按 MIBlood-EV 报告。",
+   "note_refs": [
+    "welsh2024",
+    "karimi2018",
+    "boing2014",
+    "sodar2016",
+    "gamezvalero2016",
+    "lucien2023"
+   ],
+   "note_ref_numbers": [
+    1,
+    17,
+    18,
+    22,
+    19,
+    34
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "func",
+   "priority": "purity",
+   "route": "SEC → 密度分离 → 超滤浓缩",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "karimi2018"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1,
+    17
+   ],
+   "note": "共分离的脂蛋白和蛋白可能干扰效应归因：设非 EV 级分/EV 去除级分对照，必要时加密度分离组。",
+   "note_refs": [
+    "welsh2024",
+    "takov2019",
+    "karimi2018"
+   ],
+   "note_ref_numbers": [
+    1,
+    21,
+    17
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "func",
+   "priority": "yield",
+   "route": "SEC → 超滤浓缩",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "共分离的脂蛋白和蛋白可能干扰效应归因：设非 EV 级分/EV 去除级分对照，必要时加密度分离组。",
+   "note_refs": [
+    "welsh2024",
+    "takov2019",
+    "karimi2018"
+   ],
+   "note_ref_numbers": [
+    1,
+    21,
+    17
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "func",
+   "priority": "scale",
+   "route": "SEC → 超滤浓缩",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "共分离的脂蛋白和蛋白可能干扰效应归因：设非 EV 级分/EV 去除级分对照，必要时加密度分离组。",
+   "note_refs": [
+    "welsh2024",
+    "takov2019",
+    "karimi2018"
+   ],
+   "note_ref_numbers": [
+    1,
+    21,
+    17
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "func",
+   "priority": "gentle",
+   "route": "SEC（单步）",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "共分离的脂蛋白和蛋白可能干扰效应归因：设非 EV 级分/EV 去除级分对照，必要时加密度分离组。",
+   "note_refs": [
+    "welsh2024",
+    "takov2019",
+    "karimi2018"
+   ],
+   "note_ref_numbers": [
+    1,
+    21,
+    17
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "biomarker",
+   "priority": "purity",
+   "route": "SEC → 免疫捕获目标亚群",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "kowal2016"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    26
+   ],
+   "note": "液体活检优先保证采血与前处理一致；评估并报告溶血、残余血小板与脂蛋白。",
+   "note_refs": [
+    "lucien2023",
+    "clayton2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    34,
+    36,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "biomarker",
+   "priority": "yield",
+   "route": "免疫亲和捕获",
+   "route_refs": [
+    "kowal2016",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    26,
+    1
+   ],
+   "note": "液体活检优先保证采血与前处理一致；评估并报告溶血、残余血小板与脂蛋白。",
+   "note_refs": [
+    "lucien2023",
+    "clayton2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    34,
+    36,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "biomarker",
+   "priority": "scale",
+   "route": "SEC 批量 → 靶向检测",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "液体活检优先保证采血与前处理一致；评估并报告溶血、残余血小板与脂蛋白。",
+   "note_refs": [
+    "lucien2023",
+    "clayton2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    34,
+    36,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "biomarker",
+   "priority": "gentle",
+   "route": "SEC → 珠上检测",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "液体活检优先保证采血与前处理一致；评估并报告溶血、残余血小板与脂蛋白。",
+   "note_refs": [
+    "lucien2023",
+    "clayton2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    34,
+    36,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "routine",
+   "priority": "purity",
+   "route": "SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "SEC 去可溶蛋白能力强；注意 EV 级分仍含 ApoB⁺ 脂蛋白；报告冻融次数。",
+   "note_refs": [
+    "gamezvalero2016",
+    "takov2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    19,
+    21,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "routine",
+   "priority": "yield",
+   "route": "SEC → 超滤浓缩",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "SEC 去可溶蛋白能力强；注意 EV 级分仍含 ApoB⁺ 脂蛋白；报告冻融次数。",
+   "note_refs": [
+    "gamezvalero2016",
+    "takov2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    19,
+    21,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "routine",
+   "priority": "scale",
+   "route": "SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "SEC 去可溶蛋白能力强；注意 EV 级分仍含 ApoB⁺ 脂蛋白；报告冻融次数。",
+   "note_refs": [
+    "gamezvalero2016",
+    "takov2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    19,
+    21,
+    1
+   ]
+  },
+  {
+   "sample": "plasma",
+   "use": "routine",
+   "priority": "gentle",
+   "route": "SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "SEC 去可溶蛋白能力强；注意 EV 级分仍含 ApoB⁺ 脂蛋白；报告冻融次数。",
+   "note_refs": [
+    "gamezvalero2016",
+    "takov2019",
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    19,
+    21,
+    1
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "omics",
+   "priority": "purity",
+   "route": "THP 处理 → 超滤浓缩 → SEC →（必要时）密度梯度",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "vandeun2014",
+    "jeppesen2019"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1,
+    2,
+    15
+   ],
+   "note": "先处理 Tamm–Horsfall 蛋白：它会网罗 EV 并共分离；还原剂（DTT 等）可解聚，处理方式写入方法。",
+   "note_refs": [
+    "welsh2024",
+    "fernandezllama2010",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    38,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "omics",
+   "priority": "yield",
+   "route": "THP 处理 → 差速超离",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1
+   ],
+   "note": "先处理 Tamm–Horsfall 蛋白：它会网罗 EV 并共分离；还原剂（DTT 等）可解聚，处理方式写入方法。",
+   "note_refs": [
+    "welsh2024",
+    "fernandezllama2010",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    38,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "omics",
+   "priority": "scale",
+   "route": "超滤/TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "先处理 Tamm–Horsfall 蛋白：它会网罗 EV 并共分离；还原剂（DTT 等）可解聚，处理方式写入方法。",
+   "note_refs": [
+    "welsh2024",
+    "fernandezllama2010",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    38,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "omics",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "先处理 Tamm–Horsfall 蛋白：它会网罗 EV 并共分离；还原剂（DTT 等）可解聚，处理方式写入方法。",
+   "note_refs": [
+    "welsh2024",
+    "fernandezllama2010",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    38,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "func",
+   "priority": "purity",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "尿液 EV 量低，功能实验常需合并样本并浓缩；充分换液以去除尿液溶质【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "urine",
+   "use": "func",
+   "priority": "yield",
+   "route": "超滤浓缩 → 差速超离 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "尿液 EV 量低，功能实验常需合并样本并浓缩；充分换液以去除尿液溶质【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "urine",
+   "use": "func",
+   "priority": "scale",
+   "route": "TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "尿液 EV 量低，功能实验常需合并样本并浓缩；充分换液以去除尿液溶质【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "urine",
+   "use": "func",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "尿液 EV 量低，功能实验常需合并样本并浓缩；充分换液以去除尿液溶质【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "urine",
+   "use": "biomarker",
+   "priority": "purity",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "归一化尚无共识（计时尿排泄率、渗透压或肌酐近似），预先固定并全程一致；CD9/CD63 捕获会遗漏近端肾单位来源 EV。",
+   "note_refs": [
+    "welsh2024",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "biomarker",
+   "priority": "yield",
+   "route": "超滤浓缩 → 免疫捕获",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "kowal2016",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    26,
+    1
+   ],
+   "note": "归一化尚无共识（计时尿排泄率、渗透压或肌酐近似），预先固定并全程一致；CD9/CD63 捕获会遗漏近端肾单位来源 EV。",
+   "note_refs": [
+    "welsh2024",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "biomarker",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC 批量",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "归一化尚无共识（计时尿排泄率、渗透压或肌酐近似），预先固定并全程一致；CD9/CD63 捕获会遗漏近端肾单位来源 EV。",
+   "note_refs": [
+    "welsh2024",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "biomarker",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "归一化尚无共识（计时尿排泄率、渗透压或肌酐近似），预先固定并全程一致；CD9/CD63 捕获会遗漏近端肾单位来源 EV。",
+   "note_refs": [
+    "welsh2024",
+    "erdbrugger2021"
+   ],
+   "note_ref_numbers": [
+    1,
+    39
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "routine",
+   "priority": "purity",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "尿液组成随饮水、盐平衡和昼夜节律变化，先规范采样（时间、类型）再优化提取。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "routine",
+   "priority": "yield",
+   "route": "超滤浓缩 → 差速超离",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    8,
+    9,
+    1
+   ],
+   "note": "尿液组成随饮水、盐平衡和昼夜节律变化，先规范采样（时间、类型）再优化提取。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "routine",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "尿液组成随饮水、盐平衡和昼夜节律变化，先规范采样（时间、类型）再优化提取。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "urine",
+   "use": "routine",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "尿液组成随饮水、盐平衡和昼夜节律变化，先规范采样（时间、类型）再优化提取。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "omics",
+   "priority": "purity",
+   "route": "超滤浓缩 → SEC →（必要时）免疫捕获",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "kowal2016"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1,
+    26
+   ],
+   "note": "微量体液全程低吸附耗材【实验室惯例】；样本少时优先保证颗粒计数与蛋白标志两项核心表征。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "omics",
+   "priority": "yield",
+   "route": "超滤浓缩 → 差速超离",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    8,
+    9,
+    1
+   ],
+   "note": "微量体液全程低吸附耗材【实验室惯例】；样本少时优先保证颗粒计数与蛋白标志两项核心表征。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "omics",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "微量体液全程低吸附耗材【实验室惯例】；样本少时优先保证颗粒计数与蛋白标志两项核心表征。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "omics",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "微量体液全程低吸附耗材【实验室惯例】；样本少时优先保证颗粒计数与蛋白标志两项核心表征。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "func",
+   "priority": "purity",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "样本量常是瓶颈，先做回收小试再设计给药剂量【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "otherfluid",
+   "use": "func",
+   "priority": "yield",
+   "route": "超滤浓缩 → 差速超离 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "样本量常是瓶颈，先做回收小试再设计给药剂量【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "otherfluid",
+   "use": "func",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "样本量常是瓶颈，先做回收小试再设计给药剂量【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "otherfluid",
+   "use": "func",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "样本量常是瓶颈，先做回收小试再设计给药剂量【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "otherfluid",
+   "use": "biomarker",
+   "priority": "purity",
+   "route": "免疫亲和捕获",
+   "route_refs": [
+    "kowal2016",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    26,
+    1
+   ],
+   "note": "免疫捕获需声明捕获抗原与亚群属性，并评估抗原与 EV vs 非 EV 的关联。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "biomarker",
+   "priority": "yield",
+   "route": "免疫亲和捕获",
+   "route_refs": [
+    "kowal2016",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    26,
+    1
+   ],
+   "note": "免疫捕获需声明捕获抗原与亚群属性，并评估抗原与 EV vs 非 EV 的关联。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "biomarker",
+   "priority": "scale",
+   "route": "SEC → 靶向检测",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "免疫捕获需声明捕获抗原与亚群属性，并评估抗原与 EV vs 非 EV 的关联。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "biomarker",
+   "priority": "gentle",
+   "route": "SEC → 珠上检测",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "免疫捕获需声明捕获抗原与亚群属性，并评估抗原与 EV vs 非 EV 的关联。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "routine",
+   "priority": "purity",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "先离心去细胞与碎片再浓缩（尽早去除细胞）；唾液先处理黏液层【实验室惯例】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "routine",
+   "priority": "yield",
+   "route": "超滤浓缩 → 差速超离",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    8,
+    9,
+    1
+   ],
+   "note": "先离心去细胞与碎片再浓缩（尽早去除细胞）；唾液先处理黏液层【实验室惯例】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "routine",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "先离心去细胞与碎片再浓缩（尽早去除细胞）；唾液先处理黏液层【实验室惯例】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "otherfluid",
+   "use": "routine",
+   "priority": "gentle",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "先离心去细胞与碎片再浓缩（尽早去除细胞）；唾液先处理黏液层【实验室惯例】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "omics",
+   "priority": "purity",
+   "route": "温和处理/培养收集 → 差速超离 → 密度梯度",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024",
+    "vandeun2014",
+    "jeppesen2019"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1,
+    2,
+    15
+   ],
+   "note": "细胞与细胞伪影是组织 EV 的主要污染；追踪应在 EV 中耗竭的细胞组分，并报告组织处理与酶消化细节。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "omics",
+   "priority": "yield",
+   "route": "差速超离粗提 → SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "细胞与细胞伪影是组织 EV 的主要污染；追踪应在 EV 中耗竭的细胞组分，并报告组织处理与酶消化细节。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "omics",
+   "priority": "scale",
+   "route": "组织/类器官培养上清 → TFF → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "细胞与细胞伪影是组织 EV 的主要污染；追踪应在 EV 中耗竭的细胞组分，并报告组织处理与酶消化细节。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "omics",
+   "priority": "gentle",
+   "route": "培养上清 → SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "细胞与细胞伪影是组织 EV 的主要污染；追踪应在 EV 中耗竭的细胞组分，并报告组织处理与酶消化细节。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "func",
+   "priority": "purity",
+   "route": "培养上清 → TFF → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "类器官培养液设“含基质胶、无类器官”的空白对照【实验室惯例，依据 MISEV2023 未条件化培养基对照原则】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "func",
+   "priority": "yield",
+   "route": "差速超离 → SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "类器官培养液设“含基质胶、无类器官”的空白对照【实验室惯例，依据 MISEV2023 未条件化培养基对照原则】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "func",
+   "priority": "scale",
+   "route": "TFF 浓缩 → SEC",
+   "route_refs": [
+    "busatto2018",
+    "haraszti2018",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    4,
+    24,
+    18,
+    3,
+    1
+   ],
+   "note": "类器官培养液设“含基质胶、无类器官”的空白对照【实验室惯例，依据 MISEV2023 未条件化培养基对照原则】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "func",
+   "priority": "gentle",
+   "route": "培养上清 → SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "类器官培养液设“含基质胶、无类器官”的空白对照【实验室惯例，依据 MISEV2023 未条件化培养基对照原则】。",
+   "note_refs": [
+    "welsh2024"
+   ],
+   "note_ref_numbers": [
+    1
+   ]
+  },
+  {
+   "sample": "tissue",
+   "use": "biomarker",
+   "priority": "purity",
+   "route": "差速超离 → 密度梯度 / 免疫捕获",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024",
+    "vandeun2014",
+    "jeppesen2019",
+    "kowal2016"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1,
+    2,
+    15,
+    26
+   ],
+   "note": "灌流与清洗步骤标准化并报告，以减少血液来源污染【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "biomarker",
+   "priority": "yield",
+   "route": "免疫亲和捕获",
+   "route_refs": [
+    "kowal2016",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    26,
+    1
+   ],
+   "note": "灌流与清洗步骤标准化并报告，以减少血液来源污染【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "biomarker",
+   "priority": "scale",
+   "route": "SEC 批量处理",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "灌流与清洗步骤标准化并报告，以减少血液来源污染【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "biomarker",
+   "priority": "gentle",
+   "route": "SEC → 免疫捕获",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "kowal2016"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    26
+   ],
+   "note": "灌流与清洗步骤标准化并报告，以减少血液来源污染【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "routine",
+   "priority": "purity",
+   "route": "差速超离 → SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024",
+    "thery2006",
+    "livshits2015"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1,
+    8,
+    9
+   ],
+   "note": "先固定组织处理流程（块大小、培养时长、培养基体积）再优化提取【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "routine",
+   "priority": "yield",
+   "route": "差速超离",
+   "route_refs": [
+    "thery2006",
+    "livshits2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    8,
+    9,
+    1
+   ],
+   "note": "先固定组织处理流程（块大小、培养时长、培养基体积）再优化提取【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "routine",
+   "priority": "scale",
+   "route": "超滤浓缩 → SEC",
+   "route_refs": [
+    "lobb2015",
+    "benedikter2017",
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    13,
+    23,
+    18,
+    3,
+    1
+   ],
+   "note": "先固定组织处理流程（块大小、培养时长、培养基体积）再优化提取【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  },
+  {
+   "sample": "tissue",
+   "use": "routine",
+   "priority": "gentle",
+   "route": "SEC",
+   "route_refs": [
+    "boing2014",
+    "nordin2015",
+    "welsh2024"
+   ],
+   "route_ref_numbers": [
+    18,
+    3,
+    1
+   ],
+   "note": "先固定组织处理流程（块大小、培养时长、培养基体积）再优化提取【实验室惯例】。",
+   "note_refs": [],
+   "note_ref_numbers": []
+  }
+ ],
+ "changes_from_draft": [
+  "通用收尾 “≥3 个阳性标志＋阴性标志” → MISEV2023 第 1/2/3 类（原为 MISEV2014 要求）",
+  "血浆组学/功能：加入密度分离以去 VLDL/LDL（SEC 只去 HDL）",
+  "血浆功能 note：删除未核实的“脂蛋白本身有生物活性”，改为归因对照",
+  "尿液 omics 纯度/得率路线显式加入 THP 处理；尿液 biomarker 加入归一化无共识与 CD9/CD63 捕获偏倚",
+  "组织/类器官：Matrigel、灌流等建议标注为实验室惯例",
+  "每条规则补充引用；无文献者标【实验室惯例】"
+ ]
+}

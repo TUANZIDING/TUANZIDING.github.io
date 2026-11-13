@@ -80,7 +80,8 @@
 @keyframes l3Ping{0%{transform:scale(1);opacity:.6}80%,100%{transform:scale(2.8);opacity:0}}
 .l3Muscle figcaption{position:absolute;right:16px;bottom:12px;color:var(--l3-muted);font-size:12px;opacity:.7}
 .l3Stats b{font-variant-numeric:tabular-nums;white-space:nowrap}
-.l3Atlas{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.l3Atlas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
+@media(max-width:1180px){.l3Atlas{grid-template-columns:1fr 1fr}.l3Atlas a:last-child:nth-child(odd){grid-column:1/-1}}
 .l3Atlas a{position:relative;display:block;padding:24px 64px 24px 24px;border:1px solid var(--l3-line);border-radius:16px;background:var(--l3-paper);text-decoration:none;transition:transform .5s var(--l3-ease),border-color .3s var(--l3-ease),box-shadow .5s var(--l3-ease)}
 .l3Atlas a:hover{transform:translateY(-4px);border-color:var(--l3-sage);box-shadow:0 18px 36px -24px rgba(16,29,58,.4)}
 .l3Atlas small{color:var(--l3-red);font:12px monospace;letter-spacing:.12em}
