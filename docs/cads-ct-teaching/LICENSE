@@ -5,7 +5,8 @@ Copyright (c) 2026 Haixiang Ding (丁海祥)
 
 1. 作者原创内容 / Author's original content — CC BY-NC 4.0
    README、文档/（讲义、说明）、网页文字、assets/data/ 中作者整理的部分（中文名、教学分组、说明）、
-   验证/ 的核验记录、文档/主图/ 封面排版与 文档/截图/。
+   验证/ 的核验记录与 验证/解剖名词对照表v1.1.csv（名词本身为公共规范名词）、assets/viewer/structures-v1.1.json 中
+   作者整理的部分（名称对照、系统分组、颜色、跳转点）、文档/主图/ 封面排版与 文档/截图/。
    Full text: LICENSES/CC-BY-NC-4.0.txt · https://creativecommons.org/licenses/by-nc/4.0/
 
 2. 代码 / Code — PolyForm Noncommercial License 1.0.0
@@ -15,12 +16,17 @@ Copyright (c) 2026 Haixiang Ding (丁海祥)
 
 3. 第三方材料 / Third-party material — NOT covered by 1 or 2
    a) 图片/论文原图/：Xu M et al., Nature Communications 2026, doi:10.1038/s41467-026-78732-1, CC BY 4.0（LICENSES/CC-BY-4.0.txt）。
-   b) 图片/真实CT/ 与 assets/ct/：由 TotalSegmentator dataset v2.0.1（Wasserthal et al., doi:10.5281/zenodo.10047292, CC BY 4.0）派生。
-   c) 图片/真实CT/*cads554* 与 assets/ct/*-cads.png：由 CADS-model-research 权重（CC BY-NC-SA 4.0）生成的推理结果，按该许可提供。
+   b) 图片/真实CT/、assets/viewer/ct-s0423-v1.1.nii.gz 与 assets/viewer/ref-s0423-v1.1.nii.gz：由 TotalSegmentator dataset v2.0.1
+      （Wasserthal et al., doi:10.5281/zenodo.10047292, CC BY 4.0）病例 s0423 派生（裁剪体外空气、合并掩膜并重编号；
+      处理脚本 工具/构建阅片数据v1.1.py），CC BY 4.0（LICENSES/CC-BY-4.0.txt）。
+   c) 图片/真实CT/*cads554* 与 assets/viewer/cads554-s0423-v1.1.nii.gz：由 CADS-model-research 权重（CC BY-NC-SA 4.0）
+      生成的推理结果，按该许可（署名-非商业-相同方式共享）提供。
+   f) assets/viewer/niivue-v0.69.0.umd.js：NiiVue 0.69.0（https://github.com/niivue/niivue），BSD 2-Clause，未修改，
+      许可与随附依赖说明见 LICENSES/NiiVue-BSD-2-Clause.txt。
    d) 图片/插件截图/ 与 assets/data/labelsv1.0.json 中的结构名/组号：来自 github.com/murong-xu/CADS 与
       github.com/murong-xu/SlicerCADSWholeBodyCTSeg，Apache License 2.0（LICENSES/Apache-2.0.txt）。
    e) assets/data/labelsv1.0.json 中的 SNOMED CT 编码、出现例数与中位体素数摘自上述论文（CC BY 4.0）。
-   逐项署名见 文档/图片说明v1.0.md。本仓库不分发 CADS-dataset 的影像/掩膜，也不分发 CADS 模型权重。
+   逐项署名见 文档/图片说明v1.1.md。本仓库不分发 CADS-dataset 的影像/掩膜，也不分发 CADS 模型权重。
 
 商业使用 / Commercial use
    商业用途需事先联系作者获得授权合作（第三方材料仍须遵守其原始许可）。
