@@ -1,0 +1,1725 @@
+{
+ "case": "s0423",
+ "source": "TotalSegmentator dataset v2.0.1, doi:10.5281/zenodo.10047292, CC BY 4.0",
+ "meta": {
+  "age": 65,
+  "sex": "m",
+  "study_type": "ct neck-thorax-abdomen-pelvis",
+  "pathology": "trauma",
+  "pathology_location": "thorax",
+  "ts_split": "test",
+  "in_cads_test_split": true
+ },
+ "shape": [
+  272,
+  272,
+  441
+ ],
+ "spacing_mm": [
+  1.5,
+  1.5,
+  1.5
+ ],
+ "step": 3,
+ "zs": [
+  1,
+  4,
+  7,
+  10,
+  13,
+  16,
+  19,
+  22,
+  25,
+  28,
+  31,
+  34,
+  37,
+  40,
+  43,
+  46,
+  49,
+  52,
+  55,
+  58,
+  61,
+  64,
+  67,
+  70,
+  73,
+  76,
+  79,
+  82,
+  85,
+  88,
+  91,
+  94,
+  97,
+  100,
+  103,
+  106,
+  109,
+  112,
+  115,
+  118,
+  121,
+  124,
+  127,
+  130,
+  133,
+  136,
+  139,
+  142,
+  145,
+  148,
+  151,
+  154,
+  157,
+  160,
+  163,
+  166,
+  169,
+  172,
+  175,
+  178,
+  181,
+  184,
+  187,
+  190,
+  193,
+  196,
+  199,
+  202,
+  205,
+  208,
+  211,
+  214,
+  217,
+  220,
+  223,
+  226,
+  229,
+  232,
+  235,
+  238,
+  241,
+  244,
+  247,
+  250,
+  253,
+  256,
+  259,
+  262,
+  265,
+  268,
+  271,
+  274,
+  277,
+  280,
+  283,
+  286,
+  289,
+  292,
+  295,
+  298,
+  301,
+  304,
+  307,
+  310,
+  313,
+  316,
+  319,
+  322,
+  325,
+  328,
+  331,
+  334,
+  337,
+  340,
+  343,
+  346,
+  349,
+  352,
+  355,
+  358,
+  361,
+  364,
+  367,
+  370,
+  373,
+  376,
+  379,
+  382,
+  385,
+  388,
+  391,
+  394,
+  397,
+  400,
+  403,
+  406,
+  409,
+  412,
+  415,
+  418,
+  421,
+  424,
+  427,
+  430,
+  433,
+  436,
+  439
+ ],
+ "z_l3": 190,
+ "z_t6": 358,
+ "z_hip": 91,
+ "ycor": 144,
+ "labels": [
+  {
+   "ts": "adrenal_gland_left",
+   "cads": "Adrenal gland L",
+   "zh": "左肾上腺",
+   "sys": "glandular",
+   "rgb": [
+    158,
+    119,
+    228
+   ]
+  },
+  {
+   "ts": "adrenal_gland_right",
+   "cads": "Adrenal gland R",
+   "zh": "右肾上腺",
+   "sys": "glandular",
+   "rgb": [
+    173,
+    130,
+    249
+   ]
+  },
+  {
+   "ts": "aorta",
+   "cads": "Aorta",
+   "zh": "主动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    223,
+    41,
+    93
+   ]
+  },
+  {
+   "ts": "atrial_appendage_left",
+   "cads": null,
+   "zh": "左心耳",
+   "sys": "cardiovascular",
+   "rgb": [
+    183,
+    34,
+    77
+   ]
+  },
+  {
+   "ts": "autochthon_left",
+   "cads": "Deep muscle of back L",
+   "zh": "左背深肌（竖脊肌群）",
+   "sys": "muscular",
+   "rgb": [
+    199,
+    76,
+    67
+   ]
+  },
+  {
+   "ts": "autochthon_right",
+   "cads": "Deep muscle of back R",
+   "zh": "右背深肌（竖脊肌群）",
+   "sys": "muscular",
+   "rgb": [
+    243,
+    93,
+    81
+   ]
+  },
+  {
+   "ts": "brachiocephalic_trunk",
+   "cads": null,
+   "zh": "头臂干",
+   "sys": "cardiovascular",
+   "rgb": [
+    167,
+    31,
+    70
+   ]
+  },
+  {
+   "ts": "brachiocephalic_vein_left",
+   "cads": null,
+   "zh": "左头臂静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    226,
+    42,
+    95
+   ]
+  },
+  {
+   "ts": "brachiocephalic_vein_right",
+   "cads": null,
+   "zh": "右头臂静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    224,
+    42,
+    94
+   ]
+  },
+  {
+   "ts": "brain",
+   "cads": "Brain",
+   "zh": "脑",
+   "sys": "nervous",
+   "rgb": [
+    112,
+    206,
+    150
+   ]
+  },
+  {
+   "ts": "clavicula_left",
+   "cads": "Clavicle L",
+   "zh": "左锁骨",
+   "sys": "skeletal",
+   "rgb": [
+    205,
+    196,
+    173
+   ]
+  },
+  {
+   "ts": "clavicula_right",
+   "cads": "Clavicle R",
+   "zh": "右锁骨",
+   "sys": "skeletal",
+   "rgb": [
+    203,
+    195,
+    171
+   ]
+  },
+  {
+   "ts": "colon",
+   "cads": "Colon",
+   "zh": "结肠",
+   "sys": "digestive",
+   "rgb": [
+    207,
+    147,
+    51
+   ]
+  },
+  {
+   "ts": "common_carotid_artery_left",
+   "cads": null,
+   "zh": "左颈总动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    199,
+    37,
+    83
+   ]
+  },
+  {
+   "ts": "common_carotid_artery_right",
+   "cads": null,
+   "zh": "右颈总动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    203,
+    38,
+    85
+   ]
+  },
+  {
+   "ts": "costal_cartilages",
+   "cads": null,
+   "zh": "肋软骨",
+   "sys": "skeletal",
+   "rgb": [
+    225,
+    215,
+    189
+   ]
+  },
+  {
+   "ts": "duodenum",
+   "cads": "Duodenum",
+   "zh": "十二指肠",
+   "sys": "digestive",
+   "rgb": [
+    255,
+    190,
+    67
+   ]
+  },
+  {
+   "ts": "esophagus",
+   "cads": "Esophagus",
+   "zh": "食管",
+   "sys": "digestive",
+   "rgb": [
+    251,
+    178,
+    62
+   ]
+  },
+  {
+   "ts": "femur_left",
+   "cads": "Femur L",
+   "zh": "左股骨",
+   "sys": "skeletal",
+   "rgb": [
+    231,
+    221,
+    194
+   ]
+  },
+  {
+   "ts": "femur_right",
+   "cads": "Femur R",
+   "zh": "右股骨",
+   "sys": "skeletal",
+   "rgb": [
+    255,
+    248,
+    218
+   ]
+  },
+  {
+   "ts": "gallbladder",
+   "cads": "Gallbladder",
+   "zh": "胆囊",
+   "sys": "digestive",
+   "rgb": [
+    204,
+    145,
+    51
+   ]
+  },
+  {
+   "ts": "gluteus_maximus_left",
+   "cads": "Gluteus maximus muscle L",
+   "zh": "左臀大肌",
+   "sys": "muscular",
+   "rgb": [
+    188,
+    72,
+    63
+   ]
+  },
+  {
+   "ts": "gluteus_maximus_right",
+   "cads": "Gluteus maximus muscle R",
+   "zh": "右臀大肌",
+   "sys": "muscular",
+   "rgb": [
+    223,
+    85,
+    75
+   ]
+  },
+  {
+   "ts": "gluteus_medius_left",
+   "cads": "Gluteus medius muscle L",
+   "zh": "左臀中肌",
+   "sys": "muscular",
+   "rgb": [
+    179,
+    69,
+    60
+   ]
+  },
+  {
+   "ts": "gluteus_medius_right",
+   "cads": "Gluteus medius muscle R",
+   "zh": "右臀中肌",
+   "sys": "muscular",
+   "rgb": [
+    179,
+    68,
+    60
+   ]
+  },
+  {
+   "ts": "gluteus_minimus_left",
+   "cads": "Gluteus minimus muscle L",
+   "zh": "左臀小肌",
+   "sys": "muscular",
+   "rgb": [
+    215,
+    83,
+    72
+   ]
+  },
+  {
+   "ts": "gluteus_minimus_right",
+   "cads": "Gluteus minimus muscle R",
+   "zh": "右臀小肌",
+   "sys": "muscular",
+   "rgb": [
+    212,
+    81,
+    71
+   ]
+  },
+  {
+   "ts": "heart",
+   "cads": "Heart",
+   "zh": "心脏",
+   "sys": "cardiovascular",
+   "rgb": [
+    233,
+    43,
+    98
+   ]
+  },
+  {
+   "ts": "hip_left",
+   "cads": "Hip L",
+   "zh": "左髋骨",
+   "sys": "skeletal",
+   "rgb": [
+    231,
+    221,
+    194
+   ]
+  },
+  {
+   "ts": "hip_right",
+   "cads": "Hip R",
+   "zh": "右髋骨",
+   "sys": "skeletal",
+   "rgb": [
+    222,
+    212,
+    187
+   ]
+  },
+  {
+   "ts": "humerus_left",
+   "cads": "Humerus L",
+   "zh": "左肱骨",
+   "sys": "skeletal",
+   "rgb": [
+    221,
+    211,
+    185
+   ]
+  },
+  {
+   "ts": "humerus_right",
+   "cads": "Humerus R",
+   "zh": "右肱骨",
+   "sys": "skeletal",
+   "rgb": [
+    201,
+    192,
+    169
+   ]
+  },
+  {
+   "ts": "iliac_artery_left",
+   "cads": "Common iliac artery L",
+   "zh": "左髂动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    167,
+    31,
+    70
+   ]
+  },
+  {
+   "ts": "iliac_artery_right",
+   "cads": "Common iliac artery R",
+   "zh": "右髂动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    180,
+    33,
+    76
+   ]
+  },
+  {
+   "ts": "iliac_vena_left",
+   "cads": "Common iliac vein L",
+   "zh": "左髂静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    217,
+    40,
+    91
+   ]
+  },
+  {
+   "ts": "iliac_vena_right",
+   "cads": "Common iliac vein R",
+   "zh": "右髂静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    181,
+    33,
+    76
+   ]
+  },
+  {
+   "ts": "iliopsoas_left",
+   "cads": "Iliopsoas muscle L",
+   "zh": "左髂腰肌",
+   "sys": "muscular",
+   "rgb": [
+    204,
+    78,
+    68
+   ]
+  },
+  {
+   "ts": "iliopsoas_right",
+   "cads": "Iliopsoas muscle R",
+   "zh": "右髂腰肌",
+   "sys": "muscular",
+   "rgb": [
+    176,
+    67,
+    59
+   ]
+  },
+  {
+   "ts": "inferior_vena_cava",
+   "cads": "Inferior vena cava",
+   "zh": "下腔静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    227,
+    42,
+    95
+   ]
+  },
+  {
+   "ts": "kidney_cyst_left",
+   "cads": null,
+   "zh": "左肾囊肿",
+   "sys": "urinary",
+   "rgb": [
+    199,
+    189,
+    54
+   ]
+  },
+  {
+   "ts": "kidney_cyst_right",
+   "cads": null,
+   "zh": "右肾囊肿",
+   "sys": "urinary",
+   "rgb": [
+    209,
+    198,
+    57
+   ]
+  },
+  {
+   "ts": "kidney_left",
+   "cads": "Kidney L",
+   "zh": "左肾",
+   "sys": "urinary",
+   "rgb": [
+    255,
+    246,
+    71
+   ]
+  },
+  {
+   "ts": "kidney_right",
+   "cads": "Kidney R",
+   "zh": "右肾",
+   "sys": "urinary",
+   "rgb": [
+    228,
+    217,
+    62
+   ]
+  },
+  {
+   "ts": "liver",
+   "cads": "Liver",
+   "zh": "肝",
+   "sys": "digestive",
+   "rgb": [
+    255,
+    181,
+    64
+   ]
+  },
+  {
+   "ts": "lung_lower_lobe_left",
+   "cads": "Lower lobe of lung L",
+   "zh": "左肺下叶",
+   "sys": "respiratory",
+   "rgb": [
+    85,
+    179,
+    232
+   ]
+  },
+  {
+   "ts": "lung_lower_lobe_right",
+   "cads": "Lower lobe of lung R",
+   "zh": "右肺下叶",
+   "sys": "respiratory",
+   "rgb": [
+    88,
+    185,
+    240
+   ]
+  },
+  {
+   "ts": "lung_middle_lobe_right",
+   "cads": "Middle lobe of lung R",
+   "zh": "右肺中叶",
+   "sys": "respiratory",
+   "rgb": [
+    69,
+    145,
+    188
+   ]
+  },
+  {
+   "ts": "lung_upper_lobe_left",
+   "cads": "Upper lobe of lung L",
+   "zh": "左肺上叶",
+   "sys": "respiratory",
+   "rgb": [
+    82,
+    173,
+    224
+   ]
+  },
+  {
+   "ts": "lung_upper_lobe_right",
+   "cads": "Upper lobe of lung R",
+   "zh": "右肺上叶",
+   "sys": "respiratory",
+   "rgb": [
+    81,
+    171,
+    221
+   ]
+  },
+  {
+   "ts": "pancreas",
+   "cads": "Pancreas",
+   "zh": "胰腺",
+   "sys": "digestive",
+   "rgb": [
+    255,
+    182,
+    64
+   ]
+  },
+  {
+   "ts": "portal_vein_and_splenic_vein",
+   "cads": "Portal vein and splenic vein",
+   "zh": "门静脉与脾静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    193,
+    36,
+    81
+   ]
+  },
+  {
+   "ts": "prostate",
+   "cads": "Prostate",
+   "zh": "前列腺",
+   "sys": "reproductive",
+   "rgb": [
+    200,
+    118,
+    164
+   ]
+  },
+  {
+   "ts": "pulmonary_vein",
+   "cads": null,
+   "zh": "肺静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    171,
+    32,
+    72
+   ]
+  },
+  {
+   "ts": "rib_left_1",
+   "cads": "Rib-1 L",
+   "zh": "左第 1 肋",
+   "sys": "skeletal",
+   "rgb": [
+    212,
+    203,
+    178
+   ]
+  },
+  {
+   "ts": "rib_left_10",
+   "cads": "Rib-10 L",
+   "zh": "左第 10 肋",
+   "sys": "skeletal",
+   "rgb": [
+    207,
+    198,
+    174
+   ]
+  },
+  {
+   "ts": "rib_left_11",
+   "cads": "Rib-11 L",
+   "zh": "左第 11 肋",
+   "sys": "skeletal",
+   "rgb": [
+    193,
+    185,
+    162
+   ]
+  },
+  {
+   "ts": "rib_left_12",
+   "cads": "Rib-12 L",
+   "zh": "左第 12 肋",
+   "sys": "skeletal",
+   "rgb": [
+    246,
+    235,
+    207
+   ]
+  },
+  {
+   "ts": "rib_left_2",
+   "cads": "Rib-2 L",
+   "zh": "左第 2 肋",
+   "sys": "skeletal",
+   "rgb": [
+    211,
+    202,
+    178
+   ]
+  },
+  {
+   "ts": "rib_left_3",
+   "cads": "Rib-3 L",
+   "zh": "左第 3 肋",
+   "sys": "skeletal",
+   "rgb": [
+    255,
+    248,
+    218
+   ]
+  },
+  {
+   "ts": "rib_left_4",
+   "cads": "Rib-4 L",
+   "zh": "左第 4 肋",
+   "sys": "skeletal",
+   "rgb": [
+    228,
+    218,
+    192
+   ]
+  },
+  {
+   "ts": "rib_left_5",
+   "cads": "Rib-5 L",
+   "zh": "左第 5 肋",
+   "sys": "skeletal",
+   "rgb": [
+    229,
+    219,
+    193
+   ]
+  },
+  {
+   "ts": "rib_left_6",
+   "cads": "Rib-6 L",
+   "zh": "左第 6 肋",
+   "sys": "skeletal",
+   "rgb": [
+    232,
+    222,
+    195
+   ]
+  },
+  {
+   "ts": "rib_left_7",
+   "cads": "Rib-7 L",
+   "zh": "左第 7 肋",
+   "sys": "skeletal",
+   "rgb": [
+    235,
+    225,
+    197
+   ]
+  },
+  {
+   "ts": "rib_left_8",
+   "cads": "Rib-8 L",
+   "zh": "左第 8 肋",
+   "sys": "skeletal",
+   "rgb": [
+    193,
+    185,
+    162
+   ]
+  },
+  {
+   "ts": "rib_left_9",
+   "cads": "Rib-9 L",
+   "zh": "左第 9 肋",
+   "sys": "skeletal",
+   "rgb": [
+    216,
+    207,
+    182
+   ]
+  },
+  {
+   "ts": "rib_right_1",
+   "cads": "Rib-1 R",
+   "zh": "右第 1 肋",
+   "sys": "skeletal",
+   "rgb": [
+    200,
+    192,
+    168
+   ]
+  },
+  {
+   "ts": "rib_right_10",
+   "cads": "Rib-10 R",
+   "zh": "右第 10 肋",
+   "sys": "skeletal",
+   "rgb": [
+    213,
+    204,
+    179
+   ]
+  },
+  {
+   "ts": "rib_right_11",
+   "cads": "Rib-11 R",
+   "zh": "右第 11 肋",
+   "sys": "skeletal",
+   "rgb": [
+    189,
+    181,
+    159
+   ]
+  },
+  {
+   "ts": "rib_right_12",
+   "cads": "Rib-12 R",
+   "zh": "右第 12 肋",
+   "sys": "skeletal",
+   "rgb": [
+    255,
+    247,
+    217
+   ]
+  },
+  {
+   "ts": "rib_right_2",
+   "cads": "Rib-2 R",
+   "zh": "右第 2 肋",
+   "sys": "skeletal",
+   "rgb": [
+    198,
+    190,
+    167
+   ]
+  },
+  {
+   "ts": "rib_right_3",
+   "cads": "Rib-3 R",
+   "zh": "右第 3 肋",
+   "sys": "skeletal",
+   "rgb": [
+    234,
+    224,
+    197
+   ]
+  },
+  {
+   "ts": "rib_right_4",
+   "cads": "Rib-4 R",
+   "zh": "右第 4 肋",
+   "sys": "skeletal",
+   "rgb": [
+    205,
+    196,
+    172
+   ]
+  },
+  {
+   "ts": "rib_right_5",
+   "cads": "Rib-5 R",
+   "zh": "右第 5 肋",
+   "sys": "skeletal",
+   "rgb": [
+    250,
+    240,
+    211
+   ]
+  },
+  {
+   "ts": "rib_right_6",
+   "cads": "Rib-6 R",
+   "zh": "右第 6 肋",
+   "sys": "skeletal",
+   "rgb": [
+    234,
+    224,
+    197
+   ]
+  },
+  {
+   "ts": "rib_right_7",
+   "cads": "Rib-7 R",
+   "zh": "右第 7 肋",
+   "sys": "skeletal",
+   "rgb": [
+    192,
+    183,
+    161
+   ]
+  },
+  {
+   "ts": "rib_right_8",
+   "cads": "Rib-8 R",
+   "zh": "右第 8 肋",
+   "sys": "skeletal",
+   "rgb": [
+    248,
+    238,
+    209
+   ]
+  },
+  {
+   "ts": "rib_right_9",
+   "cads": "Rib-9 R",
+   "zh": "右第 9 肋",
+   "sys": "skeletal",
+   "rgb": [
+    255,
+    245,
+    215
+   ]
+  },
+  {
+   "ts": "sacrum",
+   "cads": "Sacrum",
+   "zh": "骶骨",
+   "sys": "skeletal",
+   "rgb": [
+    253,
+    242,
+    213
+   ]
+  },
+  {
+   "ts": "scapula_left",
+   "cads": "Scapula L",
+   "zh": "左肩胛骨",
+   "sys": "skeletal",
+   "rgb": [
+    226,
+    217,
+    190
+   ]
+  },
+  {
+   "ts": "scapula_right",
+   "cads": "Scapula R",
+   "zh": "右肩胛骨",
+   "sys": "skeletal",
+   "rgb": [
+    193,
+    184,
+    162
+   ]
+  },
+  {
+   "ts": "skull",
+   "cads": null,
+   "zh": "颅骨",
+   "sys": "skeletal",
+   "rgb": [
+    196,
+    188,
+    165
+   ]
+  },
+  {
+   "ts": "small_bowel",
+   "cads": "Small intestine",
+   "zh": "小肠",
+   "sys": "digestive",
+   "rgb": [
+    255,
+    186,
+    65
+   ]
+  },
+  {
+   "ts": "spinal_cord",
+   "cads": "Spinal cord",
+   "zh": "脊髓",
+   "sys": "nervous",
+   "rgb": [
+    116,
+    212,
+    154
+   ]
+  },
+  {
+   "ts": "spleen",
+   "cads": "Spleen",
+   "zh": "脾",
+   "sys": "lymphatic",
+   "rgb": [
+    126,
+    75,
+    168
+   ]
+  },
+  {
+   "ts": "sternum",
+   "cads": "Sternum",
+   "zh": "胸骨",
+   "sys": "skeletal",
+   "rgb": [
+    251,
+    240,
+    211
+   ]
+  },
+  {
+   "ts": "stomach",
+   "cads": "Stomach",
+   "zh": "胃",
+   "sys": "digestive",
+   "rgb": [
+    239,
+    169,
+    59
+   ]
+  },
+  {
+   "ts": "subclavian_artery_left",
+   "cads": null,
+   "zh": "左锁骨下动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    208,
+    38,
+    87
+   ]
+  },
+  {
+   "ts": "subclavian_artery_right",
+   "cads": null,
+   "zh": "右锁骨下动脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    194,
+    36,
+    81
+   ]
+  },
+  {
+   "ts": "superior_vena_cava",
+   "cads": null,
+   "zh": "上腔静脉",
+   "sys": "cardiovascular",
+   "rgb": [
+    196,
+    36,
+    82
+   ]
+  },
+  {
+   "ts": "thyroid_gland",
+   "cads": "Thyroid",
+   "zh": "甲状腺",
+   "sys": "glandular",
+   "rgb": [
+    137,
+    103,
+    198
+   ]
+  },
+  {
+   "ts": "trachea",
+   "cads": "Trachea",
+   "zh": "气管",
+   "sys": "respiratory",
+   "rgb": [
+    68,
+    142,
+    184
+   ]
+  },
+  {
+   "ts": "urinary_bladder",
+   "cads": "Urinary bladder",
+   "zh": "膀胱",
+   "sys": "urinary",
+   "rgb": [
+    255,
+    245,
+    71
+   ]
+  },
+  {
+   "ts": "vertebrae_C1",
+   "cads": "Vertebra C1",
+   "zh": "颈1 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    218,
+    209,
+    184
+   ]
+  },
+  {
+   "ts": "vertebrae_C2",
+   "cads": "Vertebra C2",
+   "zh": "颈2 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    225,
+    215,
+    189
+   ]
+  },
+  {
+   "ts": "vertebrae_C3",
+   "cads": "Vertebra C3",
+   "zh": "颈3 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    207,
+    198,
+    174
+   ]
+  },
+  {
+   "ts": "vertebrae_C4",
+   "cads": "Vertebra C4",
+   "zh": "颈4 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    241,
+    230,
+    202
+   ]
+  },
+  {
+   "ts": "vertebrae_C5",
+   "cads": "Vertebra C5",
+   "zh": "颈5 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    183,
+    175,
+    154
+   ]
+  },
+  {
+   "ts": "vertebrae_C6",
+   "cads": "Vertebra C6",
+   "zh": "颈6 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    211,
+    202,
+    177
+   ]
+  },
+  {
+   "ts": "vertebrae_C7",
+   "cads": "Vertebra C7",
+   "zh": "颈7 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    184,
+    176,
+    154
+   ]
+  },
+  {
+   "ts": "vertebrae_L1",
+   "cads": "Vertebra L1",
+   "zh": "腰1 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    191,
+    183,
+    161
+   ]
+  },
+  {
+   "ts": "vertebrae_L2",
+   "cads": "Vertebra L2",
+   "zh": "腰2 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    255,
+    247,
+    217
+   ]
+  },
+  {
+   "ts": "vertebrae_L3",
+   "cads": "Vertebra L3",
+   "zh": "腰3 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    233,
+    223,
+    196
+   ]
+  },
+  {
+   "ts": "vertebrae_L4",
+   "cads": "Vertebra L4",
+   "zh": "腰4 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    215,
+    206,
+    181
+   ]
+  },
+  {
+   "ts": "vertebrae_L5",
+   "cads": "Vertebra L5",
+   "zh": "腰5 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    223,
+    213,
+    187
+   ]
+  },
+  {
+   "ts": "vertebrae_S1",
+   "cads": null,
+   "zh": "骶1 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    250,
+    240,
+    211
+   ]
+  },
+  {
+   "ts": "vertebrae_T1",
+   "cads": "Vertebra T1",
+   "zh": "胸1 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    209,
+    200,
+    175
+   ]
+  },
+  {
+   "ts": "vertebrae_T10",
+   "cads": "Vertebra T10",
+   "zh": "胸10 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    228,
+    218,
+    192
+   ]
+  },
+  {
+   "ts": "vertebrae_T11",
+   "cads": "Vertebra T11",
+   "zh": "胸11 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    235,
+    225,
+    198
+   ]
+  },
+  {
+   "ts": "vertebrae_T12",
+   "cads": "Vertebra T12",
+   "zh": "胸12 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    209,
+    200,
+    176
+   ]
+  },
+  {
+   "ts": "vertebrae_T2",
+   "cads": "Vertebra T2",
+   "zh": "胸2 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    222,
+    213,
+    187
+   ]
+  },
+  {
+   "ts": "vertebrae_T3",
+   "cads": "Vertebra T3",
+   "zh": "胸3 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    242,
+    231,
+    203
+   ]
+  },
+  {
+   "ts": "vertebrae_T4",
+   "cads": "Vertebra T4",
+   "zh": "胸4 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    253,
+    242,
+    213
+   ]
+  },
+  {
+   "ts": "vertebrae_T5",
+   "cads": "Vertebra T5",
+   "zh": "胸5 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    193,
+    185,
+    162
+   ]
+  },
+  {
+   "ts": "vertebrae_T6",
+   "cads": "Vertebra T6",
+   "zh": "胸6 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    255,
+    244,
+    215
+   ]
+  },
+  {
+   "ts": "vertebrae_T7",
+   "cads": "Vertebra T7",
+   "zh": "胸7 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    182,
+    174,
+    153
+   ]
+  },
+  {
+   "ts": "vertebrae_T8",
+   "cads": "Vertebra T8",
+   "zh": "胸8 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    241,
+    231,
+    203
+   ]
+  },
+  {
+   "ts": "vertebrae_T9",
+   "cads": "Vertebra T9",
+   "zh": "胸9 椎骨",
+   "sys": "skeletal",
+   "rgb": [
+    245,
+    235,
+    206
+   ]
+  }
+ ],
+ "l3_reference_measurements": {
+  "iliopsoas_left": {
+   "area_cm2": 10.1,
+   "mean_hu": 51.0
+  },
+  "iliopsoas_right": {
+   "area_cm2": 6.3,
+   "mean_hu": 46.0
+  },
+  "autochthon_left": {
+   "area_cm2": 28.4,
+   "mean_hu": 29.0
+  },
+  "autochthon_right": {
+   "area_cm2": 29.7,
+   "mean_hu": 12.0
+  },
+  "vertebrae_L3": {
+   "area_cm2": 27.1,
+   "mean_hu": 257.0
+  }
+ },
+ "colors": {
+  "skeletal": [
+   233,
+   223,
+   196
+  ],
+  "muscular": [
+   226,
+   87,
+   76
+  ],
+  "cardiovascular": [
+   214,
+   40,
+   90
+  ],
+  "respiratory": [
+   86,
+   180,
+   233
+  ],
+  "digestive": [
+   240,
+   170,
+   60
+  ],
+  "urinary": [
+   240,
+   228,
+   66
+  ],
+  "reproductive": [
+   204,
+   121,
+   167
+  ],
+  "glandular": [
+   160,
+   120,
+   230
+  ],
+  "nervous": [
+   120,
+   220,
+   160
+  ],
+  "sensory": [
+   0,
+   158,
+   115
+  ],
+  "lymphatic": [
+   150,
+   90,
+   200
+  ],
+  "cavities": [
+   120,
+   140,
+   160
+  ],
+  "other": [
+   170,
+   170,
+   170
+  ]
+ },
+ "z_iliac": 140,
+ "cads_inference": {
+  "model": "CADS-model-research (CC BY-NC-SA 4.0), task 554, release cads-model-research_v1.0.0",
+  "crop_xyz": [
+   24,
+   252,
+   36,
+   196,
+   120,
+   248
+  ],
+  "patch": 128,
+  "seconds": 634,
+  "dice_vs_reference": {
+   "hip_left": {
+    "ts": "hip_left",
+    "dice": 0.988,
+    "ref_voxels": 56186,
+    "pred_voxels": 56415,
+    "idx": 9
+   },
+   "hip_right": {
+    "ts": "hip_right",
+    "dice": 0.986,
+    "ref_voxels": 53623,
+    "pred_voxels": 53529,
+    "idx": 10
+   },
+   "sacrum": {
+    "ts": "sacrum",
+    "dice": 0.811,
+    "ref_voxels": 45124,
+    "pred_voxels": 59068,
+    "idx": 11
+   },
+   "gluteus_maximus_left": {
+    "ts": "gluteus_maximus_left",
+    "dice": 0.976,
+    "ref_voxels": 22822,
+    "pred_voxels": 22246,
+    "idx": 12
+   },
+   "gluteus_maximus_right": {
+    "ts": "gluteus_maximus_right",
+    "dice": 0.968,
+    "ref_voxels": 21022,
+    "pred_voxels": 20002,
+    "idx": 13
+   },
+   "gluteus_medius_left": {
+    "ts": "gluteus_medius_left",
+    "dice": 0.971,
+    "ref_voxels": 45340,
+    "pred_voxels": 43679,
+    "idx": 14
+   },
+   "gluteus_medius_right": {
+    "ts": "gluteus_medius_right",
+    "dice": 0.972,
+    "ref_voxels": 40913,
+    "pred_voxels": 39573,
+    "idx": 15
+   },
+   "gluteus_minimus_left": {
+    "ts": "gluteus_minimus_left",
+    "dice": 0.937,
+    "ref_voxels": 5202,
+    "pred_voxels": 4968,
+    "idx": 16
+   },
+   "gluteus_minimus_right": {
+    "ts": "gluteus_minimus_right",
+    "dice": 0.939,
+    "ref_voxels": 3165,
+    "pred_voxels": 2967,
+    "idx": 17
+   },
+   "autochthon_left": {
+    "ts": "autochthon_left",
+    "dice": 0.941,
+    "ref_voxels": 106277,
+    "pred_voxels": 94591,
+    "idx": 18
+   },
+   "autochthon_right": {
+    "ts": "autochthon_right",
+    "dice": 0.94,
+    "ref_voxels": 102935,
+    "pred_voxels": 91477,
+    "idx": 19
+   },
+   "iliopsoas_left": {
+    "ts": "iliopsoas_left",
+    "dice": 0.952,
+    "ref_voxels": 62192,
+    "pred_voxels": 57928,
+    "idx": 20
+   },
+   "iliopsoas_right": {
+    "ts": "iliopsoas_right",
+    "dice": 0.96,
+    "ref_voxels": 56522,
+    "pred_voxels": 52687,
+    "idx": 21
+   }
+  },
+  "l3_pred_measurements": {
+   "iliopsoas_left": {
+    "area_cm2": 9.4,
+    "mean_hu": 52.0
+   },
+   "iliopsoas_right": {
+    "area_cm2": 6.0,
+    "mean_hu": 47.0
+   },
+   "autochthon_left": {
+    "area_cm2": 26.3,
+    "mean_hu": 32.0
+   },
+   "autochthon_right": {
+    "area_cm2": 27.1,
+    "mean_hu": 14.0
+   }
+  },
+  "viewer_slices": [
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82
+  ]
+ }
+}
