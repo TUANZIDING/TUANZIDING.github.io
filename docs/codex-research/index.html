@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>用 Codex 做科研 · 网页课件 | aiai 人工智能学院</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="把论文搜索、综述写作、数据分析、答辩 PPT 拆成可复用的 Codex 工作流。一页一个要点的网页课件。">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./codex-deckv0.1.css">
+<script type="importmap">
+{ "imports": {
+  "three/webgpu": "./vendor/three.webgpu.min.js",
+  "three/tsl": "./vendor/three.tsl.min.js"
+} }
+</script>
+</head>
+<body data-scene="cover">
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="bgdots" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="chrome">
+  <a class="brand" href="https://aiai-academy.com/" aria-label="aiai 人工智能学院首页"><b>aiai</b><span>用 Codex 做科研</span></a>
+  <div class="secchip" id="secchip"><i></i><span>封面</span></div>
+  <div class="gpu" id="gpu"><i></i><span>3D</span></div>
+</header>
+
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+
+<!-- 1 封面 -->
+<section class="s on" data-sec="0" data-scene="cover" data-t="封面">
+  <div class="cover">
+    <p class="kicker a">AIAI 网页课件 · CODEX FOR RESEARCH</p>
+    <h1 class="a">用 Codex<br>做科研</h1>
+    <p class="sub a">从文献搜索到答辩 PPT</p>
+    <p class="lede a">Codex 不只会写代码。这节课把研究生最常见的四件事，拆成可复用的工作流，每一步都配好能直接复制的提示词。</p>
+    <div class="cta-row a"><button class="cta" data-next>开始 <span>→</span></button><span class="hint">键盘 ← → 或空格翻页 · 手机左右滑</span></div>
+  </div>
+</section>
+
+<!-- 2 路线 -->
+<section class="s" data-sec="0" data-scene="none" data-t="课程路线">
+  <div class="head"><p class="kicker a">课程路线</p><h2 class="a">两个基础，四个场景</h2></div>
+  <div class="route">
+    <div class="rt a base"><b>01</b><h4>任务型 Agent</h4><p>一个任务一个文件夹</p></div>
+    <div class="rt a base"><b>02</b><h4>Skill = SOP</h4><p>把流程沉淀下来</p></div>
+    <div class="rt a c3"><b>03</b><h4>论文搜索</h4><p>先检索路径，再真实检索</p></div>
+    <div class="rt a c4"><b>04</b><h4>综述写作</h4><p>只基于真实论文</p></div>
+    <div class="rt a c5"><b>05</b><h4>数据分析</h4><p>代码跑结果</p></div>
+    <div class="rt a c6"><b>06</b><h4>答辩 PPT</h4><p>重组答辩逻辑</p></div>
+  </div>
+  <svg class="routeline a" viewBox="0 0 1400 20" preserveAspectRatio="none" aria-hidden="true"><path d="M10 10 H1390"/></svg>
+</section>
+
+<!-- 3 主线 -->
+<section class="s" data-sec="0" data-scene="none" data-t="一条主线">
+  <div class="head"><p class="kicker a">贯穿全课</p><h2 class="a">记住这四条，就记住了这节课</h2></div>
+  <div class="rules">
+    <div class="rule a"><span>规则</span><p>一个任务一个文件夹，用 <code>AGENTS.md</code> 写清规则</p></div>
+    <div class="rule a"><span>流程</span><p>把反复做的事沉淀成 Skill，也就是成熟 SOP</p></div>
+    <div class="rule a"><span>底线</span><p>文献要真实检索，结果要由代码和真实数据生成</p></div>
+    <div class="rule a"><span>顺序</span><p>先理解、再计划、最后才产出，顺序不能反</p></div>
+  </div>
+</section>
+
+<!-- 4 章节 01 -->
+<section class="s divider" data-sec="1" data-scene="core" data-t="任务型 Agent">
+  <div class="dv"><b class="a">01</b><p class="kicker a">第一步</p><h2 class="a">不要只把 Codex<br>当聊天机器人</h2><p class="lede a">把它当成任务型 Agent：一个具体任务，建一个小文件夹。</p></div>
+</section>
+
+<!-- 5 文件夹 -->
+<section class="s" data-sec="1" data-scene="none" data-t="一个任务一个文件夹">
+  <div class="head"><p class="kicker a">任务型 Agent</p><h2 class="a">一个具体任务，一个小文件夹</h2></div>
+  <div class="row two">
+    <div class="card a"><h4 class="ct">文献搜索</h4>
+<pre class="tree typed">literature-search/
+├── <b>AGENTS.md</b>
+├── topic.md
+├── seed-papers.md
+├── search-results/
+└── notes/</pre></div>
+    <div class="card a"><h4 class="ct">数据分析</h4>
+<pre class="tree typed">data-analysis/
+├── <b>AGENTS.md</b>
+├── data.csv
+├── variable-dictionary.md
+├── scripts/
+├── figures/
+└── reports/</pre></div>
+  </div>
+  <p class="take a"><b>关键</b>每个文件夹都有一份 <code>AGENTS.md</code>，下一页看它写什么。</p>
+</section>
+
+<!-- 6 AGENTS.md 是什么 -->
+<section class="s" data-sec="1" data-scene="none" data-t="AGENTS.md">
+  <div class="row split">
+    <div class="col narrow">
+      <p class="kicker a">最重要的文件</p><h2 class="a">AGENTS.md<br>是任务规则</h2>
+      <p class="lede a">它是你写给 Codex 的<strong>任务规则</strong>。Codex 进入文件夹就会照着它干活。</p>
+    </div>
+    <div class="col">
+      <div class="prompt a" data-label="AGENTS.md · 文献搜索"><pre>这是一个文献搜索任务。
+研究主题：生成式 AI 对研究生科研自我效能的影响。
+规则：
+1. 不要凭模型记忆编造论文。
+2. 所有推荐文献必须提供标题、作者、年份、来源、DOI 或可访问链接。
+3. 先生成检索式，再执行检索，再整理结果。
+4. 输出结果保存到 search-results/ 文件夹。
+5. 不确定的信息请标记为“待核查”，不要写成确定结论。</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 AGENTS 数据分析 -->
+<section class="s" data-sec="1" data-scene="none" data-t="AGENTS.md · 数据分析">
+  <div class="row split">
+    <div class="col narrow">
+      <p class="kicker a">换个任务</p><h2 class="a">数据分析的<br>规则长这样</h2>
+      <p class="lede a">规则写的是<strong>边界</strong>：数据从哪来、图怎么生成、产出放哪。</p>
+    </div>
+    <div class="col">
+      <div class="prompt a" data-label="AGENTS.md · 数据分析"><pre>这是一个问卷数据分析任务。
+数据文件：data.csv
+变量说明：variable-dictionary.md
+规则：
+1. 所有统计结果必须来自 data.csv。
+2. 所有图表必须由 Python 或 R 代码生成，不要用图片生成模型直接画统计图。
+3. 每一步分析都要保留代码。
+4. 输出 data_quality_report.md、analysis_report.md、figures/ 和 scripts/analysis.py。
+5. 如果变量不适合做某种统计分析，请先说明原因，不要硬做。</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 第一条指令 -->
+<section class="s" data-sec="1" data-scene="none" data-t="第一条指令">
+  <div class="head"><p class="kicker a">开工第一句</p><h2 class="a">先让它进入上下文，别让它自由发挥</h2></div>
+  <div class="row two">
+    <div class="bad a"><span>✕ 别这样开头</span><p class="big">“帮我做科研。”</p></div>
+    <div class="good a"><span>✓ 先读、先复述</span><p>读文件夹和规则，复述目标、已有材料、缺失材料和下一步建议。</p></div>
+  </div>
+  <div class="prompt a" data-label="第一条指令"><pre>请先阅读当前文件夹和 AGENTS.md，告诉我你理解到的任务目标、已有材料、缺失材料，以及下一步你建议执行的操作。先不要直接生成最终结果。</pre></div>
+</section>
+
+<!-- 9 章节 02 -->
+<section class="s divider" data-sec="2" data-scene="core2" data-t="Skill = SOP">
+  <div class="dv"><b class="a">02</b><p class="kicker a">第二步</p><h2 class="a">Skill 不是提示词，<br>而是成熟 SOP</h2><p class="lede a">同一个 Codex，配置了不同 Skill，能力会差很多。</p></div>
+</section>
+
+<!-- 10 提示词 vs Skill -->
+<section class="s" data-sec="2" data-scene="none" data-t="提示词 vs Skill">
+  <div class="head"><p class="kicker a">一次性 vs 可复用</p><h2 class="a">它们回答的不是同一个问题</h2></div>
+  <div class="vs">
+    <div class="vsl a"><small>提示词</small><h3>这一次，<br>我怎么问 AI？</h3><p>依赖模型的通用能力，每次重写，效果不稳定。</p></div>
+    <div class="vsmid a">VS</div>
+    <div class="vsr a"><small>Skill</small><h3>以后每次遇到类似任务，<br>Agent 按什么流程做？</h3><p>沿固定流程干活，输入、步骤、输出都可预期。</p></div>
+  </div>
+</section>
+
+<!-- 11 六件事 -->
+<section class="s" data-sec="2" data-scene="none" data-t="好 Skill 的六件事">
+  <div class="head"><p class="kicker a">检查清单</p><h2 class="a">一个好的 Skill 写清这六件事</h2></div>
+  <div class="six">
+    <div class="a"><i>1</i>什么时候用</div><div class="a"><i>2</i>需要什么输入</div><div class="a"><i>3</i>按什么步骤执行</div>
+    <div class="a"><i>4</i>能调用哪些脚本</div><div class="a"><i>5</i>最后输出什么</div><div class="a"><i>6</i>哪些事情不能做</div>
+  </div>
+</section>
+
+<!-- 12 别追热门 -->
+<section class="s" data-sec="2" data-scene="none" data-t="别只看热度">
+  <div class="row split">
+    <div class="col narrow"><p class="kicker a warnk">提醒</p><h2 class="a">别因为一个 Skill 很火，就拿来写论文</h2></div>
+    <div class="col">
+      <div class="card warn a"><h4 class="ct">例子：K-Dense Scientific Agent Skills</h4>
+        <p class="stat"><b data-count="148">0</b><span>个科研 Skill</span></p>
+        <p>覆盖癌症基因组学、药物靶点结合、分子动力学、RNA velocity、地理空间、时间序列、科学数据库等，整体偏生物、化学、医学、组学和科学计算。</p></div>
+      <p class="take a"><b>判断标准</b>教育学、新闻传播、管理学、社会学或计算机写作方向，要看<strong>它的工作流是否适合你的研究任务</strong>，而不是热度。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13 审 Skill -->
+<section class="s" data-sec="2" data-scene="none" data-t="先审再用">
+  <div class="head"><p class="kicker a">装好任何 Skill 之后</p><h2 class="a">先让 Codex 把它审一遍</h2></div>
+  <div class="row split2">
+    <div class="prompt a" data-label="审 Skill"><pre>请先不要执行任务。请阅读这个 Skill 的 SKILL.md，并用中文总结：
+1. 这个 Skill 适合解决什么问题？
+2. 它需要我提供哪些输入材料？
+3. 它会调用哪些脚本、工具或外部服务？
+4. 它最终会输出哪些文件或结果？
+5. 它明确不适合做什么？
+6. 结合我的研究任务，你认为这个 Skill 是否适配？如果不适配，需要改哪些规则？</pre></div>
+    <div class="col">
+      <div class="card a"><h4 class="ct">不匹配怎么办</h4><p>别硬用。让 Codex 基于它改一版适合自己的流程，或把实验室常用流程沉淀成自己的 Skill。</p></div>
+      <div class="card a"><h4 class="ct">最适合写成 Skill 的例子</h4><p>论文终稿检查：查数值、查图表编号、查参考文献、查统计符号、查格式、查基金号。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 章节 03 -->
+<section class="s divider c3" data-sec="3" data-scene="st0" data-t="论文搜索">
+  <div class="dv"><b class="a">03</b><p class="kicker a">场景一</p><h2 class="a">论文搜索</h2><p class="lede a">先生成检索路径，再真实检索。</p></div>
+</section>
+
+<!-- 15 危险问法 -->
+<section class="s c3" data-sec="3" data-scene="none" data-t="最危险的问法">
+  <div class="head"><p class="kicker a">论文搜索</p><h2 class="a">最危险的问法，和正确路径</h2></div>
+  <div class="bad a wide"><span>✕ 最危险的问法</span><p class="big">“请推荐 20 篇关于生成式 AI 和研究生科研能力的论文。”</p><small>模型可能凭记忆列出一批看起来很像真的文献，没有真实检索，也没有 DOI、PMID 或数据库链接。</small></div>
+  <ol class="flow">
+    <li class="a"><b>拆主题</b><span>概念矩阵</span></li>
+    <li class="a"><b>检索式</b><span>多组、各有角度</span></li>
+    <li class="a"><b>真实检索</b><span>Skill / API</span></li>
+    <li class="a"><b>文献表</b><span>去重、可核查</span></li>
+  </ol>
+</section>
+
+<!-- 16 概念矩阵 -->
+<section class="s c3" data-sec="3" data-scene="none" data-t="① 概念矩阵">
+  <div class="head"><p class="kicker a">① 拆主题 · 示例：生成式 AI 对研究生科研自我效能的影响</p><h2 class="a">先生成检索语言，不推荐论文</h2></div>
+  <div class="row split2">
+    <div class="prompt a" data-label="生成概念矩阵"><pre>请把下面这个研究主题拆成文献检索概念矩阵：
+主题：生成式 AI 对研究生科研自我效能的影响。
+请输出：
+1. 核心概念
+2. 英文关键词
+3. 同义词或近义表达
+4. 可能相关理论
+5. 可用于 Google Scholar 的英文检索式
+6. 可用于中文数据库的中文检索式
+注意：这一步只生成检索语言，不要推荐具体论文。</pre></div>
+    <div class="card tbl a"><h4 class="ct">它可能拆出的检索入口</h4>
+      <table><thead><tr><th>概念</th><th>英文表达</th><th>可能扩展</th></tr></thead><tbody>
+      <tr><td>生成式 AI</td><td>generative AI, ChatGPT, large language models</td><td>AI tools, GenAI, LLMs</td></tr>
+      <tr><td>研究生</td><td>graduate students, postgraduate students</td><td>doctoral students, master students</td></tr>
+      <tr><td>科研自我效能</td><td>research self-efficacy</td><td>academic self-efficacy, research confidence</td></tr>
+      <tr><td>科研训练</td><td>research training</td><td>academic writing, literature review, research productivity</td></tr>
+      <tr><td>技术接受</td><td>technology acceptance</td><td>perceived usefulness, perceived ease of use</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<!-- 17 检索式 -->
+<section class="s c3" data-sec="3" data-scene="none" data-t="② 检索式">
+  <div class="row split">
+    <div class="col narrow"><p class="kicker a">② 生成检索式</p><h2 class="a">不要一条超长检索式</h2><p class="lede a">分成多组，每组只盯一个角度：科研写作、文献综述、研究自我效能、技术接受……</p></div>
+    <div class="col"><div class="prompt a" data-label="生成检索式"><pre>请基于上面的概念矩阵，生成 10 组 Google Scholar 检索式。
+要求：
+1. 不要只生成一条特别长的检索式。
+2. 每组检索式聚焦一个角度，比如科研写作、文献综述、研究自我效能、技术接受。
+3. 每组检索式后解释它主要想找到哪类论文。
+4. 输出到 search-results/search-queries.md。</pre></div></div>
+  </div>
+</section>
+
+<!-- 18 工具 -->
+<section class="s c3" data-sec="3" data-scene="none" data-t="③ 按学科选工具">
+  <div class="head"><p class="kicker a">③ 真实检索</p><h2 class="a">按学科选工具</h2></div>
+  <div class="tools">
+    <div class="tool a"><em>社科 · 教育 · 管理</em><h4>Google Scholar Search Skill</h4><p>ClawHub 上可用，按关键词、作者、年份检索并导出元数据。</p></div>
+    <div class="tool a"><em>医学 · 生物医学 · 公卫</em><h4>pubmed-paper-finder</h4><p>把医学主题拆成多个 PubMed 检索模块，调用 NCBI E-utilities 取回 PMID、标题、期刊、年份、DOI、摘要和链接，再按相关性、证据类型、新近程度生成阅读清单。</p></div>
+    <div class="tool a"><em>已有论文列表</em><h4>paper-quality-filter</h4><p>按来源层面的证据排阅读优先级：JCR 分区、影响因子、中科院分区、CCF 等级、EI、北大核心、CSSCI、AMI、科技核心等。不判断单篇学术价值。</p></div>
+  </div>
+  <p class="note a">安装任何 Skill 都很简单：直接告诉 Codex“帮我安装某某 Skill，地址是……”。</p>
+</section>
+
+<!-- 19 执行检索 -->
+<section class="s c3" data-sec="3" data-scene="none" data-t="执行检索">
+  <div class="head"><p class="kicker a">③ 真实检索 · 两种写法</p><h2 class="a">把检索交给工具，结果才可核查</h2></div>
+  <div class="row two">
+    <div class="prompt a" data-label="社科：执行检索"><pre>请使用 Google Scholar Search Skill，基于 search-results/search-queries.md 里的 10 组检索式进行检索。
+要求：
+1. 每组检索式返回前 10 篇结果。
+2. 合并去重。
+3. 保留标题、作者、年份、来源、引用数、链接。
+4. 初步判断主题相关性。
+5. 输出 literature_search_results.md 和 literature_matrix.csv。</pre></div>
+    <div class="prompt a" data-label="医学：安装 Skill"><pre>请帮我从 GitHub 安装这个 Skill：
+https://github.com/yilaai/pubmed-paper-finder
+安装后请先阅读 SKILL.md，告诉我它的检索流程、输入要求、输出格式和使用限制。</pre></div>
+  </div>
+  <p class="take a"><b>原则</b>不是让 AI 凭空推荐论文，而是让 Codex 设计检索路径、执行真实检索、整理可核查结果。</p>
+</section>
+
+<!-- 20 章节 04 -->
+<section class="s divider c4" data-sec="4" data-scene="st1" data-t="综述写作">
+  <div class="dv"><b class="a">04</b><p class="kicker a">场景二</p><h2 class="a">综述写作</h2><p class="lede a">AI 擅长阅读理解，但必须基于真实论文。</p></div>
+</section>
+
+<!-- 21 顺序锁 -->
+<section class="s c4" data-sec="4" data-scene="none" data-t="顺序锁">
+  <div class="head"><p class="kicker a">前提只有一个：必须基于真实论文</p><h2 class="a">顺序锁：先矩阵，再大纲，最后正文</h2></div>
+  <p class="lede a">综述要大量阅读、归纳、比较、分类，正是 AI 的强项。建议给 Codex 接入论文搜索 API，或使用已接入论文库的工具。</p>
+  <div class="lock">
+    <div class="lk a"><i>1</i><b>主题矩阵</b><small>literature_theme_matrix.md</small></div>
+    <span class="arr a">→</span>
+    <div class="lk a"><i>2</i><b>综述大纲</b><small>review_outline.md</small></div>
+    <span class="arr a">→</span>
+    <div class="lk a"><i>3</i><b>正文初稿</b><small>literature_review_v1.md</small></div>
+  </div>
+</section>
+
+<!-- 22 综述文件夹 -->
+<section class="s c4" data-sec="4" data-scene="none" data-t="综述的规则">
+  <div class="head"><p class="kicker a">综述任务</p><h2 class="a">文件夹和规则</h2></div>
+  <div class="row split3">
+    <div class="col">
+      <div class="card a"><pre class="tree typed">literature-review/
+├── <b>AGENTS.md</b>
+├── papers/
+├── literature_matrix.csv
+├── notes/
+└── draft/</pre></div>
+      <div class="bad a"><span>✕ 不要直接问</span><p>“请帮我写一篇关于生成式 AI 与研究生科研能力的文献综述。”</p></div>
+    </div>
+    <div class="prompt a" data-label="AGENTS.md · 综述"><pre>这是一个文献综述写作任务。
+规则：
+1. 综述只能基于 papers/ 文件夹中的 PDF、literature_matrix.csv 和 notes/ 中的读书笔记。
+2. 不得新增我没有提供或没有真实检索到的文献。
+3. 每个重要观点后面必须标注文献来源。
+4. 如果某个观点缺少文献支撑，请写入 unchecked_claims.md。
+5. 先生成主题矩阵和综述大纲，再写正文。</pre></div>
+  </div>
+</section>
+
+<!-- 23 综述三步 -->
+<section class="s c4" data-sec="4" data-scene="none" data-t="综述三步">
+  <div class="head"><p class="kicker a">点步骤切换</p><h2 class="a">三步提示词</h2></div>
+  <div class="steps" data-steps>
+    <div class="snav a">
+      <button class="on"><i>1</i>先做文献矩阵</button>
+      <button><i>2</i>再写大纲</button>
+      <button><i>3</i>最后写正文</button>
+    </div>
+    <div class="spanes a">
+<div class="prompt" data-label="① 先做文献矩阵"><pre>请阅读 papers/ 文件夹中的论文和 literature_matrix.csv。
+先不要写综述正文，请先输出 literature_theme_matrix.md，表格包括：
+1. 主题板块
+2. 代表文献
+3. 研究对象
+4. 研究方法
+5. 核心发现
+6. 研究不足
+7. 和我的研究问题有什么关系
+注意：只能使用我提供的真实论文。不要新增文献。</pre></div>
+<div class="prompt" data-label="② 再写大纲" hidden><pre>请基于 literature_theme_matrix.md 生成综述大纲。
+要求：
+1. 不要按“张三说、李四说、王五说”排列。
+2. 按研究主题和问题逻辑组织。
+3. 每一节说明：这一节回答什么问题、使用哪些文献、最后要引出什么研究不足。
+4. 输出 review_outline.md。</pre></div>
+<div class="prompt" data-label="③ 最后写正文" hidden><pre>请基于 review_outline.md 和 literature_theme_matrix.md 写 literature review 初稿。
+要求：
+1. 每段都要有明确中心句。
+2. 每个重要判断都要标注对应文献。
+3. 不要写没有来源支撑的泛泛评价。
+4. 不确定的地方写入 unchecked_claims.md。
+5. 输出 draft/literature_review_v1.md。</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- 24 综述收尾 -->
+<section class="s c4 quote" data-sec="4" data-scene="none" data-t="综述原则">
+  <blockquote class="a">综述写作最怕的不是 AI 不会总结，<br>而是它<em>总结了不存在的文献</em>。</blockquote>
+  <div class="card a w60"><h4 class="ct">可参考：Research-Paper-Writing-Skills</h4><p>主要面向 ML/CV/NLP 论文，覆盖 Abstract、Introduction、Method、Experiments、Conclusion 的写作与自查，也适合做 claim-evidence alignment 和投稿前自审。</p></div>
+</section>
+
+<!-- 25 章节 05 -->
+<section class="s divider c5" data-sec="5" data-scene="st2" data-t="数据分析">
+  <div class="dv"><b class="a">05</b><p class="kicker a">场景三</p><h2 class="a">数据分析</h2><p class="lede a">让 Codex 写代码跑结果，不要让大模型直接画图。</p></div>
+</section>
+
+<!-- 26 底线 -->
+<section class="s c5" data-sec="5" data-scene="none" data-t="底线">
+  <div class="row split">
+    <div class="col narrow"><p class="kicker a">真正麻烦的部分</p><h2 class="a">清洗、缺失、统计、导表、画图、报告</h2><p class="lede a">Codex 能写代码、运行、看报错、改代码，再把结果存下来。</p></div>
+    <div class="col">
+      <div class="card warn a"><h4 class="ct">底线</h4><p class="big">数据分析结果必须通过<strong>代码和真实数据</strong>生成，不能让大模型凭空生成统计图。</p></div>
+      <div class="card tbl a"><h4 class="ct">示例：模拟问卷变量</h4>
+        <table class="vars"><tbody>
+        <tr><td><code>ai_use_frequency</code></td><td>使用 AI 工具的频率</td><td><code>research_self_efficacy</code></td><td>科研自我效能</td></tr>
+        <tr><td><code>writing_anxiety</code></td><td>学术写作焦虑</td><td><code>literature_skill</code></td><td>文献阅读能力</td></tr>
+        <tr><td><code>grade</code></td><td>年级</td><td><code>discipline</code></td><td>学科</td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- 27 分析三步 -->
+<section class="s c5" data-sec="5" data-scene="none" data-t="分析三步">
+  <div class="head"><p class="kicker a">点步骤切换</p><h2 class="a">体检 → 计划 → 写代码运行</h2></div>
+  <div class="steps" data-steps>
+    <div class="snav a">
+      <button class="on"><i>1</i>数据体检<small>样本量、类型、缺失、异常值、量表范围</small></button>
+      <button><i>2</i>分析计划<small>描述 → 相关 → 回归，写明理由与解释边界</small></button>
+      <button><i>3</i>写代码并运行<small>代码、表格、图全部可追溯</small></button>
+    </div>
+    <div class="spanes a">
+<div class="prompt" data-label="① 先做数据体检"><pre>请读取 data.csv 和 variable-dictionary.md。
+先不要做统计推断，请先完成数据质量检查：
+1. 样本量是多少？
+2. 每个变量的数据类型是什么？
+3. 每个变量缺失值比例是多少？
+4. 是否存在明显异常值？
+5. 量表变量的取值范围是否符合变量说明？
+6. 输出 reports/data_quality_report.md。</pre></div>
+<div class="prompt" data-label="② 生成分析计划" hidden><pre>请基于数据质量检查结果，生成一个适合这份问卷数据的分析计划。
+要求：
+1. 先做描述性统计。
+2. 再做相关分析。
+3. 如果变量条件允许，做回归分析。
+4. 每一种分析都说明使用原因、变量选择和结果解释边界。
+5. 输出 reports/analysis_plan.md。</pre></div>
+<div class="prompt" data-label="③ 写代码并运行" hidden><pre>请根据 reports/analysis_plan.md 写 Python 分析代码。
+要求：
+1. 使用 pandas、numpy、scipy、statsmodels、matplotlib 或 seaborn。
+2. 所有分析结果必须来自 data.csv。
+3. 保存完整代码到 scripts/analysis.py。
+4. 输出 descriptive_statistics.xlsx、correlation_matrix.xlsx、regression_results.md。
+5. 生成 figures/fig1_missing_values.png、figures/fig2_correlation_heatmap.png、figures/fig3_regression_coefficients.png。
+6. 不要使用图片生成模型直接画统计图。</pre></div>
+    </div>
+  </div>
+  <p class="note a">这样生成的图才可追溯：打开 scripts/analysis.py 能看到怎么算的，也能核对 correlation_matrix.xlsx 和图是否一致。</p>
+</section>
+
+<!-- 28 Data Analyzer -->
+<section class="s c5" data-sec="5" data-scene="none" data-t="现成 Skill">
+  <div class="head"><p class="kicker a">现成 Skill：Data Analyzer（ClawHub）</p><h2 class="a">装上之前，先审流程</h2></div>
+  <p class="lede a">支持 Excel、CSV、Word、PDF、TXT、Markdown，可做文件夹扫描、汇总、统计、趋势分析和报告输出。</p>
+  <div class="row split2">
+    <div class="col">
+      <div class="prompt cmd a" data-label="安装"><pre>openclaw skills install @tobewin/data-analyzer</pre></div>
+      <div class="prompt a" data-label="装好后先审流程"><pre>请先阅读 data-analyzer Skill 的 SKILL.md，告诉我它适合哪些数据分析任务，会读取哪些文件类型，会输出什么结果。然后结合我的 data.csv，判断它是否适合当前分析。</pre></div>
+    </div>
+    <div class="card a figdemo" aria-hidden="true">
+      <h4 class="ct">代码生成的图，才可追溯</h4>
+      <div class="heat" id="heat"></div>
+      <p class="mini">示意：相关矩阵热图由 scripts/analysis.py 基于 data.csv 计算</p>
+    </div>
+  </div>
+</section>
+
+<!-- 29 美化 -->
+<section class="s c5" data-sec="5" data-scene="none" data-t="第二轮打磨">
+  <div class="row split">
+    <div class="col narrow"><p class="kicker a">第二轮</p><h2 class="a">用图表 Skill 打磨，不改结果</h2><p class="take a"><b>分工</b>Codex 写代码、跑分析、美化图表；数据解释和统计方法选择仍由研究者判断。</p></div>
+    <div class="col"><div class="prompt a" data-label="$nature-figure 打磨相关矩阵图"><pre>请使用 $nature-figure，后端选择 Python。
+请读取 scripts/analysis.py 和 figures/fig2_correlation_heatmap.png，基于同一个 data.csv 重新生成一版更适合论文或组会汇报的相关矩阵图。
+要求：
+1. 不改变任何统计结果。
+2. 只优化配色、字体、标签、图例和导出格式。
+3. 同时导出 PNG、SVG 和 PDF。
+4. 输出 figures/fig2_correlation_heatmap_polished.svg 和 figures/figure_notes.md。</pre></div></div>
+  </div>
+</section>
+
+<!-- 30 章节 06 -->
+<section class="s divider c6" data-sec="6" data-scene="st3" data-t="答辩 PPT">
+  <div class="dv"><b class="a">06</b><p class="kicker a">场景四</p><h2 class="a">答辩 PPT</h2><p class="lede a">论文写好了，不要再手搓每一页。</p></div>
+</section>
+
+<!-- 31 论文≠PPT -->
+<section class="s c6" data-sec="6" data-scene="none" data-t="重组答辩逻辑">
+  <div class="head"><p class="kicker a">论文是长文本，PPT 是现场表达</p><h2 class="a">核心不是换格式，而是重组答辩逻辑</h2></div>
+  <div class="row split3">
+    <div class="card a"><pre class="tree typed">defense-ppt/
+├── <b>AGENTS.md</b>
+├── final-paper.md
+├── figures/
+├── tables/
+└── ppt-output/</pre></div>
+    <div class="prompt a" data-label="AGENTS.md · 答辩"><pre>这是一个硕士论文答辩 PPT 生成任务。
+规则：
+1. PPT 必须基于 final-paper.md 和 figures/ 中的真实图表。
+2. 不要新增论文中没有的数据、结果和结论。
+3. 先生成答辩大纲 outline.md，经我确认后再生成 PPT。
+4. 每页只讲一个核心信息。
+5. 同时生成 speech.md 作为逐页讲稿。</pre></div>
+  </div>
+</section>
+
+<!-- 32 答辩三步 -->
+<section class="s c6" data-sec="6" data-scene="none" data-t="答辩三步">
+  <div class="head"><p class="kicker a">点步骤切换</p><h2 class="a">拆逻辑 → 出大纲 → 生成 PPT</h2></div>
+  <div class="steps" data-steps>
+    <div class="snav a">
+      <button class="on"><i>1</i>拆论文逻辑<small>defense_logic.md</small></button>
+      <button><i>2</i>生成大纲<small>outline.md · 等你确认</small></button>
+      <button><i>3</i>生成 PPT<small>codex-ppt Skill</small></button>
+    </div>
+    <div class="spanes a">
+<div class="prompt" data-label="① 拆论文逻辑"><pre>请阅读 final-paper.md。
+先不要生成 PPT，请先输出 defense_logic.md，包括：
+1. 这篇论文的研究问题是什么？
+2. 为什么这个问题值得研究？
+3. 文献综述最后引出了什么不足？
+4. 本文的方法设计是什么？
+5. 主要发现是什么？
+6. 创新点是什么？
+7. 答辩时最可能被问到的问题有哪些？</pre></div>
+<div class="prompt" data-label="② 生成大纲" hidden><pre>请基于 defense_logic.md 生成 12 页左右的硕士论文答辩 PPT 大纲。
+要求：
+1. 每页包括：页标题、核心信息、建议图表、讲述重点。
+2. 结构包括：研究背景、研究问题、文献基础、研究方法、主要发现、创新点、不足与展望。
+3. 不要直接生成 PPT，先输出 outline.md 等我确认。</pre></div>
+<div class="prompt" data-label="③ 用 codex-ppt Skill 生成" hidden><pre>请使用 codex-ppt skill，把 defense-ppt/final-paper.md 做成 12 页左右的硕士论文答辩 PPT。
+要求：
+1. 先阅读 AGENTS.md、defense_logic.md 和 outline.md。
+2. 如果 outline.md 还不适合答辩，请先提出修改建议，不要直接生成 PPT。
+3. PPT 使用科研答辩风，页面简洁，减少大段文字。
+4. 必须保留论文中的关键图表，不要编造新数据。
+5. 生成 outline.md、speech.md 和最终 .pptx。
+6. 每页备注区写入对应讲稿。</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- 33 codex-ppt -->
+<section class="s c6" data-sec="6" data-scene="none" data-t="codex-ppt-skill">
+  <div class="head"><p class="kicker a">codex-ppt-skill 怎么工作</p><h2 class="a">从论文到可讲的 .pptx</h2></div>
+  <ol class="flow f5">
+    <li class="a"><b>规划</b><span>大纲 + 视觉风格</span></li>
+    <li class="a"><b>样张</b><span>先确认</span></li>
+    <li class="a"><b>逐页生成</b><span>幻灯片图片</span></li>
+    <li class="a"><b>组装</b><span>.pptx</span></li>
+    <li class="a"><b>讲稿</b><span>speech.md 写进备注</span></li>
+  </ol>
+  <div class="row split2">
+    <div class="prompt cmd a" data-label="安装"><pre>npx -y skills@latest add ningzimu/codex-ppt-skill \
+  --skill codex-ppt \
+  --agent codex \
+  --global</pre></div>
+    <div class="col">
+      <div class="good a"><span>优点</span><p>整页图片式 PPT，视觉统一、速度快，适合快速把论文变成可讲的答辩稿。</p></div>
+      <div class="bad soft a"><span>局限</span><p>页面元素不一定能逐个编辑。要精修，就用可编辑 PPT 转换工具，或在 PowerPoint 里手动调整关键页。</p></div>
+    </div>
+  </div>
+  <p class="note a">可处理文章、报告、论文、课程笔记、Markdown、PDF、Word。</p>
+</section>
+
+<!-- 34 练习 排序 -->
+<section class="s divider c7" data-sec="7" data-scene="end" data-t="课堂练习">
+  <div class="dv"><b class="a">07</b><p class="kicker a">课堂练习</p><h2 class="a">检验一下：<br>你会让 Codex 怎么干活？</h2></div>
+</section>
+
+<section class="s" data-sec="7" data-scene="none" data-t="排序挑战">
+  <div class="head"><p class="kicker a">排序挑战</p><h2 class="a">综述写作的正确顺序是？</h2></div>
+  <p class="lede a">依次点击，把四步排成正确顺序。</p>
+  <div class="order a" id="order">
+    <button data-k="3">写正文初稿</button><button data-k="1">做主题矩阵</button><button data-k="0">读真实论文</button><button data-k="2">写综述大纲</button>
+  </div>
+  <div class="orderout a" id="orderout"></div>
+</section>
+
+<section class="s" data-sec="7" data-scene="none" data-t="快问快答">
+  <div class="head"><p class="kicker a">快问快答 · <span id="qn">1 / 6</span></p><h2 class="a" id="qtitle"></h2></div>
+  <div class="qopts a" id="qopts"></div>
+  <p class="why" id="qwhy"></p>
+  <div class="qbar a"><span id="qscore">得分 0</span><button class="cta small" id="qnext" disabled>下一题 →</button></div>
+</section>
+
+<section class="s end" data-sec="7" data-scene="end" data-t="课后一招">
+  <div class="cover">
+    <p class="kicker a">课后一招</p>
+    <h2 class="a">还不会用 Codex？</h2>
+    <p class="lede a">先安装它，然后把这节课的内容交给它，让它一步步带你完成每一项工作。</p>
+    <p class="sub small a">科研里琐碎、重复的工作交给 Agent，把时间留给思考与创造。</p>
+    <div class="cta-row a"><button class="cta ghost" data-go="0">回到封面 ↺</button></div>
+    <p class="credit a">内容整理自 Roxy（@DrRabbitAI）在 X 上的公开文章《如何用 Codex 辅助我们做科研》。</p>
+  </div>
+</section>
+
+</div>
+</main>
+
+<nav class="nav" aria-label="翻页">
+  <button id="prev" aria-label="上一页">←</button>
+  <div class="ninfo"><b id="pg">1</b><span>/</span><span id="pt">1</span></div>
+  <button id="next" aria-label="下一页">→</button>
+</nav>
+<div class="prog" aria-hidden="true"><i id="progfill"></i></div>
+<div class="secdots" id="secdots" aria-label="章节"></div>
+
+<script type="module" src="./codex-deck-scenev0.1.js"></script>
+<script src="./codex-deck-appv0.1.js" defer></script>
+</body>
+</html>

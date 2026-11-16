@@ -70,6 +70,12 @@ const domainIcons=[FirstAidKit,Brain,ChalkboardTeacher,ShieldCheck];
 const statIcons=[BookOpenText,Trophy,Medal,ChalkboardTeacher];
 const scrollMeta=[{slug:'yangliu-yiyi',img:'/assets/shihua-yangliu.jpg',seal:'柳'},{slug:'biansai',img:'/assets/shihua-biansai.jpg',seal:'关'},{slug:'jiangnan',img:'/assets/shihua-jiangnan.jpg',seal:'梦'}];
 const statValues=[{to:4,pad:2},{to:6,pad:2},{to:3.7,dec:1,pre:'Top ',suf:'%'},{to:3,pad:2}];
+const S193='https://web.stanford.edu/class/archive/cs/cs193t/cs193t.1272/lectures/';
+const aiCourse={
+  zh:{eye:'AI 课件 · AI COURSEWARE',lead:'自建课件与推荐的公开课，一个讲实战，一个打基础。',own:'自建课件',ownTitle:'用 Codex 做科研',ownBody:'从论文搜索、综述写作、数据分析到答辩 PPT，拆成可复用的 Codex 工作流；一页一个要点，每步配可复制提示词。',ownMeta:'幻灯片式网页课件 · 37 页',open:'打开课件',ext:'推荐外部课程',extTitle:'Stanford CS193T · Thinking with AI',extBody:'Cynthia Bailey 主讲，2026 秋季，YouTube 免费公开。从模型原理、提示词、RAG 到 Agent 与 AI 治理，无需技术背景。',extNote:'课程版权归 Stanford 与讲者所有，此处仅提供官方链接。',site:'课程官网',lectures:['AI 入门：模型如何工作','核心提示词','管理信息来源','嘉宾：AI 在人文、法律、生物工程','让 AI 采取行动','掌控你的 AI','计算成本','保持思考敏锐']},
+  en:{eye:'AI COURSEWARE',lead:'My own courseware alongside a recommended open course: one hands-on, one foundational.',own:'My courseware',ownTitle:'Doing Research with Codex',ownBody:'Literature search, review writing, data analysis and defense slides, broken into reusable Codex workflows with copy-ready prompts, one idea per page.',ownMeta:'Slide-style web lesson · 37 pages',open:'Open lesson',ext:'Recommended course',extTitle:'Stanford CS193T · Thinking with AI',extBody:'Taught by Cynthia Bailey, Autumn 2026, free on YouTube. From how models work and prompting to RAG, agents and AI governance; no technical background needed.',extNote:'Course content © Stanford and the instructor; official links only.',site:'Course site',lectures:['Introduction to AI','Core Prompting','Managing Sources','Guest Speakers: AI in humanities, law, bioengineering','AI Taking Action','Control Your AI','Count the Cost','Staying Sharp']}
+};
+const aiLectureLinks=[S193+'01-welcome/',S193+'02-prompting/',S193+'03-context/',S193+'04-research-guests/',S193+'05-agents/',S193+'06-control-ai/',S193+'07-budget/','https://cs193t.stanford.edu/'];
 const atlasLinks=['https://tuanziding.github.io/radiation-muscle-pathway/','https://tuanziding.github.io/radiation-muscle-pathway/ev-intervention.html','/ev-isolation-guide/','/cads-ct-teaching/'];
 const labelPos=[[16,12],[30,47],[73,30],[76,74],[12,66]];
 const KAGGLE='https://www.kaggle.com/certification/competitions/bruceding123/pokemon-tcg-ai-battle';
@@ -198,6 +204,14 @@ export function Light3App(){
       <section id="teaching" className="l3Teaching">
         <div className="l3SectionHead"><h2>{t.teaching}</h2><p>{t.lectureTitle}</p></div>
         <div className="l3Timeline">{['2024','2025','2026'].map((year,index)=><article key={year}><span>0{index+1}</span><time>{year}</time><h3>{t.lectureCohorts[index]}</h3><p>{t.lectureProgram}</p><small>{t.lectureLabel}</small></article>)}</div>
+        <div className="l3AiCourses" aria-label={aiCourse[lang].eye}>
+          <p className="l3AiEye">{aiCourse[lang].eye}<span>{aiCourse[lang].lead}</span></p>
+          <a className="l3AiOwn" href="/codex-research/"><small>{aiCourse[lang].own}</small><h3>{aiCourse[lang].ownTitle}</h3><p>{aiCourse[lang].ownBody}</p><em>{aiCourse[lang].ownMeta}</em><span>{aiCourse[lang].open}<ArrowRight/></span></a>
+          <article className="l3AiExt"><small>{aiCourse[lang].ext}</small><h3><a href="https://cs193t.stanford.edu/" target="_blank" rel="noreferrer">{aiCourse[lang].extTitle}</a></h3><p>{aiCourse[lang].extBody}</p>
+            <ol>{aiCourse[lang].lectures.map((name,i)=><li key={i}><a href={aiLectureLinks[i]} target="_blank" rel="noreferrer"><b>L{i+1}</b><span>{name}</span><ArrowRight/></a></li>)}</ol>
+            <p className="l3AiNote">{aiCourse[lang].extNote} <a href="https://cs193t.stanford.edu/" target="_blank" rel="noreferrer">{aiCourse[lang].site}</a></p>
+          </article>
+        </div>
       </section>
 
       <section id="culture" className="l3Culture">

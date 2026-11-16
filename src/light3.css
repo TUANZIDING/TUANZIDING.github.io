@@ -141,3 +141,25 @@
 .l3Sq{position:relative;left:auto;top:auto;transform:none;width:min(100%,920px)}
 .l3Lens p{padding:8px 12px;border-radius:8px;background:rgba(252,250,247,.94);box-shadow:0 8px 20px -14px rgba(16,29,58,.5)}
 .l3Lens span{color:#4b5361}
+
+.l3AiCourses{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;margin-top:56px;border:1px solid var(--l3-line)}
+.l3AiEye{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin:0;padding:18px 30px;border-bottom:1px solid var(--l3-line);color:var(--l3-red);font:10px monospace;letter-spacing:.13em}
+.l3AiEye span{color:var(--l3-muted);font:13px var(--l3-sans);letter-spacing:0}
+.l3AiOwn,.l3AiExt{position:relative;padding:30px;color:inherit;text-decoration:none}
+.l3AiOwn{display:flex;flex-direction:column;border-right:1px solid var(--l3-line);background:linear-gradient(160deg,#f6f5ff 0%,#fff 62%);transition:background .3s}
+.l3AiOwn:hover{background:linear-gradient(160deg,#eeecff 0%,#fff 70%)}
+.l3AiCourses small{color:var(--l3-sage);font:9px monospace;letter-spacing:.12em;text-transform:uppercase}
+.l3AiCourses h3{margin:14px 0 10px;color:var(--l3-ink);font:28px/1.2 var(--l3-serif)}
+.l3AiCourses h3 a{color:inherit;text-decoration:none}.l3AiCourses h3 a:hover{color:var(--l3-red)}
+.l3AiCourses p{margin:0;color:var(--l3-muted);font-size:13px;line-height:1.8}
+.l3AiOwn em{margin-top:16px;color:#5b55c9;font:normal 12px var(--l3-sans)}
+.l3AiOwn>span{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:28px;color:var(--l3-ink);font-size:13px;font-weight:500}
+.l3AiOwn>span svg{width:15px;transition:transform .3s}.l3AiOwn:hover>span svg{transform:translateX(4px)}
+.l3AiExt ol{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin:20px 0 16px;padding:0;list-style:none}
+.l3AiExt li a{display:grid;grid-template-columns:30px 1fr 14px;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--l3-line);color:#2d3237;font-size:12.5px;line-height:1.45;text-decoration:none}
+.l3AiExt li a b{color:var(--l3-red);font:500 13px var(--l3-serif)}
+.l3AiExt li a svg{width:13px;color:var(--l3-muted);transition:transform .25s}
+.l3AiExt li a:hover{color:var(--l3-ink)}.l3AiExt li a:hover svg{transform:translateX(3px);color:var(--l3-red)}
+.l3AiNote{font-size:11px!important}.l3AiNote a{color:var(--l3-ink)}
+@media(max-width:860px){.l3AiCourses{grid-template-columns:1fr;margin-top:40px}.l3AiEye{padding:16px 20px}.l3AiOwn,.l3AiExt{padding:24px 20px}.l3AiOwn{border-right:0;border-bottom:1px solid var(--l3-line)}.l3AiOwn>span{padding-top:20px}}
+@media(max-width:560px){.l3AiExt ol{grid-template-columns:1fr}.l3AiCourses h3{font-size:24px}}
